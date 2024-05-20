@@ -1,0 +1,7545 @@
+{
+    "font_size": 0.4,
+    "font_color": "#FFFFFF",
+    "background_alpha": 0.5,
+    "background_color": "#9C27B0",
+    "Stroke": "none",
+    "body": [
+        {
+            "from": 1,
+            "to": 4.32,
+            "location": 2,
+            "content": "大家好 前两期我们讲了视频理解领域里的"
+        },
+        {
+            "from": 4.33,
+            "to": 5.52,
+            "location": 2,
+            "content": "两篇经典的论文"
+        },
+        {
+            "from": 5.81,
+            "to": 8.24,
+            "location": 2,
+            "content": "一个是双流网络 一个是I3D网络"
+        },
+        {
+            "from": 8.76,
+            "to": 11.72,
+            "location": 2,
+            "content": "所以说对视频理解这个问题有了个基本的了解"
+        },
+        {
+            "from": 12.19,
+            "to": 14.34,
+            "location": 2,
+            "content": "今天我们就从2014年开始"
+        },
+        {
+            "from": 14.61,
+            "to": 16.59,
+            "location": 2,
+            "content": "一直到最近2021年的工作"
+        },
+        {
+            "from": 17,
+            "to": 18.92,
+            "location": 2,
+            "content": "我们一起来总结一下 做一个串讲"
+        },
+        {
+            "from": 19.68,
+            "to": 20.77,
+            "location": 2,
+            "content": "背景里的这篇论文"
+        },
+        {
+            "from": 20.94,
+            "to": 23.97,
+            "location": 2,
+            "content": "其实是我们组两年前写的一篇综述论文"
+        },
+        {
+            "from": 24.32,
+            "to": 26.79,
+            "location": 2,
+            "content": "当时是为了我们要在CVPR2020年"
+        },
+        {
+            "from": 26.8,
+            "to": 28.75,
+            "location": 2,
+            "content": "举办的一个视频理解的Tutorial"
+        },
+        {
+            "from": 28.76,
+            "to": 30.55,
+            "location": 2,
+            "content": "而准备的一些讲义和资料"
+        },
+        {
+            "from": 30.96,
+            "to": 34,
+            "location": 2,
+            "content": "结果越写越长 就写成一篇综述论文了"
+        },
+        {
+            "from": 34.44,
+            "to": 37.12,
+            "location": 2,
+            "content": "我们这篇综述里大概提及了超过200篇"
+        },
+        {
+            "from": 37.13,
+            "to": 38.64,
+            "location": 2,
+            "content": "在视频领域里的论文"
+        },
+        {
+            "from": 38.84,
+            "to": 40.48,
+            "location": 2,
+            "content": "除了没有Video Transformer"
+        },
+        {
+            "from": 40.6,
+            "to": 42.57,
+            "location": 2,
+            "content": "基本是包含了之前用Deep Learning"
+        },
+        {
+            "from": 42.58,
+            "to": 44.89,
+            "location": 2,
+            "content": "去做Video Action Recognition的大部分工作"
+        },
+        {
+            "from": 45.24,
+            "to": 48.02,
+            "location": 2,
+            "content": "今天这期视频其实我也是想仿照之前"
+        },
+        {
+            "from": 48.03,
+            "to": 50.18,
+            "location": 2,
+            "content": "图3里这种时间线上的结构"
+        },
+        {
+            "from": 50.73,
+            "to": 52.53,
+            "location": 2,
+            "content": "从最开始的用卷积神经网络"
+        },
+        {
+            "from": 52.54,
+            "to": 54.05,
+            "location": 2,
+            "content": "做DeepVideo这个工作"
+        },
+        {
+            "from": 54.24,
+            "to": 55.6,
+            "location": 2,
+            "content": "然后到双流网络"
+        },
+        {
+            "from": 55.6,
+            "to": 57.92,
+            "location": 2,
+            "content": "以及双流网络的这些大部分的变体"
+        },
+        {
+            "from": 58.42,
+            "to": 61.54,
+            "location": 2,
+            "content": "还有3D网络以及3D网络的这些变体"
+        },
+        {
+            "from": 61.91,
+            "to": 62.63,
+            "location": 2,
+            "content": "以及讨论一下"
+        },
+        {
+            "from": 62.64,
+            "to": 64.55,
+            "location": 2,
+            "content": "最新的基于Video Transformer的工作"
+        },
+        {
+            "from": 65.04,
+            "to": 68.22,
+            "location": 2,
+            "content": "鉴于本期内容比较多 我们就直奔主题"
+        },
+        {
+            "from": 68.77,
+            "to": 70.39,
+            "location": 2,
+            "content": "大概我会分4个部分来讲"
+        },
+        {
+            "from": 70.76,
+            "to": 73.65,
+            "location": 2,
+            "content": "第一部分就是自从AlexNet之后"
+        },
+        {
+            "from": 73.76,
+            "to": 74.91,
+            "location": 2,
+            "content": "对视频理解的研究"
+        },
+        {
+            "from": 75.13,
+            "to": 78.26,
+            "location": 2,
+            "content": "就从这种手工特征慢慢转移到卷积神经网络了"
+        },
+        {
+            "from": 78.52,
+            "to": 80.6,
+            "location": 2,
+            "content": "在这一部分里我们只讲一篇论文"
+        },
+        {
+            "from": 80.81,
+            "to": 83.04,
+            "location": 2,
+            "content": "就是CVPR 2014的DeepVideo那篇论文"
+        },
+        {
+            "from": 83.65,
+            "to": 85.68,
+            "location": 2,
+            "content": "接下来在第2部分和第3部分"
+        },
+        {
+            "from": 85.69,
+            "to": 88.52,
+            "location": 2,
+            "content": "我们会分别讲双流网络及其它的变体"
+        },
+        {
+            "from": 88.53,
+            "to": 90.92,
+            "location": 2,
+            "content": "还有3D卷积神经网络以及它的变体"
+        },
+        {
+            "from": 91.38,
+            "to": 94.34,
+            "location": 2,
+            "content": "这两个部分涉及的工作比较多 所以会讲很久"
+        },
+        {
+            "from": 94.95,
+            "to": 96,
+            "location": 2,
+            "content": "然后到第四部分"
+        },
+        {
+            "from": 96,
+            "to": 97.87,
+            "location": 2,
+            "content": "自从Vision Transformer出现以后"
+        },
+        {
+            "from": 98.63,
+            "to": 101.11,
+            "location": 2,
+            "content": "视频理解领域里是如何把image transformer"
+        },
+        {
+            "from": 101.28,
+            "to": 102.95,
+            "location": 2,
+            "content": "延伸到video transformer上的"
+        },
+        {
+            "from": 103.55,
+            "to": 105.35,
+            "location": 2,
+            "content": "其实这里面他用的很多方法"
+        },
+        {
+            "from": 105.36,
+            "to": 107.23,
+            "location": 2,
+            "content": "都是直接从2或者3里面来的"
+        },
+        {
+            "from": 107.57,
+            "to": 108.72,
+            "location": 2,
+            "content": "尤其是借鉴了很多"
+        },
+        {
+            "from": 108.72,
+            "to": 111.12,
+            "location": 2,
+            "content": "在3D卷积神经网络里使用的技巧 "
+        },
+        {
+            "from": 111.12,
+            "to": 113.45,
+            "location": 2,
+            "content": "所以说第四部分呢 讲的也会比较快"
+        },
+        {
+            "from": 114.26,
+            "to": 115.41,
+            "location": 2,
+            "content": "首先我们来看一下"
+        },
+        {
+            "from": 115.42,
+            "to": 117.65,
+            "location": 2,
+            "content": "CVPR14的这篇DeepVideo的论文"
+        },
+        {
+            "from": 118.36,
+            "to": 120.06,
+            "location": 2,
+            "content": "题目非常直截了当"
+        },
+        {
+            "from": 120.29,
+            "to": 122.8,
+            "location": 2,
+            "content": "上来就是说呢 大规模的视频分类理解"
+        },
+        {
+            "from": 123.09,
+            "to": 124.6,
+            "location": 2,
+            "content": "用卷积神经网络来做"
+        },
+        {
+            "from": 125.18,
+            "to": 127.54,
+            "location": 2,
+            "content": "其实在这篇论文之前也有一些工作"
+        },
+        {
+            "from": 127.55,
+            "to": 129.22,
+            "location": 2,
+            "content": "是用神经网络来做的"
+        },
+        {
+            "from": 129.56,
+            "to": 132.12,
+            "location": 2,
+            "content": "有卷积神经网络也有用LSTM（长短期记忆）"
+        },
+        {
+            "from": 132.58,
+            "to": 133.58,
+            "location": 2,
+            "content": "但是呢那些工作"
+        },
+        {
+            "from": 133.59,
+            "to": 135.5,
+            "location": 2,
+            "content": "都是在AlexNet出现之前"
+        },
+        {
+            "from": 135.89,
+            "to": 137.71,
+            "location": 2,
+            "content": "一般使用的数据集都比较小"
+        },
+        {
+            "from": 137.92,
+            "to": 139.31,
+            "location": 2,
+            "content": "或者说网络也比较浅"
+        },
+        {
+            "from": 139.92,
+            "to": 140.92,
+            "location": 2,
+            "content": "而DeepVideo这篇论文"
+        },
+        {
+            "from": 140.94,
+            "to": 142.55,
+            "location": 2,
+            "content": "是在AlexNet的出现之后"
+        },
+        {
+            "from": 142.56,
+            "to": 146.61,
+            "location": 2,
+            "content": "是在深度学习时代 使用了超大规模的数据集"
+        },
+        {
+            "from": 147.01,
+            "to": 149.77,
+            "location": 2,
+            "content": "而且使用了比较深的这种卷积神经网络去做的"
+        },
+        {
+            "from": 150.42,
+            "to": 154.11,
+            "location": 2,
+            "content": "所以说算是深度学习时代 使用卷积神经网络"
+        },
+        {
+            "from": 154.12,
+            "to": 157.35,
+            "location": 2,
+            "content": "去处理视频理解问题的最早期的工作之一"
+        },
+        {
+            "from": 158.12,
+            "to": 160.68,
+            "location": 2,
+            "content": "作者团队来自于Google Research和Stanford"
+        },
+        {
+            "from": 161.49,
+            "to": 164.13,
+            "location": 2,
+            "content": "一作就是之前我们也提过好几次的Andrej Karpathy"
+        },
+        {
+            "from": 164.76,
+            "to": 165.41,
+            "location": 2,
+            "content": "14年的时候呢"
+        },
+        {
+            "from": 165.58,
+            "to": 167.53,
+            "location": 2,
+            "content": "他还是Stanford的一个博士生"
+        },
+        {
+            "from": 167.88,
+            "to": 169.88,
+            "location": 2,
+            "content": "这篇工作是他在Google实习的时候"
+        },
+        {
+            "from": 169.89,
+            "to": 170.88,
+            "location": 2,
+            "content": "完成的一篇论文"
+        },
+        {
+            "from": 171.46,
+            "to": 173.09,
+            "location": 2,
+            "content": "然而就在短短的7 8年之后"
+        },
+        {
+            "from": 173.65,
+            "to": 175.59,
+            "location": 2,
+            "content": "Andrej 就已经带领特斯拉的团队"
+        },
+        {
+            "from": 175.83,
+            "to": 177.67,
+            "location": 2,
+            "content": "把辅助无人驾驶做得这么好了"
+        },
+        {
+            "from": 178.42,
+            "to": 180.56,
+            "location": 2,
+            "content": "接下来几位作者都来自于Google Research"
+        },
+        {
+            "from": 181.23,
+            "to": 183.16,
+            "location": 2,
+            "content": "这个团队其实为视频理解领域"
+        },
+        {
+            "from": 183.17,
+            "to": 184.44,
+            "location": 2,
+            "content": "做出了很大的贡献"
+        },
+        {
+            "from": 185,
+            "to": 188.27,
+            "location": 2,
+            "content": "不光是这篇论文里提出的Sports-1M这个数据集"
+        },
+        {
+            "from": 188.62,
+            "to": 190.85,
+            "location": 2,
+            "content": "他们在两年之后呢又推出了一个更大的"
+        },
+        {
+            "from": 190.96,
+            "to": 192.61,
+            "location": 2,
+            "content": "YouTube-8M的数据集"
+        },
+        {
+            "from": 193.04,
+            "to": 194.74,
+            "location": 2,
+            "content": "还有最近为了action detection"
+        },
+        {
+            "from": 194.75,
+            "to": 197.54,
+            "location": 2,
+            "content": "提出的AVA数据集 全都是这个团队做的"
+        },
+        {
+            "from": 198.16,
+            "to": 200.47,
+            "location": 2,
+            "content": "最后就是我们耳熟能详的李飞飞老师"
+        },
+        {
+            "from": 201.05,
+            "to": 202.13,
+            "location": 2,
+            "content": "在ImageNet数据集"
+        },
+        {
+            "from": 202.14,
+            "to": 203.97,
+            "location": 2,
+            "content": "取得了如此巨大的成功之后"
+        },
+        {
+            "from": 204.57,
+            "to": 207.21,
+            "location": 2,
+            "content": "又来建立一个如此大规模的视频数据集"
+        },
+        {
+            "from": 207.77,
+            "to": 210.45,
+            "location": 2,
+            "content": "也是很大程度上推动了视频理解领域的发展"
+        },
+        {
+            "from": 211.56,
+            "to": 214.23,
+            "location": 2,
+            "content": "论文本身呢 其实它的方法是比较直接的"
+        },
+        {
+            "from": 214.91,
+            "to": 217.7,
+            "location": 2,
+            "content": "想法其实就是说如何把卷积神经网络"
+        },
+        {
+            "from": 217.71,
+            "to": 220.9,
+            "location": 2,
+            "content": "从图片识别里面应用到视频识别里面"
+        },
+        {
+            "from": 221.56,
+            "to": 224.63,
+            "location": 2,
+            "content": "那视频跟图片唯一的不同就是它多了一个时间轴"
+        },
+        {
+            "from": 224.88,
+            "to": 226.71,
+            "location": 2,
+            "content": "就是说它有更多的视频帧"
+        },
+        {
+            "from": 227.08,
+            "to": 228.37,
+            "location": 2,
+            "content": "而不是单个的图片了"
+        },
+        {
+            "from": 229.33,
+            "to": 232.07,
+            "location": 2,
+            "content": "所以很自然就有几个变体是需要尝试的"
+        },
+        {
+            "from": 232.08,
+            "to": 234.19,
+            "location": 2,
+            "content": "比如说这里列出来的后3种变体"
+        },
+        {
+            "from": 234.75,
+            "to": 235.95,
+            "location": 2,
+            "content": "我们一个一个来过"
+        },
+        {
+            "from": 236.78,
+            "to": 237.77,
+            "location": 2,
+            "content": "首先论文里说的"
+        },
+        {
+            "from": 237.78,
+            "to": 239.17,
+            "location": 2,
+            "content": "这个Single Frame的方式"
+        },
+        {
+            "from": 239.38,
+            "to": 240.45,
+            "location": 2,
+            "content": "就是单帧的方式"
+        },
+        {
+            "from": 240.46,
+            "to": 242.57,
+            "location": 2,
+            "content": "它其实就是一个图片分类的任务"
+        },
+        {
+            "from": 243.55,
+            "to": 245.14,
+            "location": 2,
+            "content": "在一个视频里任选一帧"
+        },
+        {
+            "from": 245.15,
+            "to": 247.62,
+            "location": 2,
+            "content": "然后把这一帧通过一个卷积神经网络"
+        },
+        {
+            "from": 247.83,
+            "to": 250.46,
+            "location": 2,
+            "content": "最后通过两层FC[全连接]然后得到一个分类结果"
+        },
+        {
+            "from": 251.05,
+            "to": 252.79,
+            "location": 2,
+            "content": "这个其实就相当于是一个baseline"
+        },
+        {
+            "from": 253.44,
+            "to": 255.15,
+            "location": 2,
+            "content": "它完全没有时间信息"
+        },
+        {
+            "from": 255.16,
+            "to": 257.11,
+            "location": 2,
+            "content": "也完全没有视频信息在里面"
+        },
+        {
+            "from": 257.9,
+            "to": 259.93,
+            "location": 2,
+            "content": "然后作者就开始做各种尝试了"
+        },
+        {
+            "from": 260.4,
+            "to": 262.16,
+            "location": 2,
+            "content": "首先第一个比较好做的尝试"
+        },
+        {
+            "from": 262.29,
+            "to": 263.32,
+            "location": 2,
+            "content": "就是Late Fusion"
+        },
+        {
+            "from": 263.41,
+            "to": 265.56,
+            "location": 2,
+            "content": "我们在讲双流网络的时候也讲过"
+        },
+        {
+            "from": 266.41,
+            "to": 267.51,
+            "location": 2,
+            "content": "之所以叫它\"late\""
+        },
+        {
+            "from": 267.87,
+            "to": 270.61,
+            "location": 2,
+            "content": "是因为它是在网络输出层面做的一些结合"
+        },
+        {
+            "from": 271.23,
+            "to": 273.62,
+            "location": 2,
+            "content": "这幅图里呢 就是说比如说我有一个视频"
+        },
+        {
+            "from": 274.22,
+            "to": 275.5,
+            "location": 2,
+            "content": "我去随机的选几帧"
+        },
+        {
+            "from": 275.51,
+            "to": 278.74,
+            "location": 2,
+            "content": "然后每一帧呢 都是单独的通过一个卷积神经网络"
+        },
+        {
+            "from": 279.13,
+            "to": 281.39,
+            "location": 2,
+            "content": "这两个神经网络是权值共享的"
+        },
+        {
+            "from": 282.02,
+            "to": 284.6,
+            "location": 2,
+            "content": "然后把得到的这两个特征合并一下"
+        },
+        {
+            "from": 284.89,
+            "to": 287.24,
+            "location": 2,
+            "content": "通过这个FC层[全连接层]最后做一下输出"
+        },
+        {
+            "from": 287.91,
+            "to": 289.34,
+            "location": 2,
+            "content": "这样虽然从做法上"
+        },
+        {
+            "from": 289.51,
+            "to": 292.54,
+            "location": 2,
+            "content": "还是说单帧进入一个卷积神经网络"
+        },
+        {
+            "from": 292.55,
+            "to": 295.41,
+            "location": 2,
+            "content": "去得到一个特征 还是比较像图片分类的"
+        },
+        {
+            "from": 295.86,
+            "to": 298.37,
+            "location": 2,
+            "content": "但是毕竟因为后面把这个特征合并起来了"
+        },
+        {
+            "from": 298.38,
+            "to": 301.53,
+            "location": 2,
+            "content": "所以说稍微有一些时序上的信息在里面"
+        },
+        {
+            "from": 302.69,
+            "to": 304.96,
+            "location": 2,
+            "content": "做完了Late Fusion 自然对应的"
+        },
+        {
+            "from": 304.97,
+            "to": 306.36,
+            "location": 2,
+            "content": "就会有这种Early Fusion"
+        },
+        {
+            "from": 307.08,
+            "to": 309.27,
+            "location": 2,
+            "content": "作者这里采用的是非常early的做法"
+        },
+        {
+            "from": 309.81,
+            "to": 312.21,
+            "location": 2,
+            "content": "也就是在输入层面就做了这种融合"
+        },
+        {
+            "from": 313.26,
+            "to": 315.29,
+            "location": 2,
+            "content": "具体的做法就是把5个视频帧"
+        },
+        {
+            "from": 315.3,
+            "to": 317.53,
+            "location": 2,
+            "content": "在RGB 那个Channel上直接合起来"
+        },
+        {
+            "from": 317.92,
+            "to": 319.7,
+            "location": 2,
+            "content": "这样原来你是一张图片"
+        },
+        {
+            "from": 319.71,
+            "to": 321.42,
+            "location": 2,
+            "content": "所以RGB你有3个channel"
+        },
+        {
+            "from": 321.96,
+            "to": 323.48,
+            "location": 2,
+            "content": "你现在是有5个图片 "
+        },
+        {
+            "from": 323.48,
+            "to": 326.11,
+            "location": 2,
+            "content": "所以就是3×5=15 你有15个channel"
+        },
+        {
+            "from": 326.56,
+            "to": 328.39,
+            "location": 2,
+            "content": "那也就意味着你这里的网络结构"
+        },
+        {
+            "from": 328.56,
+            "to": 331.07,
+            "location": 2,
+            "content": "要进行一定的改变了 尤其是第一层"
+        },
+        {
+            "from": 331.79,
+            "to": 334.89,
+            "location": 2,
+            "content": "你第一个卷积层接受的输入的通道数"
+        },
+        {
+            "from": 335.14,
+            "to": 337.21,
+            "location": 2,
+            "content": "就要由原来的3变成15了"
+        },
+        {
+            "from": 337.72,
+            "to": 339.96,
+            "location": 2,
+            "content": "但之后的网络都跟之前保持不变"
+        },
+        {
+            "from": 340.6,
+            "to": 341.8,
+            "location": 2,
+            "content": "这种Early Fusion的做法"
+        },
+        {
+            "from": 342.01,
+            "to": 343.48,
+            "location": 2,
+            "content": "就能在网络的刚开始"
+        },
+        {
+            "from": 343.86,
+            "to": 346.89,
+            "location": 2,
+            "content": "就能从输入的层面去感受到这种时序上的改变"
+        },
+        {
+            "from": 347.65,
+            "to": 350.69,
+            "location": 2,
+            "content": "希望能学到一些全局的运动或者时间信息"
+        },
+        {
+            "from": 352.31,
+            "to": 355.54,
+            "location": 2,
+            "content": "最后 既然你做过Late Fusion又做过Early Fusion"
+        },
+        {
+            "from": 356.04,
+            "to": 357.96,
+            "location": 2,
+            "content": "其实另外一个更直接的变体"
+        },
+        {
+            "from": 357.97,
+            "to": 359.84,
+            "location": 2,
+            "content": "就是说为什么不把这两个合起来做呢"
+        },
+        {
+            "from": 360.83,
+            "to": 362.43,
+            "location": 2,
+            "content": "于是作者这里也尝试了一下"
+        },
+        {
+            "from": 362.67,
+            "to": 364.04,
+            "location": 2,
+            "content": "他管这个叫Slow Fusion"
+        },
+        {
+            "from": 364.9,
+            "to": 365.84,
+            "location": 2,
+            "content": "意思就是说你这个"
+        },
+        {
+            "from": 365.84,
+            "to": 367.97,
+            "location": 2,
+            "content": " Late Fusion合并的太晚了"
+        },
+        {
+            "from": 368.16,
+            "to": 370.33,
+            "location": 2,
+            "content": "Early Fusion又合并的太早了"
+        },
+        {
+            "from": 370.86,
+            "to": 372.85,
+            "location": 2,
+            "content": "如果能在网络学习的过程中"
+        },
+        {
+            "from": 373.1,
+            "to": 375.33,
+            "location": 2,
+            "content": "就在这个特征层面再去做一些合并了"
+        },
+        {
+            "from": 375.34,
+            "to": 376.45,
+            "location": 2,
+            "content": "那就再好不过了"
+        },
+        {
+            "from": 377.39,
+            "to": 379.5,
+            "location": 2,
+            "content": "具体的做法就是每次先选1个"
+        },
+        {
+            "from": 379.51,
+            "to": 382.26,
+            "location": 2,
+            "content": "有10个视频帧的1个小的视频段"
+        },
+        {
+            "from": 382.75,
+            "to": 386.07,
+            "location": 2,
+            "content": "然后每4个视频帧就通过1个卷积神经网络"
+        },
+        {
+            "from": 386.08,
+            "to": 387.31,
+            "location": 2,
+            "content": "去抽取一些特征"
+        },
+        {
+            "from": 387.91,
+            "to": 390.42,
+            "location": 2,
+            "content": "这些刚开始的层也都是权值共享的"
+        },
+        {
+            "from": 390.94,
+            "to": 392.96,
+            "location": 2,
+            "content": "在抽出最开始的这些特征之后"
+        },
+        {
+            "from": 393.79,
+            "to": 395.72,
+            "location": 2,
+            "content": "用最开始的4个输入片段"
+        },
+        {
+            "from": 396.38,
+            "to": 398.85,
+            "location": 2,
+            "content": "我们又把它慢慢合并成2个输入片段"
+        },
+        {
+            "from": 399.48,
+            "to": 402.58,
+            "location": 2,
+            "content": "然后再做一些卷积操作 去学习更深层的特征"
+        },
+        {
+            "from": 403.01,
+            "to": 404.84,
+            "location": 2,
+            "content": "最后再把这个特征给FC"
+        },
+        {
+            "from": 404.85,
+            "to": 406.16,
+            "location": 2,
+            "content": "然后去做最后的分类"
+        },
+        {
+            "from": 407.03,
+            "to": 409.67,
+            "location": 2,
+            "content": "这个意思就是说整个网络从头到尾"
+        },
+        {
+            "from": 410.12,
+            "to": 412.78,
+            "location": 2,
+            "content": "其实都是对这个视频的整体在进行学习"
+        },
+        {
+            "from": 413.37,
+            "to": 415.2,
+            "location": 2,
+            "content": "按道理来说结果应该是最好的"
+        },
+        {
+            "from": 415.58,
+            "to": 417.55,
+            "location": 2,
+            "content": "而事实上它结果也是最好的"
+        },
+        {
+            "from": 418.24,
+            "to": 419.44,
+            "location": 2,
+            "content": "但作者没有想到的是"
+        },
+        {
+            "from": 419.65,
+            "to": 421.88,
+            "location": 2,
+            "content": "其实这几种方法差别都不大"
+        },
+        {
+            "from": 422.3,
+            "to": 423.57,
+            "location": 2,
+            "content": "而且更没有想到的是"
+        },
+        {
+            "from": 423.74,
+            "to": 426.93,
+            "location": 2,
+            "content": "即使是在100万个视频上去做了预训练之后"
+        },
+        {
+            "from": 427.45,
+            "to": 430.89,
+            "location": 2,
+            "content": "在UCF101小数据集上去做迁移学习的时候"
+        },
+        {
+            "from": 431.61,
+            "to": 433.96,
+            "location": 2,
+            "content": "竟然效果还比不上之前的手工特征"
+        },
+        {
+            "from": 434.29,
+            "to": 435.51,
+            "location": 2,
+            "content": "这个就非常诡异了"
+        },
+        {
+            "from": 436.23,
+            "to": 438.35,
+            "location": 2,
+            "content": "所以作者又开始尝试另外一条路"
+        },
+        {
+            "from": 439.73,
+            "to": 441.12,
+            "location": 2,
+            "content": "另外一种尝试就是"
+        },
+        {
+            "from": 441.13,
+            "to": 444.29,
+            "location": 2,
+            "content": "作者这里在图二里画的这种多分辨率的"
+        },
+        {
+            "from": 444.3,
+            "to": 445.81,
+            "location": 2,
+            "content": "卷积神经网络的结构"
+        },
+        {
+            "from": 446.73,
+            "to": 450.46,
+            "location": 2,
+            "content": "作者一看用2D卷积神经网络去学时序特征"
+        },
+        {
+            "from": 450.59,
+            "to": 452.14,
+            "location": 2,
+            "content": "确实很难 不好学"
+        },
+        {
+            "from": 452.71,
+            "to": 453.7,
+            "location": 2,
+            "content": "我就先不学了"
+        },
+        {
+            "from": 454.22,
+            "to": 456.75,
+            "location": 2,
+            "content": "我把图像那边使用卷积神经网络"
+        },
+        {
+            "from": 456.76,
+            "to": 458.31,
+            "location": 2,
+            "content": "一些好用的trick搬过来"
+        },
+        {
+            "from": 458.48,
+            "to": 460.99,
+            "location": 2,
+            "content": "看能不能在视频领域里也工作得很好"
+        },
+        {
+            "from": 461.54,
+            "to": 463.04,
+            "location": 2,
+            "content": "也就是他这里想尝试的这种"
+        },
+        {
+            "from": 463.04,
+            "to": 464.74,
+            "location": 2,
+            "content": "多分辨率卷积神经网络"
+        },
+        {
+            "from": 465.6,
+            "to": 469.18,
+            "location": 2,
+            "content": "简单的来说作者就是把输入分成了两个部分"
+        },
+        {
+            "from": 469.5,
+            "to": 470.54,
+            "location": 2,
+            "content": "一个是原图"
+        },
+        {
+            "from": 471.24,
+            "to": 474.26,
+            "location": 2,
+            "content": "另外一个就是从原图的正中间抠出来一部分"
+        },
+        {
+            "from": 474.43,
+            "to": 475.98,
+            "location": 2,
+            "content": "变成上面的输入"
+        },
+        {
+            "from": 476.62,
+            "to": 478.78,
+            "location": 2,
+            "content": "因为不论是对图片还是对视频来说"
+        },
+        {
+            "from": 479.18,
+            "to": 481.15,
+            "location": 2,
+            "content": "一般最有用的或者说物体"
+        },
+        {
+            "from": 481.24,
+            "to": 483.31,
+            "location": 2,
+            "content": "都会出现在图片的正中间"
+        },
+        {
+            "from": 483.64,
+            "to": 485.29,
+            "location": 2,
+            "content": "所以他就把上面的这一分支"
+        },
+        {
+            "from": 485.51,
+            "to": 486.55,
+            "location": 2,
+            "content": "叫做fovea stream"
+        },
+        {
+            "from": 487.16,
+            "to": 488.08,
+            "location": 2,
+            "content": "下面的这一分支"
+        },
+        {
+            "from": 488.17,
+            "to": 489.44,
+            "location": 2,
+            "content": "叫做context stream"
+        },
+        {
+            "from": 490.2,
+            "to": 491.48,
+            "location": 2,
+            "content": "fovea其实就指的是"
+        },
+        {
+            "from": 491.49,
+            "to": 494.96,
+            "location": 2,
+            "content": "人眼视网膜里最中心的一个叫中央凹的东西"
+        },
+        {
+            "from": 495.42,
+            "to": 497.62,
+            "location": 2,
+            "content": "它是对外界变化最敏感的一个区域"
+        },
+        {
+            "from": 498.2,
+            "to": 500.8,
+            "location": 2,
+            "content": "而context指的就是图片的整体的信息"
+        },
+        {
+            "from": 501.58,
+            "to": 503.41,
+            "location": 2,
+            "content": "作者就是想通过这个操作"
+        },
+        {
+            "from": 503.66,
+            "to": 507.01,
+            "location": 2,
+            "content": "既能学到这个图片里最有用的中间的那些信息"
+        },
+        {
+            "from": 507.64,
+            "to": 509.8,
+            "location": 2,
+            "content": "又能学习到这个图片整体的一个理解"
+        },
+        {
+            "from": 510.35,
+            "to": 512.74,
+            "location": 2,
+            "content": "看看这样能不能提升对视频的理解"
+        },
+        {
+            "from": 513.52,
+            "to": 516.52,
+            "location": 2,
+            "content": "其实这个架构也可以理解成是一种双流结构"
+        },
+        {
+            "from": 516.73,
+            "to": 518.08,
+            "location": 2,
+            "content": "因为它也有两个网络"
+        },
+        {
+            "from": 518.64,
+            "to": 520.71,
+            "location": 2,
+            "content": "但是这两个网络是权值共享的"
+        },
+        {
+            "from": 521.37,
+            "to": 523.24,
+            "location": 2,
+            "content": "然后这种架构也可以理解成"
+        },
+        {
+            "from": 523.25,
+            "to": 525.84,
+            "location": 2,
+            "content": "早期对注意力的一种使用方式"
+        },
+        {
+            "from": 526.29,
+            "to": 527.97,
+            "location": 2,
+            "content": "他强制性的想让这个网络"
+        },
+        {
+            "from": 527.98,
+            "to": 530.37,
+            "location": 2,
+            "content": "去更加关注图片中心的区域"
+        },
+        {
+            "from": 531.98,
+            "to": 533.65,
+            "location": 2,
+            "content": "总之呢 一顿操作下来"
+        },
+        {
+            "from": 533.97,
+            "to": 537.37,
+            "location": 2,
+            "content": "虽然多分辨率转机神经网络有一定的提升"
+        },
+        {
+            "from": 537.76,
+            "to": 539.89,
+            "location": 2,
+            "content": "比如说跟这个单帧的Baseline比"
+        },
+        {
+            "from": 540.42,
+            "to": 542.53,
+            "location": 2,
+            "content": "单帧加上多尺度之后"
+        },
+        {
+            "from": 542.84,
+            "to": 544.52,
+            "location": 2,
+            "content": "这个效果还是有一定提升的"
+        },
+        {
+            "from": 545.01,
+            "to": 547.12,
+            "location": 2,
+            "content": "但是提升相对来说是比较小的"
+        },
+        {
+            "from": 548.13,
+            "to": 550.77,
+            "location": 2,
+            "content": "然后我们再来看一下单帧的Baseline"
+        },
+        {
+            "from": 551.17,
+            "to": 553.73,
+            "location": 2,
+            "content": "加上这几种时间信息上的合并之后"
+        },
+        {
+            "from": 553.74,
+            "to": 554.77,
+            "location": 2,
+            "content": "会有什么样的表现"
+        },
+        {
+            "from": 555.32,
+            "to": 556.73,
+            "location": 2,
+            "content": "我们可以发现 Early Fusion"
+        },
+        {
+            "from": 556.94,
+            "to": 558.29,
+            "location": 2,
+            "content": "确实做得太early了"
+        },
+        {
+            "from": 558.51,
+            "to": 559.63,
+            "location": 2,
+            "content": "所以说它的效果"
+        },
+        {
+            "from": 559.85,
+            "to": 562.15,
+            "location": 2,
+            "content": "还不如用Single-Frame的Baseline"
+        },
+        {
+            "from": 562.45,
+            "to": 564.95,
+            "location": 2,
+            "content": "然后Late Fusion也不如Baseline"
+        },
+        {
+            "from": 565.76,
+            "to": 567.23,
+            "location": 2,
+            "content": "只有最后的这个Slow Fusion"
+        },
+        {
+            "from": 567.4,
+            "to": 569.19,
+            "location": 2,
+            "content": "经过了一顿复杂的操作之后"
+        },
+        {
+            "from": 569.36,
+            "to": 571.19,
+            "location": 2,
+            "content": "才勉强比这个Single-Frame的"
+        },
+        {
+            "from": 571.2,
+            "to": 572.35,
+            "location": 2,
+            "content": "Baseline高了一点点"
+        },
+        {
+            "from": 572.95,
+            "to": 574.82,
+            "location": 2,
+            "content": "而且这个还是在他们提出的"
+        },
+        {
+            "from": 575,
+            "to": 577.25,
+            "location": 2,
+            "content": "Sports-1M数据集上的结果"
+        },
+        {
+            "from": 578.75,
+            "to": 581.46,
+            "location": 2,
+            "content": "如果我们换一个数据集 换到14年"
+        },
+        {
+            "from": 581.63,
+            "to": 584.62,
+            "location": 2,
+            "content": "当时大家广为接受的UCF-101数据集上"
+        },
+        {
+            "from": 585.31,
+            "to": 587.47,
+            "location": 2,
+            "content": "我们可以看到作者这里最好的变体"
+        },
+        {
+            "from": 587.68,
+            "to": 589.71,
+            "location": 2,
+            "content": "也只有65.4%的这个准确度"
+        },
+        {
+            "from": 590.3,
+            "to": 592.14,
+            "location": 2,
+            "content": "而事实上我们之前在双流网络"
+        },
+        {
+            "from": 592.15,
+            "to": 593.58,
+            "location": 2,
+            "content": "那篇论文里也讲到过"
+        },
+        {
+            "from": 594.14,
+            "to": 595.89,
+            "location": 2,
+            "content": "当时最好的手工特征的方法"
+        },
+        {
+            "from": 596.1,
+            "to": 598.45,
+            "location": 2,
+            "content": "就已经能达到87%的准确度了"
+        },
+        {
+            "from": 599.32,
+            "to": 602.43,
+            "location": 2,
+            "content": "也就意味着说 当你使用了这么多预训练的数据"
+        },
+        {
+            "from": 602.44,
+            "to": 604.83,
+            "location": 2,
+            "content": "而且又使用了这么大规模的一个网络之后呢"
+        },
+        {
+            "from": 605.86,
+            "to": 607.38,
+            "location": 2,
+            "content": "最后这个迁移学习的结果"
+        },
+        {
+            "from": 607.51,
+            "to": 609.5,
+            "location": 2,
+            "content": "竟然还不如一个手工特征的结果"
+        },
+        {
+            "from": 610.03,
+            "to": 614.19,
+            "location": 2,
+            "content": "而且是远远不如 所以说引发了大家很多的思考"
+        },
+        {
+            "from": 614.92,
+            "to": 618.64,
+            "location": 2,
+            "content": "为什么深度学习在图片分类图片检测分割那边"
+        },
+        {
+            "from": 618.65,
+            "to": 619.76,
+            "location": 2,
+            "content": "都工作地这么好"
+        },
+        {
+            "from": 620.21,
+            "to": 622.11,
+            "location": 2,
+            "content": "但是在视频领域里怎么就碰壁了呢"
+        },
+        {
+            "from": 623.1,
+            "to": 625.78,
+            "location": 2,
+            "content": "但这篇文章的意义呢 其实是不在于它的效果的"
+        },
+        {
+            "from": 626.37,
+            "to": 629.63,
+            "location": 2,
+            "content": "他不仅提出了当时最大的视频理解的数据集"
+        },
+        {
+            "from": 630.22,
+            "to": 632.5,
+            "location": 2,
+            "content": "而且把你能想到的这种最直接的方式"
+        },
+        {
+            "from": 632.71,
+            "to": 633.54,
+            "location": 2,
+            "content": "全都试了一遍"
+        },
+        {
+            "from": 634.02,
+            "to": 636.23,
+            "location": 2,
+            "content": "给后续的工作做了一个很好的铺垫"
+        },
+        {
+            "from": 636.65,
+            "to": 638.64,
+            "location": 2,
+            "content": "这才有了后面几年深度学习"
+        },
+        {
+            "from": 638.65,
+            "to": 640.92,
+            "location": 2,
+            "content": "在视频领域里的飞速的发展"
+        },
+        {
+            "from": 641.8,
+            "to": 644.24,
+            "location": 2,
+            "content": "所以到18  19年的时候视频理解"
+        },
+        {
+            "from": 644.25,
+            "to": 645.68,
+            "location": 2,
+            "content": "或者说这个动作识别"
+        },
+        {
+            "from": 646.18,
+            "to": 649.48,
+            "location": 2,
+            "content": "已经是CV领域排名前5前6的一个关键词了"
+        },
+        {
+            "from": 649.88,
+            "to": 651.4,
+            "location": 2,
+            "content": "是一个非常主流的视觉任务"
+        },
+        {
+            "from": 652.64,
+            "to": 653.75,
+            "location": 2,
+            "content": "说完了DeepVideo"
+        },
+        {
+            "from": 653.88,
+            "to": 655.79,
+            "location": 2,
+            "content": "接下来我们就来讲一下双流网络"
+        },
+        {
+            "from": 656.35,
+            "to": 657.74,
+            "location": 2,
+            "content": "因为我们刚才在DeepVideo"
+        },
+        {
+            "from": 657.75,
+            "to": 659.14,
+            "location": 2,
+            "content": "这篇论文里也看到了"
+        },
+        {
+            "from": 659.43,
+            "to": 661.98,
+            "location": 2,
+            "content": "2D网络在当时还是不能很好地"
+        },
+        {
+            "from": 661.99,
+            "to": 663.86,
+            "location": 2,
+            "content": "去学习这种时序信息的"
+        },
+        {
+            "from": 664.46,
+            "to": 667.3,
+            "location": 2,
+            "content": "而视频理解和图像理解最关键的区别"
+        },
+        {
+            "from": 667.31,
+            "to": 669.12,
+            "location": 2,
+            "content": "就在于它多了一个时间轴"
+        },
+        {
+            "from": 669.67,
+            "to": 672.36,
+            "location": 2,
+            "content": "所以如何去更好地处理这个时间信息"
+        },
+        {
+            "from": 672.86,
+            "to": 674.42,
+            "location": 2,
+            "content": "可能才会带来更大的提升"
+        },
+        {
+            "from": 675.09,
+            "to": 677.28,
+            "location": 2,
+            "content": "所以接下来大家就想了很多的方法"
+        },
+        {
+            "from": 677.41,
+            "to": 679.16,
+            "location": 2,
+            "content": "双流网络是其中一个"
+        },
+        {
+            "from": 679.29,
+            "to": 682.52,
+            "location": 2,
+            "content": "他就利用了光流这个特征去帮助网络学习"
+        },
+        {
+            "from": 683,
+            "to": 684.51,
+            "location": 2,
+            "content": "当然了 也有很多人尝试"
+        },
+        {
+            "from": 684.52,
+            "to": 686.59,
+            "location": 2,
+            "content": "想用LSTM去做这个视频理解"
+        },
+        {
+            "from": 687.24,
+            "to": 689.91,
+            "location": 2,
+            "content": "另外呢 大家就想用这种3d卷积神经网络"
+        },
+        {
+            "from": 690.35,
+            "to": 692.71,
+            "location": 2,
+            "content": "因为本身视频 它就是一个3D的输入"
+        },
+        {
+            "from": 693.26,
+            "to": 696.06,
+            "location": 2,
+            "content": "所以你用3D的网络去应对 听起来就更合理"
+        },
+        {
+            "from": 696.72,
+            "to": 698.7,
+            "location": 2,
+            "content": "然后其实还有很多别的操作了"
+        },
+        {
+            "from": 698.95,
+            "to": 700.82,
+            "location": 2,
+            "content": "比如说基于轨迹的一些方法"
+        },
+        {
+            "from": 701.12,
+            "to": 702.27,
+            "location": 2,
+            "content": "基于ranking function的"
+        },
+        {
+            "from": 702.28,
+            "to": 702.85,
+            "location": 2,
+            "content": "一些方法"
+        },
+        {
+            "from": 703.16,
+            "to": 705.21,
+            "location": 2,
+            "content": "还有基于shift移位这种操作"
+        },
+        {
+            "from": 705.87,
+            "to": 708.31,
+            "location": 2,
+            "content": "总之呢 在2014年之后的这五六年里"
+        },
+        {
+            "from": 708.87,
+            "to": 711.16,
+            "location": 2,
+            "content": "视频动作识别还是发展的相当不错的"
+        },
+        {
+            "from": 712.36,
+            "to": 714.79,
+            "location": 2,
+            "content": "首先 我们来回顾一下双流网络"
+        },
+        {
+            "from": 715.33,
+            "to": 718.03,
+            "location": 2,
+            "content": "双流网络 我们在之前的视频里已经讲到过了"
+        },
+        {
+            "from": 718.04,
+            "to": 719.83,
+            "location": 2,
+            "content": "所以这里我们就直接跳到图1"
+        },
+        {
+            "from": 721,
+            "to": 722.62,
+            "location": 2,
+            "content": "双流网络的主要意义就是说"
+        },
+        {
+            "from": 723.15,
+            "to": 724.98,
+            "location": 2,
+            "content": "当你用一个卷积神经网络"
+        },
+        {
+            "from": 724.99,
+            "to": 727.46,
+            "location": 2,
+            "content": "无法去很好的处理时序信息的时候"
+        },
+        {
+            "from": 727.96,
+            "to": 730.59,
+            "location": 2,
+            "content": "你只需要在下面再加一个卷积神经网络"
+        },
+        {
+            "from": 730.6,
+            "to": 732.79,
+            "location": 2,
+            "content": "去专门处理这个时序信息就好了"
+        },
+        {
+            "from": 733.51,
+            "to": 735.46,
+            "location": 2,
+            "content": "比如说像这里从原始视频中"
+        },
+        {
+            "from": 735.63,
+            "to": 737.54,
+            "location": 2,
+            "content": "去抽取对应的光流图像"
+        },
+        {
+            "from": 738.49,
+            "to": 741.52,
+            "location": 2,
+            "content": "光流图像里就涵盖了很多的物体移动的信息"
+        },
+        {
+            "from": 741.77,
+            "to": 743.52,
+            "location": 2,
+            "content": "以及这个视频的时序信息"
+        },
+        {
+            "from": 744.25,
+            "to": 746.2,
+            "location": 2,
+            "content": "最后呢 上面的空间流网络"
+        },
+        {
+            "from": 746.21,
+            "to": 748.52,
+            "location": 2,
+            "content": "其实就是在学一个从RGB图像"
+        },
+        {
+            "from": 748.52,
+            "to": 750.32,
+            "location": 2,
+            "content": "到最后的分类的映射"
+        },
+        {
+            "from": 750.86,
+            "to": 754.13,
+            "location": 2,
+            "content": "而下面的时间流网络就是学一个从光流图像"
+        },
+        {
+            "from": 754.14,
+            "to": 755.97,
+            "location": 2,
+            "content": "到最后的分类的这么一个映射"
+        },
+        {
+            "from": 757.07,
+            "to": 758.19,
+            "location": 2,
+            "content": "这两个卷积神经网络"
+        },
+        {
+            "from": 758.32,
+            "to": 760.43,
+            "location": 2,
+            "content": "都不用去学习这种时序信息了"
+        },
+        {
+            "from": 760.92,
+            "to": 763.18,
+            "location": 2,
+            "content": "他只需要去学习这种对应的映射就可以了"
+        },
+        {
+            "from": 763.64,
+            "to": 765.19,
+            "location": 2,
+            "content": "一下就把问题给简化了"
+        },
+        {
+            "from": 765.68,
+            "to": 768.76,
+            "location": 2,
+            "content": "而且两个网络各司其职 谁也不干扰谁"
+        },
+        {
+            "from": 769.25,
+            "to": 771.47,
+            "location": 2,
+            "content": "相对而言呢 优化起来就轻松许多"
+        },
+        {
+            "from": 772.03,
+            "to": 773.59,
+            "location": 2,
+            "content": "所以别看是仅仅加上了"
+        },
+        {
+            "from": 773.6,
+            "to": 775.55,
+            "location": 2,
+            "content": "下面这一只时间流的网络"
+        },
+        {
+            "from": 775.96,
+            "to": 778.06,
+            "location": 2,
+            "content": "但是大幅度地提高了性能"
+        },
+        {
+            "from": 778.51,
+            "to": 780.85,
+            "location": 2,
+            "content": "一旦双流网络证明了他的成功"
+        },
+        {
+            "from": 781.58,
+            "to": 783.18,
+            "location": 2,
+            "content": "迅速就有很多工作跟进了"
+        },
+        {
+            "from": 783.71,
+            "to": 785.63,
+            "location": 2,
+            "content": "我们其实单从这个图里就能看到"
+        },
+        {
+            "from": 785.64,
+            "to": 787.6,
+            "location": 2,
+            "content": "有几个比较容易能想到的想法"
+        },
+        {
+            "from": 788.4,
+            "to": 791.63,
+            "location": 2,
+            "content": "比如说 首先你最后合并这个fusion"
+        },
+        {
+            "from": 791.84,
+            "to": 792.59,
+            "location": 2,
+            "content": "是做在最后面的"
+        },
+        {
+            "from": 793.28,
+            "to": 795.32,
+            "location": 2,
+            "content": "你是在已经经过softmax之后"
+        },
+        {
+            "from": 795.33,
+            "to": 797.62,
+            "location": 2,
+            "content": "才做合并 所以也叫Late Fusion"
+        },
+        {
+            "from": 798.25,
+            "to": 800.36,
+            "location": 2,
+            "content": "自然而然的 肯定就会有人问你"
+        },
+        {
+            "from": 800.37,
+            "to": 801.52,
+            "location": 2,
+            "content": "能不能做Early Fusion"
+        },
+        {
+            "from": 801.81,
+            "to": 802.84,
+            "location": 2,
+            "content": "Early Fusion的效果"
+        },
+        {
+            "from": 802.85,
+            "to": 804.4,
+            "location": 2,
+            "content": "会不会比Late Fusion好呢"
+        },
+        {
+            "from": 804.99,
+            "to": 807.9,
+            "location": 2,
+            "content": "因为按道理来说 如果你能在前面这些层之间"
+        },
+        {
+            "from": 808.07,
+            "to": 810.86,
+            "location": 2,
+            "content": "去做这种空间和时间流的特征交互"
+        },
+        {
+            "from": 811.43,
+            "to": 812.63,
+            "location": 2,
+            "content": "应该是比你在最后"
+        },
+        {
+            "from": 812.72,
+            "to": 814.91,
+            "location": 2,
+            "content": "做一个简单的这种加权平均效果要好的"
+        },
+        {
+            "from": 815.48,
+            "to": 817.35,
+            "location": 2,
+            "content": "所以说怎么去做Early Fusion"
+        },
+        {
+            "from": 817.44,
+            "to": 818.83,
+            "location": 2,
+            "content": "算是一个研究方向"
+        },
+        {
+            "from": 819.72,
+            "to": 822.23,
+            "location": 2,
+            "content": "第二个更直接的呢 这里面明显就是一个"
+        },
+        {
+            "from": 822.24,
+            "to": 823.39,
+            "location": 2,
+            "content": "AlexNet的变体"
+        },
+        {
+            "from": 824.04,
+            "to": 825.99,
+            "location": 2,
+            "content": "接下来大家已经有了Inception Net"
+        },
+        {
+            "from": 826,
+            "to": 826.79,
+            "location": 2,
+            "content": "VGGNet"
+        },
+        {
+            "from": 826.8,
+            "to": 828.99,
+            "location": 2,
+            "content": "ResNet以及更深的其他网络"
+        },
+        {
+            "from": 829.75,
+            "to": 831.7,
+            "location": 2,
+            "content": "很显然 对于深度学习时代来说"
+        },
+        {
+            "from": 831.79,
+            "to": 834.14,
+            "location": 2,
+            "content": "越深的网络一般效果是越好的"
+        },
+        {
+            "from": 834.77,
+            "to": 837.8,
+            "location": 2,
+            "content": "尝试更深的网络对于视频动作识别来说"
+        },
+        {
+            "from": 837.81,
+            "to": 838.96,
+            "location": 2,
+            "content": "也是一个研究方向"
+        },
+        {
+            "from": 839.51,
+            "to": 842.42,
+            "location": 2,
+            "content": "但是因为普遍来说视频这些数据集都比较小"
+        },
+        {
+            "from": 842.78,
+            "to": 844.6,
+            "location": 2,
+            "content": "所以说如何在小数据集上"
+        },
+        {
+            "from": 844.61,
+            "to": 846.42,
+            "location": 2,
+            "content": "去训练大模型是一个难点"
+        },
+        {
+            "from": 846.91,
+            "to": 850.01,
+            "location": 2,
+            "content": "如何更好的去控制过拟合 是个很难的问题"
+        },
+        {
+            "from": 850.98,
+            "to": 853.69,
+            "location": 2,
+            "content": "第3个方向就是说 当你把一个图片"
+        },
+        {
+            "from": 853.9,
+            "to": 856.37,
+            "location": 2,
+            "content": "通过一个卷积神经网络 最后得到一个特征"
+        },
+        {
+            "from": 857.09,
+            "to": 860.01,
+            "location": 2,
+            "content": "双流网络 直接就是把这个特征拿来就去做分类"
+        },
+        {
+            "from": 860.67,
+            "to": 862.87,
+            "location": 2,
+            "content": "同样的道理 对于这个时间流网络来说"
+        },
+        {
+            "from": 862.88,
+            "to": 865.87,
+            "location": 2,
+            "content": "也是把这个特征抽出来之后直接就去做分类"
+        },
+        {
+            "from": 866.54,
+            "to": 869.98,
+            "location": 2,
+            "content": "而事实上我们知道我们有一类非常成熟的模型"
+        },
+        {
+            "from": 870.28,
+            "to": 874.23,
+            "location": 2,
+            "content": "叫做RNN或者LSTM 他们是专门用来处理"
+        },
+        {
+            "from": 874.24,
+            "to": 875.31,
+            "location": 2,
+            "content": "这种时序信息的"
+        },
+        {
+            "from": 876.02,
+            "to": 877.34,
+            "location": 2,
+            "content": "其实很多人一直都觉得"
+        },
+        {
+            "from": 877.35,
+            "to": 879.42,
+            "location": 2,
+            "content": "LSTM应该是处理视频理解的"
+        },
+        {
+            "from": 879.43,
+            "to": 880.7,
+            "location": 2,
+            "content": "一个非常好的工具"
+        },
+        {
+            "from": 881.21,
+            "to": 882.69,
+            "location": 2,
+            "content": "如果你先能在每一帧上"
+        },
+        {
+            "from": 882.9,
+            "to": 884.73,
+            "location": 2,
+            "content": "用卷积神经网络去抽特征"
+        },
+        {
+            "from": 885.14,
+            "to": 886.83,
+            "location": 2,
+            "content": "然后你在抽出来的特征之上"
+        },
+        {
+            "from": 887,
+            "to": 888.63,
+            "location": 2,
+            "content": "再去加一个LSTM层"
+        },
+        {
+            "from": 888.97,
+            "to": 891.41,
+            "location": 2,
+            "content": "去把他们之间的这些时序信息模拟起来"
+        },
+        {
+            "from": 891.84,
+            "to": 893.95,
+            "location": 2,
+            "content": "你最后得到的特征应该会更强"
+        },
+        {
+            "from": 894.38,
+            "to": 896.77,
+            "location": 2,
+            "content": "所以这也就是第3个可以做的研究方向"
+        },
+        {
+            "from": 897.52,
+            "to": 899.78,
+            "location": 2,
+            "content": "第4个我们可以探索就是说"
+        },
+        {
+            "from": 900.13,
+            "to": 903.12,
+            "location": 2,
+            "content": "无论你是用单张图片 还是用光流图像"
+        },
+        {
+            "from": 903.12,
+            "to": 906.16,
+            "location": 2,
+            "content": "这光流图像里面是10个视频帧得到的 "
+        },
+        {
+            "from": 906.16,
+            "to": 907.3,
+            "location": 2,
+            "content": "它都非常的短"
+        },
+        {
+            "from": 907.77,
+            "to": 910.62,
+            "location": 2,
+            "content": "因为对于一个帧率为25或者30的视频来说"
+        },
+        {
+            "from": 911.33,
+            "to": 914.48,
+            "location": 2,
+            "content": "即使是10帧也才对应不到0.5秒的时间"
+        },
+        {
+            "from": 914.52,
+            "to": 915.88,
+            "location": 2,
+            "content": "是非常非常短的"
+        },
+        {
+            "from": 916.32,
+            "to": 918.6,
+            "location": 2,
+            "content": "但是一般一个动作或者一般一个事件"
+        },
+        {
+            "from": 918.69,
+            "to": 921.2,
+            "location": 2,
+            "content": "它的时序时间都是2 3秒甚至更长"
+        },
+        {
+            "from": 921.99,
+            "to": 925.18,
+            "location": 2,
+            "content": "我们如何去做这种长时间的视频理解呢"
+        },
+        {
+            "from": 925.61,
+            "to": 927.73,
+            "location": 2,
+            "content": "很显然不论是单帧还是光流"
+        },
+        {
+            "from": 927.74,
+            "to": 929.25,
+            "location": 2,
+            "content": "都不能给我们有效的答案"
+        },
+        {
+            "from": 930.18,
+            "to": 932.6,
+            "location": 2,
+            "content": "所以说分别针对这几个研究方向"
+        },
+        {
+            "from": 932.61,
+            "to": 934.64,
+            "location": 2,
+            "content": "也就分别推出了不同的工作"
+        },
+        {
+            "from": 935.05,
+            "to": 938.08,
+            "location": 2,
+            "content": "接下来我就针对每个方向去讲一个代表工作"
+        },
+        {
+            "from": 939.6,
+            "to": 940.75,
+            "location": 2,
+            "content": "那首先我们提到的呢"
+        },
+        {
+            "from": 940.88,
+            "to": 942.79,
+            "location": 2,
+            "content": "就是这篇CVPR 2015的论文"
+        },
+        {
+            "from": 942.96,
+            "to": 944.76,
+            "location": 2,
+            "content": "叫Beyond Short Snippets"
+        },
+        {
+            "from": 944.76,
+            "to": 946.64,
+            "location": 2,
+            "content": "Deep Network for Video Classification"
+        },
+        {
+            "from": 947.45,
+            "to": 949.6,
+            "location": 2,
+            "content": "题目的意思就是说 我不想再做这种"
+        },
+        {
+            "from": 949.61,
+            "to": 951.24,
+            "location": 2,
+            "content": "特别短的视频理解了"
+        },
+        {
+            "from": 951.62,
+            "to": 952.85,
+            "location": 2,
+            "content": "题目里的Short Snippets"
+        },
+        {
+            "from": 952.86,
+            "to": 954.33,
+            "location": 2,
+            "content": "其实就是指那种2 3秒"
+        },
+        {
+            "from": 954.54,
+            "to": 957.41,
+            "location": 2,
+            "content": "或者甚至还不到2 3秒的小的视频段"
+        },
+        {
+            "from": 958.76,
+            "to": 960.4,
+            "location": 2,
+            "content": "作者团队呢 其实我们可以看到"
+        },
+        {
+            "from": 960.61,
+            "to": 962.28,
+            "location": 2,
+            "content": "跟之前DeepVideo那个作者团队"
+        },
+        {
+            "from": 962.29,
+            "to": 963.12,
+            "location": 2,
+            "content": "还是差不多的"
+        },
+        {
+            "from": 963.25,
+            "to": 964.72,
+            "location": 2,
+            "content": "还是来自于Google这个组"
+        },
+        {
+            "from": 965.18,
+            "to": 967.2,
+            "location": 2,
+            "content": "只不过呢 一作换了另外一个实习生"
+        },
+        {
+            "from": 967.87,
+            "to": 970.73,
+            "location": 2,
+            "content": "这篇论文的主要方法 其实都画在这个图1里了"
+        },
+        {
+            "from": 971.52,
+            "to": 974.42,
+            "location": 2,
+            "content": "就是说如果你按照双流网络的这种思想去做"
+        },
+        {
+            "from": 974.95,
+            "to": 977.15,
+            "location": 2,
+            "content": "这个原始图像只有一帧或者几帧"
+        },
+        {
+            "from": 977.52,
+            "to": 979.07,
+            "location": 2,
+            "content": "光流图也就只有10帧"
+        },
+        {
+            "from": 979.67,
+            "to": 981.66,
+            "location": 2,
+            "content": "它能处理的视频其实是非常短的"
+        },
+        {
+            "from": 982.32,
+            "to": 985.1,
+            "location": 2,
+            "content": "如果这时候 我们有特别多的视频帧"
+        },
+        {
+            "from": 985.32,
+            "to": 986.6,
+            "location": 2,
+            "content": "那该怎么处理呢"
+        },
+        {
+            "from": 987.27,
+            "to": 989.57,
+            "location": 2,
+            "content": "其实一般来讲 对于所有的这些视频帧"
+        },
+        {
+            "from": 989.7,
+            "to": 992.25,
+            "location": 2,
+            "content": "我们肯定都是先用一种方法去抽它的特征"
+        },
+        {
+            "from": 992.89,
+            "to": 994.11,
+            "location": 2,
+            "content": "比如说原始的手工特征"
+        },
+        {
+            "from": 994.28,
+            "to": 995.99,
+            "location": 2,
+            "content": "那就是我们抽一个SIFT的特征"
+        },
+        {
+            "from": 996.53,
+            "to": 998,
+            "location": 2,
+            "content": "对于现在深度学习时代"
+        },
+        {
+            "from": 998.17,
+            "to": 1000.68,
+            "location": 2,
+            "content": "我们就拿一个卷积神经网络去抽一个特征"
+        },
+        {
+            "from": 1001.46,
+            "to": 1003.66,
+            "location": 2,
+            "content": "关键呢 就是说在抽到这些特征之后"
+        },
+        {
+            "from": 1003.67,
+            "to": 1005.9,
+            "location": 2,
+            "content": "我们该如何去做 pooling这个操作"
+        },
+        {
+            "from": 1006.33,
+            "to": 1008.29,
+            "location": 2,
+            "content": "我们当然可以简单地做一个max pooling"
+        },
+        {
+            "from": 1008.46,
+            "to": 1009.45,
+            "location": 2,
+            "content": "或者average pooling"
+        },
+        {
+            "from": 1009.89,
+            "to": 1012.27,
+            "location": 2,
+            "content": "这篇论文里呢 做了非常详尽的探索"
+        },
+        {
+            "from": 1012.59,
+            "to": 1013.73,
+            "location": 2,
+            "content": "他还做了conv pooling"
+        },
+        {
+            "from": 1014.25,
+            "to": 1015.78,
+            "location": 2,
+            "content": "他还像DeepVideo那篇论文一样"
+        },
+        {
+            "from": 1015.79,
+            "to": 1016.74,
+            "location": 2,
+            "content": "做了late pooling"
+        },
+        {
+            "from": 1017.03,
+            "to": 1017.82,
+            "location": 2,
+            "content": " slow pooling"
+        },
+        {
+            "from": 1017.92,
+            "to": 1018.83,
+            "location": 2,
+            "content": "local pooling"
+        },
+        {
+            "from": 1019.63,
+            "to": 1021.59,
+            "location": 2,
+            "content": "最后的结论 其实也是都差不多"
+        },
+        {
+            "from": 1021.84,
+            "to": 1023.63,
+            "location": 2,
+            "content": "就是这个conv pooling表现最好"
+        },
+        {
+            "from": 1024.39,
+            "to": 1025.55,
+            "location": 2,
+            "content": "然后他们又尝试了一下"
+        },
+        {
+            "from": 1025.56,
+            "to": 1027.47,
+            "location": 2,
+            "content": "用LSTM去做这种特征的融合"
+        },
+        {
+            "from": 1028.24,
+            "to": 1028.93,
+            "location": 2,
+            "content": "按道理来说"
+        },
+        {
+            "from": 1029.1,
+            "to": 1031.73,
+            "location": 2,
+            "content": "LSTM能够掌握这种时间上的变化"
+        },
+        {
+            "from": 1032.13,
+            "to": 1034.17,
+            "location": 2,
+            "content": "应该是一个更好的特征融合的方式"
+        },
+        {
+            "from": 1034.71,
+            "to": 1038.11,
+            "location": 2,
+            "content": "但是其实一会我们看结果 它的提升也非常有限"
+        },
+        {
+            "from": 1039.42,
+            "to": 1041,
+            "location": 2,
+            "content": "具体怎么使用LSTM"
+        },
+        {
+            "from": 1041.13,
+            "to": 1043,
+            "location": 2,
+            "content": "其实就在他们的图4里有写"
+        },
+        {
+            "from": 1043.79,
+            "to": 1046.1,
+            "location": 2,
+            "content": " c在这里就代表是最后这个"
+        },
+        {
+            "from": 1046.11,
+            "to": 1047.9,
+            "location": 2,
+            "content": "卷积神经网络抽出来的那个特征"
+        },
+        {
+            "from": 1048.38,
+            "to": 1051.45,
+            "location": 2,
+            "content": "意思就是说 每一个视频帧它其实都对应了"
+        },
+        {
+            "from": 1051.46,
+            "to": 1054.53,
+            "location": 2,
+            "content": "一个卷积神经网络 然后去抽取到 c这个特征"
+        },
+        {
+            "from": 1055.37,
+            "to": 1058.16,
+            "location": 2,
+            "content": "当然了 这里卷积神经网络肯定都是权值共享的"
+        },
+        {
+            "from": 1058.17,
+            "to": 1060.32,
+            "location": 2,
+            "content": "而不是说有很多单独训练的网络"
+        },
+        {
+            "from": 1061.14,
+            "to": 1062.52,
+            "location": 2,
+            "content": "当你达到这些特征以后"
+        },
+        {
+            "from": 1062.73,
+            "to": 1065.04,
+            "location": 2,
+            "content": "其实这些特征在时序上是有顺序的"
+        },
+        {
+            "from": 1065.41,
+            "to": 1067.19,
+            "location": 2,
+            "content": "所以你才想到要用一个LSTM"
+        },
+        {
+            "from": 1067.2,
+            "to": 1068.79,
+            "location": 2,
+            "content": "去做这种特征的融合"
+        },
+        {
+            "from": 1069.18,
+            "to": 1072.16,
+            "location": 2,
+            "content": "接下来作者这里就用了5层LSTM网络"
+        },
+        {
+            "from": 1072.53,
+            "to": 1075.14,
+            "location": 2,
+            "content": "去处理之前这些抽取出来的视频特征"
+        },
+        {
+            "from": 1075.54,
+            "to": 1078.21,
+            "location": 2,
+            "content": "最后橘黄色部分就代表softmax操作"
+        },
+        {
+            "from": 1078.49,
+            "to": 1079.56,
+            "location": 2,
+            "content": "就直接做分类了"
+        },
+        {
+            "from": 1080.33,
+            "to": 1083.95,
+            "location": 2,
+            "content": "所以说 这个改动相对于双流网络来说是非常直接的"
+        },
+        {
+            "from": 1084.41,
+            "to": 1086.29,
+            "location": 2,
+            "content": "前面的操作 通通都没有改变"
+        },
+        {
+            "from": 1086.92,
+            "to": 1088.48,
+            "location": 2,
+            "content": "只是在最后一个卷积层之后"
+        },
+        {
+            "from": 1089.23,
+            "to": 1091.85,
+            "location": 2,
+            "content": "不是简单的做一层FC操作 直接做分类"
+        },
+        {
+            "from": 1092.19,
+            "to": 1094.87,
+            "location": 2,
+            "content": "而是把所有的这些特征通过一些LSTM层"
+        },
+        {
+            "from": 1095.53,
+            "to": 1097.45,
+            "location": 2,
+            "content": "去做一些时序上的处理和融合"
+        },
+        {
+            "from": 1097.81,
+            "to": 1098.95,
+            "location": 2,
+            "content": "最后再做这个分类"
+        },
+        {
+            "from": 1100.94,
+            "to": 1101.96,
+            "location": 2,
+            "content": "作者这里先是在"
+        },
+        {
+            "from": 1101.96,
+            "to": 1104.18,
+            "location": 2,
+            "content": "Sports-1M数据集上做了一下实验"
+        },
+        {
+            "from": 1104.64,
+            "to": 1107.04,
+            "location": 2,
+            "content": "他就对比了一下之前的最好的结果"
+        },
+        {
+            "from": 1107.25,
+            "to": 1109.08,
+            "location": 2,
+            "content": "比如说单帧或者Slow Fusion"
+        },
+        {
+            "from": 1109.47,
+            "to": 1110.57,
+            "location": 2,
+            "content": "Slow Fusion其实就是"
+        },
+        {
+            "from": 1110.58,
+            "to": 1111.61,
+            "location": 2,
+            "content": "DeepVideo的结果了"
+        },
+        {
+            "from": 1112.33,
+            "to": 1113.68,
+            "location": 2,
+            "content": "然后他们论文里提出来"
+        },
+        {
+            "from": 1114.13,
+            "to": 1116.12,
+            "location": 2,
+            "content": "就是这个Conv Pooling和使用LSTM"
+        },
+        {
+            "from": 1116.39,
+            "to": 1119.06,
+            "location": 2,
+            "content": "我们首先可以看到 在使用这个视频帧数上"
+        },
+        {
+            "from": 1119.12,
+            "to": 1122.7,
+            "location": 2,
+            "content": "Conv Pooling 和 LSTM都能使用非常多的帧"
+        },
+        {
+            "from": 1123.1,
+            "to": 1125.22,
+            "location": 2,
+            "content": "意思就是说 他能看到非常长的视频"
+        },
+        {
+            "from": 1125.92,
+            "to": 1129.03,
+            "location": 2,
+            "content": "最后的结果 也比之前的这两种方法好了许多"
+        },
+        {
+            "from": 1129.75,
+            "to": 1131.19,
+            "location": 2,
+            "content": "当然了这里这么大的提升"
+        },
+        {
+            "from": 1131.32,
+            "to": 1133.83,
+            "location": 2,
+            "content": "也不光是使用了Conv Pooling或者LSTM"
+        },
+        {
+            "from": 1134.16,
+            "to": 1135.91,
+            "location": 2,
+            "content": "主要还是因为使用了光流"
+        },
+        {
+            "from": 1136.37,
+            "to": 1138.28,
+            "location": 2,
+            "content": "而且看到了更多的视频帧"
+        },
+        {
+            "from": 1138.9,
+            "to": 1141.66,
+            "location": 2,
+            "content": "如果你仅仅地去对比Conv Pooling和LSTM来看呢"
+        },
+        {
+            "from": 1141.83,
+            "to": 1143.78,
+            "location": 2,
+            "content": "其实他们的差距基本没有多大"
+        },
+        {
+            "from": 1144.49,
+            "to": 1147.26,
+            "location": 2,
+            "content": "也就是说LSTM没有想象中的那么有用"
+        },
+        {
+            "from": 1148.17,
+            "to": 1150.71,
+            "location": 2,
+            "content": "如果我们再来看一下UCF-101上的结果"
+        },
+        {
+            "from": 1151.45,
+            "to": 1152.82,
+            "location": 2,
+            "content": "之前传统的手工特征方式"
+        },
+        {
+            "from": 1153.06,
+            "to": 1155.12,
+            "location": 2,
+            "content": "最好能达到88%的准确度"
+        },
+        {
+            "from": 1155.87,
+            "to": 1158.06,
+            "location": 2,
+            "content": "然后DeepVideo就只有65.4%"
+        },
+        {
+            "from": 1158.27,
+            "to": 1160.58,
+            "location": 2,
+            "content": "因为它没有很好地利用时序的信息"
+        },
+        {
+            "from": 1160.95,
+            "to": 1163.7,
+            "location": 2,
+            "content": "然后双流网络一上 立马这个效果就不一样了"
+        },
+        {
+            "from": 1163.71,
+            "to": 1166.9,
+            "location": 2,
+            "content": "直接就88% 跟之前最好的手工特征打平手了"
+        },
+        {
+            "from": 1167.74,
+            "to": 1168.61,
+            "location": 2,
+            "content": "然而这篇论文"
+        },
+        {
+            "from": 1168.7,
+            "to": 1171.41,
+            "location": 2,
+            "content": "是完全在双流网络的基础上在做的"
+        },
+        {
+            "from": 1171.42,
+            "to": 1174.41,
+            "location": 2,
+            "content": "所以说它的效果 肯定是要比双流网络更好才行"
+        },
+        {
+            "from": 1174.88,
+            "to": 1176.56,
+            "location": 2,
+            "content": "而事实上我们这里可以看到"
+        },
+        {
+            "from": 1176.77,
+            "to": 1178.74,
+            "location": 2,
+            "content": "当使用120帧的Conv Pooling的时候"
+        },
+        {
+            "from": 1179.45,
+            "to": 1182.67,
+            "location": 2,
+            "content": "也只有88.2%的准确度只比88%高了一点点"
+        },
+        {
+            "from": 1183.14,
+            "to": 1185.57,
+            "location": 2,
+            "content": "然后使用了LSTM之后用了30帧"
+        },
+        {
+            "from": 1185.86,
+            "to": 1189.05,
+            "location": 2,
+            "content": "也只有88.6%的效果 只比88%好了一点点"
+        },
+        {
+            "from": 1190.11,
+            "to": 1191.66,
+            "location": 2,
+            "content": "所以说在短视频上"
+        },
+        {
+            "from": 1191.67,
+            "to": 1193.3,
+            "location": 2,
+            "content": "比如说像UCF-101这种"
+        },
+        {
+            "from": 1193.31,
+            "to": 1194.58,
+            "location": 2,
+            "content": "只有六七秒的视频上"
+        },
+        {
+            "from": 1195.1,
+            "to": 1197.73,
+            "location": 2,
+            "content": " LSTM所带来的提升是非常有限的"
+        },
+        {
+            "from": 1198.9,
+            "to": 1201.57,
+            "location": 2,
+            "content": "当然在我看来其实也是比较好理解的"
+        },
+        {
+            "from": 1202.14,
+            "to": 1204.33,
+            "location": 2,
+            "content": "因为我一直觉得 像LSTM这种操作"
+        },
+        {
+            "from": 1204.46,
+            "to": 1205.97,
+            "location": 2,
+            "content": "它绝对是一个更high level"
+        },
+        {
+            "from": 1206.14,
+            "to": 1207.81,
+            "location": 2,
+            "content": "更有语义信息的特征"
+        },
+        {
+            "from": 1208.46,
+            "to": 1211.18,
+            "location": 2,
+            "content": "给LSTM的输入必须有一定的变化"
+        },
+        {
+            "from": 1212,
+            "to": 1213.83,
+            "location": 2,
+            "content": "LSTM才能起到它应有的作用"
+        },
+        {
+            "from": 1214.19,
+            "to": 1216.42,
+            "location": 2,
+            "content": "它才能学到这个时间上的改变"
+        },
+        {
+            "from": 1216.98,
+            "to": 1218.38,
+            "location": 2,
+            "content": "但如果你的视频比较短"
+        },
+        {
+            "from": 1218.63,
+            "to": 1220.1,
+            "location": 2,
+            "content": "只有五六秒 六七秒的话"
+        },
+        {
+            "from": 1220.48,
+            "to": 1222.67,
+            "location": 2,
+            "content": "你这个语义信息可能根本就没有改变"
+        },
+        {
+            "from": 1223.23,
+            "to": 1225.54,
+            "location": 2,
+            "content": "你从这个视频里却抽了很多帧出来"
+        },
+        {
+            "from": 1225.83,
+            "to": 1228.62,
+            "location": 2,
+            "content": "然后再把这些帧通过卷积神经网络去抽到"
+        },
+        {
+            "from": 1228.87,
+            "to": 1230.42,
+            "location": 2,
+            "content": "更有语义信息的特征之后"
+        },
+        {
+            "from": 1231.01,
+            "to": 1232.92,
+            "location": 2,
+            "content": "这些特征其实可能都差不多"
+        },
+        {
+            "from": 1233.09,
+            "to": 1234.64,
+            "location": 2,
+            "content": "都代表了差不多的意思"
+        },
+        {
+            "from": 1235.45,
+            "to": 1238.12,
+            "location": 2,
+            "content": "你把这样的特征传给一个LSTM网络"
+        },
+        {
+            "from": 1238.13,
+            "to": 1240.88,
+            "location": 2,
+            "content": "就相当于你把很多一模一样的东西给了LSTM"
+        },
+        {
+            "from": 1241.61,
+            "to": 1244.64,
+            "location": 2,
+            "content": "你指望LSTM能学到什么 其实什么也学不到"
+        },
+        {
+            "from": 1245.26,
+            "to": 1247.57,
+            "location": 2,
+            "content": "所以这也就是我觉得为什么在短视频上"
+        },
+        {
+            "from": 1247.58,
+            "to": 1249.93,
+            "location": 2,
+            "content": "LSTM不能发挥它威力的原因"
+        },
+        {
+            "from": 1250.52,
+            "to": 1251.68,
+            "location": 2,
+            "content": "如果在长视频上"
+        },
+        {
+            "from": 1251.69,
+            "to": 1253.84,
+            "location": 2,
+            "content": "或者说变化比较剧烈的视频理解上"
+        },
+        {
+            "from": 1254.44,
+            "to": 1256.11,
+            "location": 2,
+            "content": "LSTM还是有用武之地的"
+        },
+        {
+            "from": 1257.51,
+            "to": 1259.1,
+            "location": 2,
+            "content": "说完了LSTM这个方向"
+        },
+        {
+            "from": 1259.35,
+            "to": 1260.9,
+            "location": 2,
+            "content": "接下来就该说Early Fusion"
+        },
+        {
+            "from": 1260.91,
+            "to": 1261.58,
+            "location": 2,
+            "content": "这个方向"
+        },
+        {
+            "from": 1262.19,
+            "to": 1264.42,
+            "location": 2,
+            "content": "这篇是CVPR 2016的一篇论文"
+        },
+        {
+            "from": 1264.725,
+            "to": 1268.325,
+            "location": 2,
+            "content": "叫做Convolutional Two-Stream Network Fusion for Video Action Recognition "
+        },
+        {
+            "from": 1268.74,
+            "to": 1271.1,
+            "location": 2,
+            "content": "它其实就把双流网络题目给颠倒了一下"
+        },
+        {
+            "from": 1271.67,
+            "to": 1272.47,
+            "location": 2,
+            "content": "双流网络"
+        },
+        {
+            "from": 1272.75,
+            "to": 1274.09,
+            "location": 2,
+            "content": "叫做two stream convolutional of network"
+        },
+        {
+            "from": 1274.63,
+            "to": 1276.2,
+            "location": 2,
+            "content": "它叫convolutional two stream"
+        },
+        {
+            "from": 1276.91,
+            "to": 1279.23,
+            "location": 2,
+            "content": "其实关键词只有一个 就是这个fusion"
+        },
+        {
+            "from": 1279.78,
+            "to": 1281.91,
+            "location": 2,
+            "content": "这篇文章 非常细致地讲了一下"
+        },
+        {
+            "from": 1281.92,
+            "to": 1283.71,
+            "location": 2,
+            "content": "到底如何去做这种合并"
+        },
+        {
+            "from": 1284.33,
+            "to": 1286.16,
+            "location": 2,
+            "content": "就是说当你有了这个时间流"
+        },
+        {
+            "from": 1286.29,
+            "to": 1287.76,
+            "location": 2,
+            "content": "又有了这个空间流之后"
+        },
+        {
+            "from": 1288.01,
+            "to": 1289.96,
+            "location": 2,
+            "content": "你如何去在两个流之间"
+        },
+        {
+            "from": 1290.13,
+            "to": 1291.28,
+            "location": 2,
+            "content": "去做这种Early Fusion"
+        },
+        {
+            "from": 1291.76,
+            "to": 1294.74,
+            "location": 2,
+            "content": "这个图一里 其实只画了他们论文中的一部分"
+        },
+        {
+            "from": 1294.91,
+            "to": 1297.18,
+            "location": 2,
+            "content": "就是如何去做这种空间上的 fusion"
+        },
+        {
+            "from": 1297.96,
+            "to": 1300.21,
+            "location": 2,
+            "content": "比如说现在都有两个特征图"
+        },
+        {
+            "from": 1300.54,
+            "to": 1302.91,
+            "location": 2,
+            "content": "如何把特征图上的这两个对应的点"
+        },
+        {
+            "from": 1302.92,
+            "to": 1303.71,
+            "location": 2,
+            "content": "去做这种合并"
+        },
+        {
+            "from": 1304.8,
+            "to": 1306.95,
+            "location": 2,
+            "content": "这个在论文中叫spatial fusion"
+        },
+        {
+            "from": 1307.44,
+            "to": 1309.7,
+            "location": 2,
+            "content": "作者还讨论了一些temporal fusion的方法"
+        },
+        {
+            "from": 1310.45,
+            "to": 1312.84,
+            "location": 2,
+            "content": "然后在你决定了去做这种fusion之后"
+        },
+        {
+            "from": 1312.97,
+            "to": 1315.76,
+            "location": 2,
+            "content": "到底在网络的哪一层去做这种fusion"
+        },
+        {
+            "from": 1316.07,
+            "to": 1317.06,
+            "location": 2,
+            "content": "也是非常关键的"
+        },
+        {
+            "from": 1317.59,
+            "to": 1319.48,
+            "location": 2,
+            "content": "所以说作者就从这3个方向"
+        },
+        {
+            "from": 1319.61,
+            "to": 1321.2,
+            "location": 2,
+            "content": "分别回答了这几个问题"
+        },
+        {
+            "from": 1321.66,
+            "to": 1323.21,
+            "location": 2,
+            "content": "从而最后得到了一个非常好的"
+        },
+        {
+            "from": 1323.21,
+            "to": 1324.85,
+            "location": 2,
+            "content": "一个Early Fusion的网络结构"
+        },
+        {
+            "from": 1325.19,
+            "to": 1327.27,
+            "location": 2,
+            "content": "能够比之前直接做Late Fusion的"
+        },
+        {
+            "from": 1327.28,
+            "to": 1329.27,
+            "location": 2,
+            "content": "这种双流网络效果也好不少"
+        },
+        {
+            "from": 1330.44,
+            "to": 1331.84,
+            "location": 2,
+            "content": "接下来看作者团队"
+        },
+        {
+            "from": 1331.84,
+            "to": 1335.07,
+            "location": 2,
+            "content": "一作Christoph在做完这篇工作之后"
+        },
+        {
+            "from": 1335.61,
+            "to": 1336.66,
+            "location": 2,
+            "content": "就一发不可收拾"
+        },
+        {
+            "from": 1336.91,
+            "to": 1339.42,
+            "location": 2,
+            "content": "在视频领域里出了很多代表性的工作"
+        },
+        {
+            "from": 1339.67,
+            "to": 1342,
+            "location": 2,
+            "content": "比如说之后的SlowFast、X3D"
+        },
+        {
+            "from": 1342,
+            "to": 1344.5,
+            "location": 2,
+            "content": "直接就把3D-CNN做到了极致"
+        },
+        {
+            "from": 1344.7,
+            "to": 1346.61,
+            "location": 2,
+            "content": "让大家不得不去转向Video Transformer"
+        },
+        {
+            "from": 1347.3,
+            "to": 1348.56,
+            "location": 2,
+            "content": "然后Video Transformer里"
+        },
+        {
+            "from": 1348.57,
+            "to": 1350.8,
+            "location": 2,
+            "content": "他也做了MViT以及MViTv2"
+        },
+        {
+            "from": 1351.58,
+            "to": 1353.14,
+            "location": 2,
+            "content": "我们今天接下来至少还要讲到"
+        },
+        {
+            "from": 1353.15,
+            "to": 1354.9,
+            "location": 2,
+            "content": "他另外两篇代表性的工作"
+        },
+        {
+            "from": 1355.62,
+            "to": 1357.85,
+            "location": 2,
+            "content": "二作Aexl是Christoph的老师"
+        },
+        {
+            "from": 1358.29,
+            "to": 1360.99,
+            "location": 2,
+            "content": "他们跟最后的三作 A.Z. 也有很多的合作"
+        },
+        {
+            "from": 1361.94,
+            "to": 1364.33,
+            "location": 2,
+            "content": "双流网络其实就出自于A.Z.之手"
+        },
+        {
+            "from": 1364.76,
+            "to": 1365.88,
+            "location": 2,
+            "content": "这个估计他们就想了想"
+        },
+        {
+            "from": 1366.21,
+            "to": 1368.6,
+            "location": 2,
+            "content": "既然双流网络里是这么做Late Fusion的"
+        },
+        {
+            "from": 1368.89,
+            "to": 1370.76,
+            "location": 2,
+            "content": "我们要不要研究一下Early Fusion"
+        },
+        {
+            "from": 1371.08,
+            "to": 1372.67,
+            "location": 2,
+            "content": "于是乎 就有了这篇论文"
+        },
+        {
+            "from": 1374.04,
+            "to": 1375.83,
+            "location": 2,
+            "content": "首先我们就来简单的看一下"
+        },
+        {
+            "from": 1375.96,
+            "to": 1377.55,
+            "location": 2,
+            "content": "什么是 spatial fusion"
+        },
+        {
+            "from": 1378.12,
+            "to": 1379.16,
+            "location": 2,
+            "content": "作者在这里解释说"
+        },
+        {
+            "from": 1379.38,
+            "to": 1382.31,
+            "location": 2,
+            "content": "当你有时间流和空间里有两个网络之后"
+        },
+        {
+            "from": 1382.95,
+            "to": 1386.26,
+            "location": 2,
+            "content": "我们如何能保证时间流和空间流的特征图"
+        },
+        {
+            "from": 1386.51,
+            "to": 1389.26,
+            "location": 2,
+            "content": "在同样的这个位置上 它们产生的通道"
+        },
+        {
+            "from": 1389.27,
+            "to": 1391.75,
+            "location": 2,
+            "content": "response是差不多能联系起来的"
+        },
+        {
+            "from": 1392.47,
+            "to": 1394.09,
+            "location": 2,
+            "content": "因为这样才算是一个Early Fusion"
+        },
+        {
+            "from": 1394.3,
+            "to": 1396.85,
+            "location": 2,
+            "content": "就是在特征图层面他去做这种合并"
+        },
+        {
+            "from": 1397.52,
+            "to": 1399.92,
+            "location": 2,
+            "content": "作者这里就做了几个简单的尝试 "
+        },
+        {
+            "from": 1399.92,
+            "to": 1401.85,
+            "location": 2,
+            "content": "比如说这里 他说这个max fusion"
+        },
+        {
+            "from": 1402.77,
+            "to": 1405.64,
+            "location": 2,
+            "content": "对于a和b两个不同的特征图来说"
+        },
+        {
+            "from": 1405.81,
+            "to": 1408.96,
+            "location": 2,
+            "content": "在同样的这个位置上 我们只取它的最大值"
+        },
+        {
+            "from": 1409.17,
+            "to": 1410.59,
+            "location": 2,
+            "content": "作为合并之后的值"
+        },
+        {
+            "from": 1410.92,
+            "to": 1412.35,
+            "location": 2,
+            "content": "这个就叫max fusion"
+        },
+        {
+            "from": 1413.4,
+            "to": 1414.91,
+            "location": 2,
+            "content": "如果我们不想2选1"
+        },
+        {
+            "from": 1415,
+            "to": 1417.31,
+            "location": 2,
+            "content": "我们想尽可能的把这些信息都保留下来"
+        },
+        {
+            "from": 1417.6,
+            "to": 1419.19,
+            "location": 2,
+            "content": "我们也可以有很多别的方式"
+        },
+        {
+            "from": 1419.62,
+            "to": 1420.72,
+            "location": 2,
+            "content": "比如说最简单"
+        },
+        {
+            "from": 1421.01,
+            "to": 1422.4,
+            "location": 2,
+            "content": "就是这种concatenation fusion"
+        },
+        {
+            "from": 1422.7,
+            "to": 1424.96,
+            "location": 2,
+            "content": "直接把两个特征图合并起来就完了"
+        },
+        {
+            "from": 1426.09,
+            "to": 1428.43,
+            "location": 2,
+            "content": "或者说我们也可以做一下 conv fusion"
+        },
+        {
+            "from": 1429.19,
+            "to": 1431.18,
+            "location": 2,
+            "content": "先把这两个特征图堆叠起来"
+        },
+        {
+            "from": 1431.73,
+            "to": 1433.83,
+            "location": 2,
+            "content": "然后再对它做一层卷积操作"
+        },
+        {
+            "from": 1434.55,
+            "to": 1437.5,
+            "location": 2,
+            "content": "当然更简单的呢 我们可以在两个特征图上"
+        },
+        {
+            "from": 1437.51,
+            "to": 1439.38,
+            "location": 2,
+            "content": "对应的位置上 直接做一个加法"
+        },
+        {
+            "from": 1440.22,
+            "to": 1441.69,
+            "location": 2,
+            "content": "最后最复杂的一种形式"
+        },
+        {
+            "from": 1441.86,
+            "to": 1443.93,
+            "location": 2,
+            "content": "就是直接做一个 bilinear fusion"
+        },
+        {
+            "from": 1444.47,
+            "to": 1446.11,
+            "location": 2,
+            "content": "那就是说给定两个特征图之后"
+        },
+        {
+            "from": 1446.28,
+            "to": 1447.59,
+            "location": 2,
+            "content": "我们在这两个特征图上"
+        },
+        {
+            "from": 1447.72,
+            "to": 1449.23,
+            "location": 2,
+            "content": "去做一个 outer product"
+        },
+        {
+            "from": 1449.96,
+            "to": 1453.32,
+            "location": 2,
+            "content": "做完乘积之后 再在所有维度上做一次加权平均"
+        },
+        {
+            "from": 1454.23,
+            "to": 1456.18,
+            "location": 2,
+            "content": "这种方法 明显它的计算复杂度"
+        },
+        {
+            "from": 1456.19,
+            "to": 1458.14,
+            "location": 2,
+            "content": "就比之前几种方法要高很多了"
+        },
+        {
+            "from": 1458.55,
+            "to": 1461.02,
+            "location": 2,
+            "content": "而事实上我们最后也可以看到表现最好的"
+        },
+        {
+            "from": 1461.28,
+            "to": 1462.77,
+            "location": 2,
+            "content": "其实就是 conv fusion就可以了"
+        },
+        {
+            "from": 1464.09,
+            "to": 1465.63,
+            "location": 2,
+            "content": "然后说完了spatial fusion"
+        },
+        {
+            "from": 1465.87,
+            "to": 1467.98,
+            "location": 2,
+            "content": "就是说在这个空间维度上 我们已经知道"
+        },
+        {
+            "from": 1467.99,
+            "to": 1470.42,
+            "location": 2,
+            "content": "如何处理这两个网络这个特征图了"
+        },
+        {
+            "from": 1471.05,
+            "to": 1472.32,
+            "location": 2,
+            "content": "接下来的问题就是说我们"
+        },
+        {
+            "from": 1472.33,
+            "to": 1475.08,
+            "location": 2,
+            "content": "到底应该在网络的哪个部分去做合并"
+        },
+        {
+            "from": 1475.76,
+            "to": 1477.19,
+            "location": 2,
+            "content": "到底是偏前面一些的层"
+        },
+        {
+            "from": 1477.2,
+            "to": 1478.43,
+            "location": 2,
+            "content": "比如说 conv1  conv 2"
+        },
+        {
+            "from": 1478.44,
+            "to": 1480.59,
+            "location": 2,
+            "content": "还是偏后面一些的层 conv 4 conv 5"
+        },
+        {
+            "from": 1480.8,
+            "to": 1483.75,
+            "location": 2,
+            "content": "甚至是最后的分类层 FC6 FC7"
+        },
+        {
+            "from": 1484.84,
+            "to": 1487.07,
+            "location": 2,
+            "content": "作者这里就做了大量的消融实验"
+        },
+        {
+            "from": 1487.44,
+            "to": 1490.42,
+            "location": 2,
+            "content": "最后作者就得出来了两种比较好的方式"
+        },
+        {
+            "from": 1490.71,
+            "to": 1492.06,
+            "location": 2,
+            "content": "它就列在这个图2里"
+        },
+        {
+            "from": 1492.71,
+            "to": 1495.82,
+            "location": 2,
+            "content": "第一种就是空间流和时间流先分别做"
+        },
+        {
+            "from": 1496.11,
+            "to": 1498.16,
+            "location": 2,
+            "content": "然后再做完了conv 4这层操作之后"
+        },
+        {
+            "from": 1498.39,
+            "to": 1499.48,
+            "location": 2,
+            "content": "把它们进行一次fusion"
+        },
+        {
+            "from": 1499.99,
+            "to": 1502.05,
+            "location": 2,
+            "content": "fusion完之后就从两个网络"
+        },
+        {
+            "from": 1502.06,
+            "to": 1503.29,
+            "location": 2,
+            "content": "变成一个网络了"
+        },
+        {
+            "from": 1504,
+            "to": 1506.28,
+            "location": 2,
+            "content": "这其实也就是传统意义上的Early Fusion"
+        },
+        {
+            "from": 1506.87,
+            "to": 1509.01,
+            "location": 2,
+            "content": "就是在模型的中间就已经二合一了"
+        },
+        {
+            "from": 1509.02,
+            "to": 1510.77,
+            "location": 2,
+            "content": "所以最后的输出只有一个"
+        },
+        {
+            "from": 1511.74,
+            "to": 1513.26,
+            "location": 2,
+            "content": "另外一个表现更好的方式"
+        },
+        {
+            "from": 1513.81,
+            "to": 1516.23,
+            "location": 2,
+            "content": "就是说我先两个网络分别做"
+        },
+        {
+            "from": 1516.57,
+            "to": 1518.25,
+            "location": 2,
+            "content": "然后再做到conv 5这一层以后"
+        },
+        {
+            "from": 1519.16,
+            "to": 1521.92,
+            "location": 2,
+            "content": "我把空间流上的conv 5的特征拿过来"
+        },
+        {
+            "from": 1522.36,
+            "to": 1524.91,
+            "location": 2,
+            "content": "和时间流的的特征做一次合并"
+        },
+        {
+            "from": 1525.41,
+            "to": 1528.3,
+            "location": 2,
+            "content": "然后这里出一个 spatial temporal的特征"
+        },
+        {
+            "from": 1529.04,
+            "to": 1531.93,
+            "location": 2,
+            "content": "就是它既有空间信息 还又有时间信息"
+        },
+        {
+            "from": 1532.34,
+            "to": 1534,
+            "location": 2,
+            "content": "所以这个特征应该是比较好的"
+        },
+        {
+            "from": 1534.65,
+            "to": 1537.24,
+            "location": 2,
+            "content": "但是我这个空间流也没有完全抛弃"
+        },
+        {
+            "from": 1537.25,
+            "to": 1540.96,
+            "location": 2,
+            "content": "我在他之后继续做pool5 FC6 FC7 FC8"
+        },
+        {
+            "from": 1541.64,
+            "to": 1543.71,
+            "location": 2,
+            "content": "保持了空间流的完整性"
+        },
+        {
+            "from": 1544.08,
+            "to": 1547.4,
+            "location": 2,
+            "content": "然后在最后的 FC8层我们再做一次合并"
+        },
+        {
+            "from": 1548,
+            "to": 1549.76,
+            "location": 2,
+            "content": "这个可以简单的理解为 就是说"
+        },
+        {
+            "from": 1549.77,
+            "to": 1551.24,
+            "location": 2,
+            "content": "我们在之前的这个特征层"
+        },
+        {
+            "from": 1551.77,
+            "to": 1552.72,
+            "location": 2,
+            "content": "就是在还没有学到"
+        },
+        {
+            "from": 1552.73,
+            "to": 1554.68,
+            "location": 2,
+            "content": "那么high level的语义特征之前"
+        },
+        {
+            "from": 1554.93,
+            "to": 1558.61,
+            "location": 2,
+            "content": "我们先合并一下 去帮助时间流去进行学习"
+        },
+        {
+            "from": 1559.12,
+            "to": 1560.63,
+            "location": 2,
+            "content": "然后等到最后FC8"
+        },
+        {
+            "from": 1560.88,
+            "to": 1562.95,
+            "location": 2,
+            "content": "已经特别高的语义含义之后"
+        },
+        {
+            "from": 1563.47,
+            "to": 1565.28,
+            "location": 2,
+            "content": "我们再去做一次合并"
+        },
+        {
+            "from": 1565.62,
+            "to": 1566.66,
+            "location": 2,
+            "content": "也就是late fusion"
+        },
+        {
+            "from": 1566.87,
+            "to": 1568.94,
+            "location": 2,
+            "content": "从而得到最后的分类结果"
+        },
+        {
+            "from": 1569.63,
+            "to": 1571.41,
+            "location": 2,
+            "content": "这两种方法效果都不错"
+        },
+        {
+            "from": 1572.37,
+            "to": 1573.76,
+            "location": 2,
+            "content": "说完了spatial fusion"
+        },
+        {
+            "from": 1573.76,
+            "to": 1576.2,
+            "location": 2,
+            "content": "又说完了应该在哪做这种fusion"
+        },
+        {
+            "from": 1576.84,
+            "to": 1577.95,
+            "location": 2,
+            "content": "最后讨论一下"
+        },
+        {
+            "from": 1577.96,
+            "to": 1579.91,
+            "location": 2,
+            "content": "如何去做这种temporal fusion"
+        },
+        {
+            "from": 1580.46,
+            "to": 1582.29,
+            "location": 2,
+            "content": "就是说当你有很多视频帧"
+        },
+        {
+            "from": 1582.3,
+            "to": 1584.41,
+            "location": 2,
+            "content": "然后你每一帧都去抽了这个特征之后"
+        },
+        {
+            "from": 1584.92,
+            "to": 1587.99,
+            "location": 2,
+            "content": "我如何在时间轴这个维度上把它们合并起来"
+        },
+        {
+            "from": 1588.24,
+            "to": 1590.79,
+            "location": 2,
+            "content": "或者做一些交互去得到最后的特征"
+        },
+        {
+            "from": 1591.57,
+            "to": 1594.2,
+            "location": 2,
+            "content": "作者在这篇论文里就尝试了两种方式"
+        },
+        {
+            "from": 1594.33,
+            "to": 1595.92,
+            "location": 2,
+            "content": "一种叫做3D  pooling"
+        },
+        {
+            "from": 1596.17,
+            "to": 1597.92,
+            "location": 2,
+            "content": "一种是先做一下3D  Conv"
+        },
+        {
+            "from": 1597.93,
+            "to": 1599.28,
+            "location": 2,
+            "content": "再做一下3D  pooling"
+        },
+        {
+            "from": 1601.1,
+            "to": 1603.29,
+            "location": 2,
+            "content": "在作者分别回答完这3个问题之后"
+        },
+        {
+            "from": 1603.54,
+            "to": 1605.93,
+            "location": 2,
+            "content": "作者就提出了最后的总体框架"
+        },
+        {
+            "from": 1606.6,
+            "to": 1609.07,
+            "location": 2,
+            "content": "从最底下来看 这就是RGB的输入"
+        },
+        {
+            "from": 1609.16,
+            "to": 1610.39,
+            "location": 2,
+            "content": "这就是光流的输入"
+        },
+        {
+            "from": 1610.4,
+            "to": 1613.35,
+            "location": 2,
+            "content": "然后下一帧的RGB输入下一帧的光流输入"
+        },
+        {
+            "from": 1614.04,
+            "to": 1616.27,
+            "location": 2,
+            "content": "总之 蓝色就代表的是空间流"
+        },
+        {
+            "from": 1616.44,
+            "to": 1618.03,
+            "location": 2,
+            "content": "绿色就代表的是时间流"
+        },
+        {
+            "from": 1618.68,
+            "to": 1621.35,
+            "location": 2,
+            "content": "然后针对每个图像或者说光流图像"
+        },
+        {
+            "from": 1621.6,
+            "to": 1624.23,
+            "location": 2,
+            "content": "我先分别用这两个网络去抽它的特征"
+        },
+        {
+            "from": 1624.94,
+            "to": 1626.32,
+            "location": 2,
+            "content": "一旦抽取好特征之后"
+        },
+        {
+            "from": 1626.45,
+            "to": 1628.68,
+            "location": 2,
+            "content": "我就按照刚才第二个问题里说的"
+        },
+        {
+            "from": 1628.95,
+            "to": 1632.74,
+            "location": 2,
+            "content": "我在Conv5那一层 我就先对时间流和空间流"
+        },
+        {
+            "from": 1632.95,
+            "to": 1633.94,
+            "location": 2,
+            "content": "做一次early fusion"
+        },
+        {
+            "from": 1634.84,
+            "to": 1638.37,
+            "location": 2,
+            "content": "这里面因为同时牵扯到空间信息和时间信息"
+        },
+        {
+            "from": 1638.66,
+            "to": 1640.54,
+            "location": 2,
+            "content": "所以我们想让它交互的更好一些"
+        },
+        {
+            "from": 1640.9,
+            "to": 1642.29,
+            "location": 2,
+            "content": "这里面我们就采用了这种"
+        },
+        {
+            "from": 1642.3,
+            "to": 1643.97,
+            "location": 2,
+            "content": "先做一个3d conv fusion"
+        },
+        {
+            "from": 1644.14,
+            "to": 1645.81,
+            "location": 2,
+            "content": "再做一个3d pooling的结构"
+        },
+        {
+            "from": 1646.25,
+            "to": 1647.35,
+            "location": 2,
+            "content": "然后在两个特征融合"
+        },
+        {
+            "from": 1647.36,
+            "to": 1650.57,
+            "location": 2,
+            "content": "而且pool完之后就可以把它变成一个FC层"
+        },
+        {
+            "from": 1651.05,
+            "to": 1653.48,
+            "location": 2,
+            "content": "最后出来一个结果 然后去算一个"
+        },
+        {
+            "from": 1653.49,
+            "to": 1654.93,
+            "location": 2,
+            "content": "Spatiotemporal的损失函数"
+        },
+        {
+            "from": 1655.4,
+            "to": 1656.79,
+            "location": 2,
+            "content": "之所以是Spatiotemporal"
+        },
+        {
+            "from": 1656.8,
+            "to": 1659.27,
+            "location": 2,
+            "content": "因为你这里时间和空间的信息都有"
+        },
+        {
+            "from": 1659.59,
+            "to": 1661.74,
+            "location": 2,
+            "content": "他学的是一个Spatiotemporal的特征"
+        },
+        {
+            "from": 1662.85,
+            "to": 1665.89,
+            "location": 2,
+            "content": "然后因为时间流特别关键 我们之前也知道"
+        },
+        {
+            "from": 1665.98,
+            "to": 1668.97,
+            "location": 2,
+            "content": "做视频就是要在这个时间上做更多的处理"
+        },
+        {
+            "from": 1669.48,
+            "to": 1672.26,
+            "location": 2,
+            "content": "所以说作者这里又把时间流单独拿出来"
+        },
+        {
+            "from": 1672.32,
+            "to": 1674.1,
+            "location": 2,
+            "content": "去做一次简单的pooling"
+        },
+        {
+            "from": 1674.36,
+            "to": 1675.63,
+            "location": 2,
+            "content": "然后再接FC层"
+        },
+        {
+            "from": 1675.64,
+            "to": 1678.95,
+            "location": 2,
+            "content": "最后专门做一个针对时间上的损失函数"
+        },
+        {
+            "from": 1680.36,
+            "to": 1683.15,
+            "location": 2,
+            "content": "这也就意味着我们这个模型是有两个分支的"
+        },
+        {
+            "from": 1683.44,
+            "to": 1686.31,
+            "location": 2,
+            "content": "一个是做这种时空学习Spatiotemporal branch"
+        },
+        {
+            "from": 1686.8,
+            "to": 1688.45,
+            "location": 2,
+            "content": "还有一个是专门做这种时间学习"
+        },
+        {
+            "from": 1688.6,
+            "to": 1689.95,
+            "location": 2,
+            "content": "一个Temporal的branch"
+        },
+        {
+            "from": 1690.75,
+            "to": 1692.9,
+            "location": 2,
+            "content": "在训练的时候也用了两个目标函数"
+        },
+        {
+            "from": 1693.07,
+            "to": 1693.86,
+            "location": 2,
+            "content": "也就是这里说的"
+        },
+        {
+            "from": 1694.07,
+            "to": 1695.04,
+            "location": 2,
+            "content": "Spatiotemporal Loss"
+        },
+        {
+            "from": 1695.04,
+            "to": 1696.18,
+            "location": 2,
+            "content": "和这个Temporal Loss"
+        },
+        {
+            "from": 1696.8,
+            "to": 1699.34,
+            "location": 2,
+            "content": "这个模型在做推理的时候是怎么做推理的"
+        },
+        {
+            "from": 1700.08,
+            "to": 1702.39,
+            "location": 2,
+            "content": "因为你网络现在有两个分支"
+        },
+        {
+            "from": 1702.61,
+            "to": 1704.91,
+            "location": 2,
+            "content": "这两个分支最后都会有一个分类头"
+        },
+        {
+            "from": 1705.26,
+            "to": 1706.2,
+            "location": 2,
+            "content": "到底应该用哪个"
+        },
+        {
+            "from": 1707.17,
+            "to": 1709.87,
+            "location": 2,
+            "content": "其实在文章中就跟在图2里画的一样"
+        },
+        {
+            "from": 1710.36,
+            "to": 1712.11,
+            "location": 2,
+            "content": "或者说跟之前的双流网络一样"
+        },
+        {
+            "from": 1712.36,
+            "to": 1713.79,
+            "location": 2,
+            "content": "它也是做了一个Late Fusion"
+        },
+        {
+            "from": 1713.92,
+            "to": 1717.07,
+            "location": 2,
+            "content": "就是把这两个最后的分类结果加权平均一下"
+        },
+        {
+            "from": 1717.45,
+            "to": 1719.01,
+            "location": 2,
+            "content": "这是我们最后的预测结果了"
+        },
+        {
+            "from": 1720.53,
+            "to": 1722.04,
+            "location": 2,
+            "content": "说完了文章的整体架构"
+        },
+        {
+            "from": 1722.32,
+            "to": 1724.31,
+            "location": 2,
+            "content": "我们就直接来看一下最后的结果"
+        },
+        {
+            "from": 1724.8,
+            "to": 1727.35,
+            "location": 2,
+            "content": "在表5里作者就展示了一下他们的方法"
+        },
+        {
+            "from": 1727.36,
+            "to": 1729.91,
+            "location": 2,
+            "content": "在UCF101和HMDB51上的结果"
+        },
+        {
+            "from": 1730.47,
+            "to": 1732.59,
+            "location": 2,
+            "content": "这里作者首先是尝试了一下"
+        },
+        {
+            "from": 1732.72,
+            "to": 1735.43,
+            "location": 2,
+            "content": "使用更深的网络会带来多大的提升"
+        },
+        {
+            "from": 1735.89,
+            "to": 1739.12,
+            "location": 2,
+            "content": "就把双流网络简单的自己复现了一下"
+        },
+        {
+            "from": 1739.54,
+            "to": 1740.7,
+            "location": 2,
+            "content": "但是他把空间流"
+        },
+        {
+            "from": 1740.71,
+            "to": 1742.3,
+            "location": 2,
+            "content": "和时间流的网络backbone"
+        },
+        {
+            "from": 1742.51,
+            "to": 1744.1,
+            "location": 2,
+            "content": "全都换成VGG-16了"
+        },
+        {
+            "from": 1744.65,
+            "to": 1748.12,
+            "location": 2,
+            "content": "这个显然是比双流网络之前用的网络结构要深一些的"
+        },
+        {
+            "from": 1748.44,
+            "to": 1750,
+            "location": 2,
+            "content": "所以说它得到的效果也好一些"
+        },
+        {
+            "from": 1750.21,
+            "to": 1753,
+            "location": 2,
+            "content": "比如说在UCF上它的提升非常大"
+        },
+        {
+            "from": 1753.5,
+            "to": 1756.25,
+            "location": 2,
+            "content": "从88%直接就提升到91.7%了"
+        },
+        {
+            "from": 1756.7,
+            "to": 1758.73,
+            "location": 2,
+            "content": "但是在HMDB51这个数据集上"
+        },
+        {
+            "from": 1758.9,
+            "to": 1762.08,
+            "location": 2,
+            "content": "其实就是59.4%和58.7%是差不多的水平"
+        },
+        {
+            "from": 1762.08,
+            "to": 1763.37,
+            "location": 2,
+            "content": "还略微有所下降"
+        },
+        {
+            "from": 1763.92,
+            "to": 1765.55,
+            "location": 2,
+            "content": "这个其实在我们马上要讲的"
+        },
+        {
+            "from": 1765.76,
+            "to": 1767.04,
+            "location": 2,
+            "content": "Temporal Segment Network"
+        },
+        {
+            "from": 1767.04,
+            "to": 1769.38,
+            "location": 2,
+            "content": "TSN这篇论文里也有提到"
+        },
+        {
+            "from": 1769.61,
+            "to": 1771.14,
+            "location": 2,
+            "content": "就是说当一个数据集特别小"
+        },
+        {
+            "from": 1771.15,
+            "to": 1773.78,
+            "location": 2,
+            "content": "但是你要用特别深的网络去训练的时候"
+        },
+        {
+            "from": 1774.34,
+            "to": 1776.34,
+            "location": 2,
+            "content": "就容易遇到这种过拟合的问题"
+        },
+        {
+            "from": 1776.65,
+            "to": 1778.51,
+            "location": 2,
+            "content": "所以说不见得你用更深的网络"
+        },
+        {
+            "from": 1778.52,
+            "to": 1779.89,
+            "location": 2,
+            "content": "就能得到更好的结果"
+        },
+        {
+            "from": 1780.68,
+            "to": 1783.41,
+            "location": 2,
+            "content": "但总之至少在UCF101这个数据集上"
+        },
+        {
+            "from": 1783.87,
+            "to": 1786.62,
+            "location": 2,
+            "content": "当你有1万多个视频的时候可能就比较够了"
+        },
+        {
+            "from": 1786.91,
+            "to": 1789.62,
+            "location": 2,
+            "content": "这时候你能从88%直接提升到91.7%"
+        },
+        {
+            "from": 1789.8,
+            "to": 1791.4,
+            "location": 2,
+            "content": "这个提升还是非常明显的"
+        },
+        {
+            "from": 1792.36,
+            "to": 1795.36,
+            "location": 2,
+            "content": "如果我们从作者自己复现的Baseline 出发"
+        },
+        {
+            "from": 1795.53,
+            "to": 1796.96,
+            "location": 2,
+            "content": "然后把 late fusion"
+        },
+        {
+            "from": 1796.97,
+            "to": 1798.12,
+            "location": 2,
+            "content": "换成early fusion之后"
+        },
+        {
+            "from": 1798.76,
+            "to": 1801.04,
+            "location": 2,
+            "content": "我们可以看到其实提升也还好"
+        },
+        {
+            "from": 1801.63,
+            "to": 1804.18,
+            "location": 2,
+            "content": "从91.7%直接提升到了92.5%"
+        },
+        {
+            "from": 1805.08,
+            "to": 1806.64,
+            "location": 2,
+            "content": "但是在HMDB51上"
+        },
+        {
+            "from": 1806.65,
+            "to": 1808.44,
+            "location": 2,
+            "content": "它的提升就非常的明显了"
+        },
+        {
+            "from": 1808.83,
+            "to": 1811.52,
+            "location": 2,
+            "content": "直接从58.5%-58.7%就提升到65.4%了"
+        },
+        {
+            "from": 1811.98,
+            "to": 1813.31,
+            "location": 2,
+            "content": "这个效果还是非常厉害的"
+        },
+        {
+            "from": 1813.98,
+            "to": 1814.57,
+            "location": 2,
+            "content": "所以说明了"
+        },
+        {
+            "from": 1814.58,
+            "to": 1816.02,
+            "location": 2,
+            "content": "这种Early Fusion的方式"
+        },
+        {
+            "from": 1816.03,
+            "to": 1818.63,
+            "location": 2,
+            "content": "可能算是一种变相的对网络的约束"
+        },
+        {
+            "from": 1819.3,
+            "to": 1820.78,
+            "location": 2,
+            "content": "让模型在早期的训练中"
+        },
+        {
+            "from": 1821.35,
+            "to": 1822.87,
+            "location": 2,
+            "content": "就能从时间流和空间流"
+        },
+        {
+            "from": 1822.88,
+            "to": 1825.43,
+            "location": 2,
+            "content": "这两只网络中去互相学习 互相弥补"
+        },
+        {
+            "from": 1825.97,
+            "to": 1827.32,
+            "location": 2,
+            "content": "所以说在一定程度上"
+        },
+        {
+            "from": 1827.33,
+            "to": 1829.32,
+            "location": 2,
+            "content": "可能弥补了数据不足的问题"
+        },
+        {
+            "from": 1829.86,
+            "to": 1831.25,
+            "location": 2,
+            "content": "所以说能够让Early Fusion"
+        },
+        {
+            "from": 1831.34,
+            "to": 1833.65,
+            "location": 2,
+            "content": "比Late Fusion学习的效果要好很多"
+        },
+        {
+            "from": 1834.67,
+            "to": 1836.46,
+            "location": 2,
+            "content": "当然了这篇文章的意义和贡献"
+        },
+        {
+            "from": 1836.71,
+            "to": 1839.3,
+            "location": 2,
+            "content": "远远不仅于 就是说作者尝试一下"
+        },
+        {
+            "from": 1839.31,
+            "to": 1841.34,
+            "location": 2,
+            "content": "Early Fusion和Late Fusion到底谁好"
+        },
+        {
+            "from": 1841.85,
+            "to": 1844.01,
+            "location": 2,
+            "content": "他主要的贡献在我看来其实有两点"
+        },
+        {
+            "from": 1844.44,
+            "to": 1846.79,
+            "location": 2,
+            "content": "第一点就是他做了大量的消融实验"
+        },
+        {
+            "from": 1847,
+            "to": 1848.35,
+            "location": 2,
+            "content": "从 spatial fusion到"
+        },
+        {
+            "from": 1848.36,
+            "to": 1849.35,
+            "location": 2,
+            "content": "temporal fusion"
+        },
+        {
+            "from": 1849.76,
+            "to": 1851.61,
+            "location": 2,
+            "content": "到到底应该在哪里去做fusion"
+        },
+        {
+            "from": 1851.85,
+            "to": 1854.14,
+            "location": 2,
+            "content": "彻底地把网络结构研究了一番"
+        },
+        {
+            "from": 1854.93,
+            "to": 1857.85,
+            "location": 2,
+            "content": "所以给后面的研究工作带来了很好的见解"
+        },
+        {
+            "from": 1858.24,
+            "to": 1859.84,
+            "location": 2,
+            "content": "能让大家少走很多弯路"
+        },
+        {
+            "from": 1860.87,
+            "to": 1862.02,
+            "location": 2,
+            "content": "第二个贡献就是"
+        },
+        {
+            "from": 1862.03,
+            "to": 1864.66,
+            "location": 2,
+            "content": "他尝试了这种3D conv和3D pooling"
+        },
+        {
+            "from": 1865.26,
+            "to": 1866.18,
+            "location": 2,
+            "content": "增加了研究者"
+        },
+        {
+            "from": 1866.27,
+            "to": 1868.52,
+            "location": 2,
+            "content": "对于使用这种3D-CNN的信心"
+        },
+        {
+            "from": 1868.52,
+            "to": 1871.23,
+            "location": 2,
+            "content": "变相地推动了这个3D-CNN的发展"
+        },
+        {
+            "from": 1872.04,
+            "to": 1874.24,
+            "location": 2,
+            "content": "所以在不到一年之后 I3D就出来了"
+        },
+        {
+            "from": 1874.76,
+            "to": 1876.52,
+            "location": 2,
+            "content": "从此就开始了3D-CNN"
+        },
+        {
+            "from": 1876.52,
+            "to": 1878.34,
+            "location": 2,
+            "content": "霸占视频理解领域的这个局面"
+        },
+        {
+            "from": 1878.97,
+            "to": 1881.25,
+            "location": 2,
+            "content": "所以说这篇论文的影响还是非常深远的"
+        },
+        {
+            "from": 1882.76,
+            "to": 1884.92,
+            "location": 2,
+            "content": "我们刚才在回顾双流网络的时候"
+        },
+        {
+            "from": 1885.17,
+            "to": 1887.12,
+            "location": 2,
+            "content": "也提到了几个可以改进的方向"
+        },
+        {
+            "from": 1887.56,
+            "to": 1889.42,
+            "location": 2,
+            "content": "刚才已经说完了LSTM"
+        },
+        {
+            "from": 1889.43,
+            "to": 1890.98,
+            "location": 2,
+            "content": "而且也说完了Early Fusion"
+        },
+        {
+            "from": 1891.28,
+            "to": 1895.02,
+            "location": 2,
+            "content": "最后该说一下如何处理更长时间的视频问题了"
+        },
+        {
+            "from": 1895.8,
+            "to": 1897.2,
+            "location": 2,
+            "content": "接下来要说的这篇论文"
+        },
+        {
+            "from": 1897.33,
+            "to": 1900.08,
+            "location": 2,
+            "content": "叫做TSN Temporal Segment Networks"
+        },
+        {
+            "from": 1900.25,
+            "to": 1902.08,
+            "location": 2,
+            "content": "是一篇ECCV 2016的中稿论文"
+        },
+        {
+            "from": 1903.08,
+            "to": 1905.38,
+            "location": 2,
+            "content": "这篇论文在视频理解领域里的贡献"
+        },
+        {
+            "from": 1905.51,
+            "to": 1908.5,
+            "location": 2,
+            "content": "完全不逊色于双流网络或者是I3D网络"
+        },
+        {
+            "from": 1908.51,
+            "to": 1909.9,
+            "location": 2,
+            "content": "这些里程碑式的工作"
+        },
+        {
+            "from": 1910.64,
+            "to": 1913.12,
+            "location": 2,
+            "content": "他不仅通过一种特别特别简单的方式"
+        },
+        {
+            "from": 1913.33,
+            "to": 1916.33,
+            "location": 2,
+            "content": "能够处理比较长的视频 而且效果特别好"
+        },
+        {
+            "from": 1917.3,
+            "to": 1920.69,
+            "location": 2,
+            "content": "而且他更大的贡献是确定了很多很好用的技巧"
+        },
+        {
+            "from": 1921.01,
+            "to": 1924.31,
+            "location": 2,
+            "content": "也就是他写进题目里的这些\"Towards Good Practices"
+        },
+        {
+            "from": 1924.32,
+            "to": 1925.55,
+            "location": 2,
+            "content": "for Deep Action Recognition\""
+        },
+        {
+            "from": 1926.26,
+            "to": 1927.8,
+            "location": 2,
+            "content": "所谓的这些good practices"
+        },
+        {
+            "from": 1927.81,
+            "to": 1928.73,
+            "location": 2,
+            "content": "好用的技巧"
+        },
+        {
+            "from": 1929.34,
+            "to": 1931.84,
+            "location": 2,
+            "content": "这些技巧包括怎么去做这种数据增强"
+        },
+        {
+            "from": 1932.14,
+            "to": 1933.81,
+            "location": 2,
+            "content": "怎么去做模型的初始化"
+        },
+        {
+            "from": 1934.18,
+            "to": 1937.46,
+            "location": 2,
+            "content": "到底该怎么使用光流 到底使用哪个网络"
+        },
+        {
+            "from": 1937.83,
+            "to": 1939.58,
+            "location": 2,
+            "content": "到底该如何防止过拟合"
+        },
+        {
+            "from": 1940.09,
+            "to": 1942.34,
+            "location": 2,
+            "content": "这篇论文全都给出了非常好的答案"
+        },
+        {
+            "from": 1943.14,
+            "to": 1945.26,
+            "location": 2,
+            "content": "它里面的很多技巧沿用至今"
+        },
+        {
+            "from": 1945.96,
+            "to": 1949.35,
+            "location": 2,
+            "content": "作者团队其实基本上都来自于CUHK(香港中文大学)"
+        },
+        {
+            "from": 1949.4,
+            "to": 1952.16,
+            "location": 2,
+            "content": "一作王利民老师当时已经去了  ETH(苏黎世联邦理工大学)读Postdoc(博士后)"
+        },
+        {
+            "from": 1952.85,
+            "to": 1955.31,
+            "location": 2,
+            "content": "上次我们讲双流网络的一个跟进工作"
+        },
+        {
+            "from": 1955.77,
+            "to": 1957.28,
+            "location": 2,
+            "content": "就是如何更好地利用光流"
+        },
+        {
+            "from": 1957.29,
+            "to": 1959.96,
+            "location": 2,
+            "content": "然后去做这种轨迹上的光流堆叠"
+        },
+        {
+            "from": 1960.52,
+            "to": 1962.39,
+            "location": 2,
+            "content": "就是王老师的工作 叫TDD(Action recognition with trajectory-pooled deep-convolutional descriptors 2015)"
+        },
+        {
+            "from": 1962.94,
+            "to": 1963.86,
+            "location": 2,
+            "content": "接下来王老师"
+        },
+        {
+            "from": 1963.87,
+            "to": 1965.18,
+            "location": 2,
+            "content": "还有UntrimmedNets(UntrimmedNets for weakly supervised action recognition and detection 2017)"
+        },
+        {
+            "from": 1965.8,
+            "to": 1966.77,
+            "location": 2,
+            "content": "ARTNet(Appearance-and-Relation Networks for Video Classification 2018)"
+        },
+        {
+            "from": 1967.38,
+            "to": 1971.39,
+            "location": 2,
+            "content": "TEA(TEA: Temporal Excitation and Aggregation for Action Recognitiontea 2020)\n V4D(2020)以及去年ICCV的TAM(TAM: Temporal Adaptive Module for Video Recognition)"
+        },
+        {
+            "from": 1971.4,
+            "to": 1973.48,
+            "location": 2,
+            "content": "还有MGSampler(MGSampler: An Explainable Sampling Strategy for Video Action Recognition 2021)一系列工作"
+        },
+        {
+            "from": 1973.48,
+            "to": 1977.12,
+            "location": 2,
+            "content": "所以说做视频理解的同学不妨多去关注一下"
+        },
+        {
+            "from": 1977.13,
+            "to": 1978.12,
+            "location": 2,
+            "content": "王老师组的工作"
+        },
+        {
+            "from": 1978.71,
+            "to": 1979.94,
+            "location": 2,
+            "content": "应该都会有所收获"
+        },
+        {
+            "from": 1981.04,
+            "to": 1983.58,
+            "location": 2,
+            "content": "TSN这篇论文到底讲的是什么意思"
+        },
+        {
+            "from": 1984.42,
+            "to": 1985.97,
+            "location": 2,
+            "content": "我们直接来看图一就可以了"
+        },
+        {
+            "from": 1986.62,
+            "to": 1987.78,
+            "location": 2,
+            "content": "这篇论文的研究动机"
+        },
+        {
+            "from": 1987.99,
+            "to": 1991.06,
+            "location": 2,
+            "content": "就是说如果你有一个原始的双流网络"
+        },
+        {
+            "from": 1991.23,
+            "to": 1995.05,
+            "location": 2,
+            "content": "你上面是一个视频帧 通过一个空间流"
+        },
+        {
+            "from": 1995.4,
+            "to": 1998.95,
+            "location": 2,
+            "content": "然后下面是几帧光流图像 通过一个时间流"
+        },
+        {
+            "from": 1999.79,
+            "to": 2003.08,
+            "location": 2,
+            "content": "你能覆盖的视频长度最多10帧"
+        },
+        {
+            "from": 2003.19,
+            "to": 2005.64,
+            "location": 2,
+            "content": "也就是不到半秒的时间 太短了"
+        },
+        {
+            "from": 2006.2,
+            "to": 2007.62,
+            "location": 2,
+            "content": "我怎样才能去理解一个"
+        },
+        {
+            "from": 2007.63,
+            "to": 2009.92,
+            "location": 2,
+            "content": "更长的完整的视频 "
+        },
+        {
+            "from": 2010.8,
+            "to": 2013.28,
+            "location": 2,
+            "content": "TSN这篇论文的想法就非常简单"
+        },
+        {
+            "from": 2013.66,
+            "to": 2016.37,
+            "location": 2,
+            "content": "我把这个视频分成几段不就完了吗"
+        },
+        {
+            "from": 2016.75,
+            "to": 2019.54,
+            "location": 2,
+            "content": "比如说我现在这个视频我就把它切成3段"
+        },
+        {
+            "from": 2019.75,
+            "to": 2023.1,
+            "location": 2,
+            "content": "它这里出于画图简单 所以就分成了3段"
+        },
+        {
+            "from": 2023.72,
+            "to": 2026.54,
+            "location": 2,
+            "content": "我在每一段里去随机抽取一帧"
+        },
+        {
+            "from": 2027.05,
+            "to": 2028.48,
+            "location": 2,
+            "content": "当做 RGB图像"
+        },
+        {
+            "from": 2028.9,
+            "to": 2031.3,
+            "location": 2,
+            "content": "然后以这一帧为起点再去选几帧"
+        },
+        {
+            "from": 2031.31,
+            "to": 2032.78,
+            "location": 2,
+            "content": "然后去算光流图像"
+        },
+        {
+            "from": 2033.26,
+            "to": 2036.11,
+            "location": 2,
+            "content": "然后后面就按照这个双流网络的做法去做"
+        },
+        {
+            "from": 2036.68,
+            "to": 2038.28,
+            "location": 2,
+            "content": "最后就会出来两个logits"
+        },
+        {
+            "from": 2039.28,
+            "to": 2042.12,
+            "location": 2,
+            "content": "然后同样的道理 我再从第二段里去抽一帧"
+        },
+        {
+            "from": 2042.29,
+            "to": 2043.84,
+            "location": 2,
+            "content": "然后当做这个RGB图像"
+        },
+        {
+            "from": 2044.24,
+            "to": 2047.47,
+            "location": 2,
+            "content": "然后再去算一些光流 再通过一个双流网络"
+        },
+        {
+            "from": 2048.14,
+            "to": 2050.33,
+            "location": 2,
+            "content": "当然这里所有的 Spatial ConvNet"
+        },
+        {
+            "from": 2050.46,
+            "to": 2051.77,
+            "location": 2,
+            "content": "全都是共享参数的"
+        },
+        {
+            "from": 2052.1,
+            "to": 2054.21,
+            "location": 2,
+            "content": "Temporal ConvNet也都是共享参数的"
+        },
+        {
+            "from": 2054.22,
+            "to": 2056.73,
+            "location": 2,
+            "content": "所以说其实你只有一组双流网络"
+        },
+        {
+            "from": 2057.5,
+            "to": 2060.2,
+            "location": 2,
+            "content": "然后再从第3段里做同样的操作"
+        },
+        {
+            "from": 2060.38,
+            "to": 2061.63,
+            "location": 2,
+            "content": "又会得到两个logits"
+        },
+        {
+            "from": 2062.69,
+            "to": 2064.52,
+            "location": 2,
+            "content": "TSN的想法就是说如果你"
+        },
+        {
+            "from": 2064.53,
+            "to": 2066.28,
+            "location": 2,
+            "content": "这个视频也不算太长"
+        },
+        {
+            "from": 2066.7,
+            "to": 2069.25,
+            "location": 2,
+            "content": "里面也就包含了一个事件或者一个动作的话"
+        },
+        {
+            "from": 2070.06,
+            "to": 2073.29,
+            "location": 2,
+            "content": "即使抽出来的这些帧表面上看起来有些不一样"
+        },
+        {
+            "from": 2073.3,
+            "to": 2075.73,
+            "location": 2,
+            "content": "但它其实最高层的语义信息"
+        },
+        {
+            "from": 2075.82,
+            "to": 2077.49,
+            "location": 2,
+            "content": "应该都描述的是一个东西"
+        },
+        {
+            "from": 2078.24,
+            "to": 2080.4,
+            "location": 2,
+            "content": "所以说我应该把每一个段里"
+        },
+        {
+            "from": 2080.49,
+            "to": 2082.36,
+            "location": 2,
+            "content": "这个空间流出来的这个logits"
+        },
+        {
+            "from": 2082.53,
+            "to": 2084.48,
+            "location": 2,
+            "content": "做一这个segmental consensus"
+        },
+        {
+            "from": 2085.34,
+            "to": 2087.52,
+            "location": 2,
+            "content": "consensus的意思就是达成共识"
+        },
+        {
+            "from": 2087.85,
+            "to": 2089.44,
+            "location": 2,
+            "content": "其实也就是做一下融合"
+        },
+        {
+            "from": 2089.86,
+            "to": 2092.35,
+            "location": 2,
+            "content": "这里面你也可以做加法做乘法"
+        },
+        {
+            "from": 2092.375,
+            "to": 2094.63,
+            "location": 2,
+            "content": "做这个max 也可以做average 都可以"
+        },
+        {
+            "from": 2095.35,
+            "to": 2097.12,
+            "location": 2,
+            "content": "甚至你也可以用一个LSTM"
+        },
+        {
+            "from": 2097.55,
+            "to": 2101.14,
+            "location": 2,
+            "content": "总之去融合一下每个段出来的分类结果"
+        },
+        {
+            "from": 2102.13,
+            "to": 2102.68,
+            "location": 2,
+            "content": "同样的道理"
+        },
+        {
+            "from": 2102.77,
+            "to": 2104.72,
+            "location": 2,
+            "content": "这个时间流出来的这个logits"
+        },
+        {
+            "from": 2104.81,
+            "to": 2106.84,
+            "location": 2,
+            "content": "也要做一个这个segmental consensus"
+        },
+        {
+            "from": 2107.13,
+            "to": 2108.2,
+            "location": 2,
+            "content": "也要达成一个共识"
+        },
+        {
+            "from": 2109.04,
+            "to": 2112.3,
+            "location": 2,
+            "content": "最后空间上的共识和时间上的共识"
+        },
+        {
+            "from": 2112.74,
+            "to": 2113.59,
+            "location": 2,
+            "content": "做一个late fusion"
+        },
+        {
+            "from": 2113.68,
+            "to": 2116.63,
+            "location": 2,
+            "content": "一个加权平均就得到最后的预测了"
+        },
+        {
+            "from": 2117.52,
+            "to": 2119.75,
+            "location": 2,
+            "content": "举个简单的例子 如果我们现在做的是"
+        },
+        {
+            "from": 2119.76,
+            "to": 2121.35,
+            "location": 2,
+            "content": "UCF101这个数据集"
+        },
+        {
+            "from": 2121.36,
+            "to": 2123.39,
+            "location": 2,
+            "content": "也就是说一共有101个类的话"
+        },
+        {
+            "from": 2123.98,
+            "to": 2125.37,
+            "location": 2,
+            "content": "其实这里的logits"
+        },
+        {
+            "from": 2125.5,
+            "to": 2128.61,
+            "location": 2,
+            "content": "其实就都是1×101的一个向量"
+        },
+        {
+            "from": 2129.06,
+            "to": 2129.76,
+            "location": 2,
+            "content": "同样的道理"
+        },
+        {
+            "from": 2129.77,
+            "to": 2132.8,
+            "location": 2,
+            "content": "这里面的这个共识也是一个1×101的向量"
+        },
+        {
+            "from": 2134.02,
+            "to": 2136.96,
+            "location": 2,
+            "content": "我们可以看到啊TSN这个想法非常的简单"
+        },
+        {
+            "from": 2137.69,
+            "to": 2139.53,
+            "location": 2,
+            "content": "很多人可能觉得这太简单了"
+        },
+        {
+            "from": 2139.62,
+            "to": 2140.97,
+            "location": 2,
+            "content": "有可能审稿都不给过"
+        },
+        {
+            "from": 2141.99,
+            "to": 2145.26,
+            "location": 2,
+            "content": "但之前沫神在讲Michael J. Black\n的那篇博文的时候"
+        },
+        {
+            "from": 2145.88,
+            "to": 2148.03,
+            "location": 2,
+            "content": "就是如何判断一个论文的新意度的时候"
+        },
+        {
+            "from": 2148.71,
+            "to": 2151.43,
+            "location": 2,
+            "content": "其实强调过简单不代表没有新意"
+        },
+        {
+            "from": 2152.05,
+            "to": 2155.33,
+            "location": 2,
+            "content": "反而如果你是一个既简单又工作的很好的方法"
+        },
+        {
+            "from": 2155.34,
+            "to": 2156.85,
+            "location": 2,
+            "content": "其实是最具有新意的"
+        },
+        {
+            "from": 2157.4,
+            "to": 2160.13,
+            "location": 2,
+            "content": "TSN这篇论文就完美的诠释了这个概念"
+        },
+        {
+            "from": 2160.79,
+            "to": 2162.7,
+            "location": 2,
+            "content": "而且这种给视频分段"
+        },
+        {
+            "from": 2162.7,
+            "to": 2164.02,
+            "location": 2,
+            "content": "这种temporal segment的思想"
+        },
+        {
+            "from": 2164.29,
+            "to": 2166.88,
+            "location": 2,
+            "content": "它不光是可以作用于这种短一点的视频"
+        },
+        {
+            "from": 2167.13,
+            "to": 2168.8,
+            "location": 2,
+            "content": "就是说这种已经裁剪好的"
+        },
+        {
+            "from": 2168.81,
+            "to": 2169.6,
+            "location": 2,
+            "content": "video clip上"
+        },
+        {
+            "from": 2170.09,
+            "to": 2172.32,
+            "location": 2,
+            "content": "那也可以工作于就没有裁剪过的"
+        },
+        {
+            "from": 2172.33,
+            "to": 2174,
+            "location": 2,
+            "content": "这种长视频上也是可以的"
+        },
+        {
+            "from": 2174.75,
+            "to": 2176.74,
+            "location": 2,
+            "content": "因为即使你这个视频很长"
+        },
+        {
+            "from": 2176.95,
+            "to": 2179.22,
+            "location": 2,
+            "content": "我也可以把它打成更多的段落"
+        },
+        {
+            "from": 2179.67,
+            "to": 2182.34,
+            "location": 2,
+            "content": "而且每个段落里的含义也不一定需要一样"
+        },
+        {
+            "from": 2182.59,
+            "to": 2183.62,
+            "location": 2,
+            "content": "如果你不一样的话"
+        },
+        {
+            "from": 2183.83,
+            "to": 2185.7,
+            "location": 2,
+            "content": "我后面这儿就不做average就好了"
+        },
+        {
+            "from": 2186.16,
+            "to": 2188.96,
+            "location": 2,
+            "content": "我可以去做LSTM 去模拟时间的走势"
+        },
+        {
+            "from": 2188.97,
+            "to": 2189.68,
+            "location": 2,
+            "content": "也是可以的"
+        },
+        {
+            "from": 2190.44,
+            "to": 2191.03,
+            "location": 2,
+            "content": "王老师之后"
+        },
+        {
+            "from": 2191.04,
+            "to": 2192.99,
+            "location": 2,
+            "content": "另外一篇工作UntrimmedNets(2017)"
+        },
+        {
+            "from": 2193.35,
+            "to": 2195.57,
+            "location": 2,
+            "content": "其实就是用来去做这种没有裁剪过的"
+        },
+        {
+            "from": 2195.58,
+            "to": 2198.97,
+            "location": 2,
+            "content": "长视频的视频分类任务的 工作的也非常好"
+        },
+        {
+            "from": 2199.49,
+            "to": 2201.46,
+            "location": 2,
+            "content": "而且这篇论文做的是surprised"
+        },
+        {
+            "from": 2201.72,
+            "to": 2202.96,
+            "location": 2,
+            "content": "就是有监督的方式"
+        },
+        {
+            "from": 2203.41,
+            "to": 2204.49,
+            "location": 2,
+            "content": "UntrimmedNets(2017)"
+        },
+        {
+            "from": 2204.5,
+            "to": 2206.05,
+            "location": 2,
+            "content": "做相当于是弱监督的方式"
+        },
+        {
+            "from": 2206.62,
+            "to": 2208.41,
+            "location": 2,
+            "content": "其实 temporal segment这个思想"
+        },
+        {
+            "from": 2208.58,
+            "to": 2210.69,
+            "location": 2,
+            "content": "还可以作用于无监督的训练方式"
+        },
+        {
+            "from": 2211.3,
+            "to": 2212.53,
+            "location": 2,
+            "content": "我们组去年的一个工作"
+        },
+        {
+            "from": 2212.66,
+            "to": 2214.25,
+            "location": 2,
+            "content": "就是把temporal segment的思想"
+        },
+        {
+            "from": 2214.26,
+            "to": 2216.25,
+            "location": 2,
+            "content": "融合到对比学习之中"
+        },
+        {
+            "from": 2216.97,
+            "to": 2220.21,
+            "location": 2,
+            "content": "简单来说就是之前的工作往往是把一个视频里"
+        },
+        {
+            "from": 2220.38,
+            "to": 2222.41,
+            "location": 2,
+            "content": "任意的两帧当做是正样本"
+        },
+        {
+            "from": 2223.06,
+            "to": 2224.97,
+            "location": 2,
+            "content": "其他的所有帧都当做负样本"
+        },
+        {
+            "from": 2225.51,
+            "to": 2227.55,
+            "location": 2,
+            "content": "但这样的话如果你这个视频比较长"
+        },
+        {
+            "from": 2227.56,
+            "to": 2230.26,
+            "location": 2,
+            "content": "你这个随机抽出来的两帧不一定是正样本"
+        },
+        {
+            "from": 2230.85,
+            "to": 2232.06,
+            "location": 2,
+            "content": "所以说我们就融合了"
+        },
+        {
+            "from": 2232.07,
+            "to": 2233.3,
+            "location": 2,
+            "content": "temporal segment的思想"
+        },
+        {
+            "from": 2233.94,
+            "to": 2236.9,
+            "location": 2,
+            "content": "在一个视频里我们先把它分成段 "
+        },
+        {
+            "from": 2237.05,
+            "to": 2238.75,
+            "location": 2,
+            "content": "从第一段 第二段 第三段里 "
+        },
+        {
+            "from": 2238.85,
+            "to": 2241.125,
+            "location": 2,
+            "content": "分别去抽出第1帧 第2帧 第3帧"
+        },
+        {
+            "from": 2241.65,
+            "to": 2243.97,
+            "location": 2,
+            "content": "我们把这3帧当做是第一个样本"
+        },
+        {
+            "from": 2244.63,
+            "to": 2246.61,
+            "location": 2,
+            "content": "然后我们再去这3个segment里"
+        },
+        {
+            "from": 2246.94,
+            "to": 2248.59,
+            "location": 2,
+            "content": "任意的再去抽3帧出来"
+        },
+        {
+            "from": 2248.9,
+            "to": 2251.92,
+            "location": 2,
+            "content": "第二个抽出来的3帧我们就当做是第二个样本"
+        },
+        {
+            "from": 2252.61,
+            "to": 2254,
+            "location": 2,
+            "content": "第一个样本和第二个样本"
+        },
+        {
+            "from": 2254.17,
+            "to": 2256.32,
+            "location": 2,
+            "content": "就可以理解成是一个正样本对了"
+        },
+        {
+            "from": 2257.04,
+            "to": 2260.16,
+            "location": 2,
+            "content": "这样它成为正样本对的可能性就大很多"
+        },
+        {
+            "from": 2260.63,
+            "to": 2262.33,
+            "location": 2,
+            "content": "因为哪怕你这个视频很长"
+        },
+        {
+            "from": 2262.5,
+            "to": 2263.85,
+            "location": 2,
+            "content": "哪怕你每个segment里"
+        },
+        {
+            "from": 2263.86,
+            "to": 2265.45,
+            "location": 2,
+            "content": "表示的语义都不一样"
+        },
+        {
+            "from": 2265.91,
+            "to": 2266.94,
+            "location": 2,
+            "content": "但是我的第一个样本"
+        },
+        {
+            "from": 2267.07,
+            "to": 2268.42,
+            "location": 2,
+            "content": "也是从第一个segment"
+        },
+        {
+            "from": 2268.43,
+            "to": 2270.18,
+            "location": 2,
+            "content": "到第二个segment 到第三个segment"
+        },
+        {
+            "from": 2270.72,
+            "to": 2272.72,
+            "location": 2,
+            "content": "我第二个样本还是从第一个segment"
+        },
+        {
+            "from": 2272.73,
+            "to": 2274.4,
+            "location": 2,
+            "content": "到第二segment到第三个segment"
+        },
+        {
+            "from": 2274.41,
+            "to": 2276.12,
+            "location": 2,
+            "content": "它的基本走势是一样的"
+        },
+        {
+            "from": 2276.68,
+            "to": 2279.37,
+            "location": 2,
+            "content": "所以它俩成为正样本队的可能性是非常高的"
+        },
+        {
+            "from": 2279.71,
+            "to": 2281.27,
+            "location": 2,
+            "content": "总之别看temporal segment"
+        },
+        {
+            "from": 2281.28,
+            "to": 2284.15,
+            "location": 2,
+            "content": "这个想法非常简单 但真的是非常的有效"
+        },
+        {
+            "from": 2284.85,
+            "to": 2287.22,
+            "location": 2,
+            "content": "我觉得它还能利用到更多的领域中去"
+        },
+        {
+            "from": 2288.29,
+            "to": 2291.2,
+            "location": 2,
+            "content": "另外我想简单提一下的就是文章题目里说的"
+        },
+        {
+            "from": 2291.21,
+            "to": 2292.6,
+            "location": 2,
+            "content": "这些好用的技巧了"
+        },
+        {
+            "from": 2292.96,
+            "to": 2295.36,
+            "location": 2,
+            "content": "这个是在文章的3.2节"
+        },
+        {
+            "from": 2295.59,
+            "to": 2297.12,
+            "location": 2,
+            "content": "也就是在网络训练部分"
+        },
+        {
+            "from": 2298.1,
+            "to": 2299.47,
+            "location": 2,
+            "content": "他们使用的第一个技巧"
+        },
+        {
+            "from": 2299.71,
+            "to": 2301.52,
+            "location": 2,
+            "content": "叫做Cross Modality Pre-training"
+        },
+        {
+            "from": 2301.76,
+            "to": 2305,
+            "location": 2,
+            "content": "它这里的 modality 其实指的就是说图像和光流"
+        },
+        {
+            "from": 2305.13,
+            "to": 2307.88,
+            "location": 2,
+            "content": "因为图像和光流其实也算是挺不一样的输入了"
+        },
+        {
+            "from": 2308.44,
+            "to": 2310.16,
+            "location": 2,
+            "content": "所以也可以理解成是多模态"
+        },
+        {
+            "from": 2310.65,
+            "to": 2312.9,
+            "location": 2,
+            "content": "他这里的意思 就是说你图像这边"
+        },
+        {
+            "from": 2312.9,
+            "to": 2315.85,
+            "location": 2,
+            "content": "可以有ImageNet这么大一个数据集去做预训练"
+        },
+        {
+            "from": 2316.07,
+            "to": 2317.86,
+            "location": 2,
+            "content": "所以你可以直接拿来做微调"
+        },
+        {
+            "from": 2318.45,
+            "to": 2319.19,
+            "location": 2,
+            "content": "效果应该不错"
+        },
+        {
+            "from": 2319.57,
+            "to": 2322.41,
+            "location": 2,
+            "content": "可是光流那边并没有一个很大的光流数据集"
+        },
+        {
+            "from": 2322.42,
+            "to": 2323.76,
+            "location": 2,
+            "content": "去做预训练"
+        },
+        {
+            "from": 2324.27,
+            "to": 2326.42,
+            "location": 2,
+            "content": "如果你只在这种小的视频数据集上"
+        },
+        {
+            "from": 2326.43,
+            "to": 2329.91,
+            "location": 2,
+            "content": "从头训练的话 你光流的效果可能不会太好"
+        },
+        {
+            "from": 2330.31,
+            "to": 2332.58,
+            "location": 2,
+            "content": "怎么样才能去做一个有效的预训练"
+        },
+        {
+            "from": 2333.66,
+            "to": 2334.41,
+            "location": 2,
+            "content": "作者这里就说"
+        },
+        {
+            "from": 2334.63,
+            "to": 2335.88,
+            "location": 2,
+            "content": "其实你把ImageNet"
+        },
+        {
+            "from": 2335.88,
+            "to": 2339.24,
+            "location": 2,
+            "content": "预训练好的模型拿过来用给光流也是可以的"
+        },
+        {
+            "from": 2339.56,
+            "to": 2340.51,
+            "location": 2,
+            "content": "效果也非常好"
+        },
+        {
+            "from": 2341.36,
+            "to": 2342.78,
+            "location": 2,
+            "content": "但是这里问题就来了"
+        },
+        {
+            "from": 2343.44,
+            "to": 2345.39,
+            "location": 2,
+            "content": "你这个ImageNet预训练好的模型"
+        },
+        {
+            "from": 2345.68,
+            "to": 2347.79,
+            "location": 2,
+            "content": "你要接收的输入是RGB图像"
+        },
+        {
+            "from": 2347.8,
+            "to": 2349.8,
+            "location": 2,
+            "content": "是RGB 3个channel"
+        },
+        {
+            "from": 2350.58,
+            "to": 2353.24,
+            "location": 2,
+            "content": "而你这个光流的输入是10张光流图"
+        },
+        {
+            "from": 2353.46,
+            "to": 2355.34,
+            "location": 2,
+            "content": "每个光流图是2个channel"
+        },
+        {
+            "from": 2355.56,
+            "to": 2357.23,
+            "location": 2,
+            "content": "是x y上的分别的位移"
+        },
+        {
+            "from": 2357.5,
+            "to": 2359.08,
+            "location": 2,
+            "content": "所以说你一共有20个channel"
+        },
+        {
+            "from": 2359.7,
+            "to": 2361.275,
+            "location": 2,
+            "content": "那你这个预训练模型"
+        },
+        {
+            "from": 2361.275,
+            "to": 2363.775,
+            "location": 2,
+            "content": "怎么把这3个channel 变成20个channel"
+        },
+        {
+            "from": 2363.775,
+            "to": 2365.005,
+            "location": 2,
+            "content": "才能使用在光流上呢"
+        },
+        {
+            "from": 2366.29,
+            "to": 2369.15,
+            "location": 2,
+            "content": "作者这里呢 其实就把网络的第一层"
+        },
+        {
+            "from": 2369.175,
+            "to": 2371.68,
+            "location": 2,
+            "content": "就是第一个卷积层的结构和参数改变了"
+        },
+        {
+            "from": 2372.36,
+            "to": 2374.84,
+            "location": 2,
+            "content": "他就把因为ImageNet那边预训练好的参数"
+        },
+        {
+            "from": 2374.97,
+            "to": 2376.6,
+            "location": 2,
+            "content": "刚开始的 RGB channel"
+        },
+        {
+            "from": 2376.77,
+            "to": 2378.99,
+            "location": 2,
+            "content": "那3个channel的预训练好的参数"
+        },
+        {
+            "from": 2379.25,
+            "to": 2381.025,
+            "location": 2,
+            "content": "先做了一下平均"
+        },
+        {
+            "from": 2381.025,
+            "to": 2383.69,
+            "location": 2,
+            "content": "那这样3个通道 就变成一个通道了"
+        },
+        {
+            "from": 2384.3,
+            "to": 2386.2,
+            "location": 2,
+            "content": "然后你现在不是需要20个通道吗"
+        },
+        {
+            "from": 2386.62,
+            "to": 2389.85,
+            "location": 2,
+            "content": "我直接就把这一个通道复制20遍就可以了"
+        },
+        {
+            "from": 2390.59,
+            "to": 2393.87,
+            "location": 2,
+            "content": "他们发现这种初始化的方式工作得非常好"
+        },
+        {
+            "from": 2394.26,
+            "to": 2396.73,
+            "location": 2,
+            "content": "后面我们可以看到这个方式提了五六个点"
+        },
+        {
+            "from": 2397.14,
+            "to": 2398.33,
+            "location": 2,
+            "content": "提升是非常显著的"
+        },
+        {
+            "from": 2398.7,
+            "to": 2401.21,
+            "location": 2,
+            "content": "而事实上这种方式现在广泛被使用"
+        },
+        {
+            "from": 2401.42,
+            "to": 2405.15,
+            "location": 2,
+            "content": "接下来的I3D它其实也就是这么去做inflation的"
+        },
+        {
+            "from": 2405.46,
+            "to": 2407.52,
+            "location": 2,
+            "content": "第二个技巧就是作者这里谈到的"
+        },
+        {
+            "from": 2407.53,
+            "to": 2409.12,
+            "location": 2,
+            "content": "这个模型正则化的技巧"
+        },
+        {
+            "from": 2409.94,
+            "to": 2412.39,
+            "location": 2,
+            "content": "那一上来作者就说BN怎么着了"
+        },
+        {
+            "from": 2413.04,
+            "to": 2415.34,
+            "location": 2,
+            "content": "其实我们也讲过很多次BN"
+        },
+        {
+            "from": 2415.35,
+            "to": 2417.34,
+            "location": 2,
+            "content": "这个层真的是让人又爱又恨"
+        },
+        {
+            "from": 2417.63,
+            "to": 2419.18,
+            "location": 2,
+            "content": "用得好 效果提升很好"
+        },
+        {
+            "from": 2419.43,
+            "to": 2421.1,
+            "location": 2,
+            "content": "用得不好 就会(遇到)各种问题"
+        },
+        {
+            "from": 2421.84,
+            "to": 2425.18,
+            "location": 2,
+            "content": "在初期的视频理解领域 用BN就有一些困难"
+        },
+        {
+            "from": 2425.71,
+            "to": 2426.9,
+            "location": 2,
+            "content": "因为数据集太小"
+        },
+        {
+            "from": 2427.3,
+            "to": 2430.35,
+            "location": 2,
+            "content": "所以说虽然BN能够让这个训练加速"
+        },
+        {
+            "from": 2430.84,
+            "to": 2433.69,
+            "location": 2,
+            "content": "但是同样也带来了很严重的过拟合的问题"
+        },
+        {
+            "from": 2434.69,
+            "to": 2436,
+            "location": 2,
+            "content": "那怎么办呢 作者在这里"
+        },
+        {
+            "from": 2436.01,
+            "to": 2438.28,
+            "location": 2,
+            "content": "就提出了一个叫partial BN的做法"
+        },
+        {
+            "from": 2439.04,
+            "to": 2442.11,
+            "location": 2,
+            "content": "他本来的动机是说如果你BN层"
+        },
+        {
+            "from": 2442.28,
+            "to": 2443.71,
+            "location": 2,
+            "content": "是可以微调的话"
+        },
+        {
+            "from": 2444.11,
+            "to": 2447.36,
+            "location": 2,
+            "content": "因为数据集比较小 所以一调就会过拟合"
+        },
+        {
+            "from": 2447.59,
+            "to": 2450.88,
+            "location": 2,
+            "content": "我其实不想调你 我想把你全冻起来是最好的"
+        },
+        {
+            "from": 2451,
+            "to": 2451.56,
+            "location": 2,
+            "content": "不要动了"
+        },
+        {
+            "from": 2452.08,
+            "to": 2455.15,
+            "location": 2,
+            "content": "但是如果你把所有的 BN层全都冻住的话"
+        },
+        {
+            "from": 2455.16,
+            "to": 2457.39,
+            "location": 2,
+            "content": "你可能迁移学习的效果就不太好了"
+        },
+        {
+            "from": 2458.14,
+            "to": 2460.92,
+            "location": 2,
+            "content": "毕竟你之前数据集是图像数据集"
+        },
+        {
+            "from": 2460.93,
+            "to": 2462.6,
+            "location": 2,
+            "content": "而且跟这个视频数据集"
+        },
+        {
+            "from": 2462.61,
+            "to": 2465.68,
+            "location": 2,
+            "content": "和这个视频动作分类 差得还是比较远的"
+        },
+        {
+            "from": 2466.34,
+            "to": 2468.65,
+            "location": 2,
+            "content": "之前BN估计出来的那些统计量"
+        },
+        {
+            "from": 2469.03,
+            "to": 2471.47,
+            "location": 2,
+            "content": "可能就不太适用于这个动作识别"
+        },
+        {
+            "from": 2472.06,
+            "to": 2472.45,
+            "location": 2,
+            "content": "怎么办"
+        },
+        {
+            "from": 2472.86,
+            "to": 2473.89,
+            "location": 2,
+            "content": "所以说作者提出的"
+        },
+        {
+            "from": 2474.14,
+            "to": 2475.65,
+            "location": 2,
+            "content": "partial BN的意思就是说"
+        },
+        {
+            "from": 2476.19,
+            "to": 2478.43,
+            "location": 2,
+            "content": "我们就把第一层的这个BN打开"
+        },
+        {
+            "from": 2478.72,
+            "to": 2480.67,
+            "location": 2,
+            "content": "后面的BN 我们就全都冻住"
+        },
+        {
+            "from": 2481.04,
+            "to": 2481.95,
+            "location": 2,
+            "content": "也就他这里说的"
+        },
+        {
+            "from": 2482.075,
+            "to": 2483.225,
+            "location": 2,
+            "content": " freeze the mean and  variance"
+        },
+        {
+            "from": 2483.275,
+            "to": 2485.08,
+            "location": 2,
+            "content": " of all the being layers"
+        },
+        {
+            "from": 2485.08,
+            "to": 2486.525,
+            "location": 2,
+            "content": " except the first  one"
+        },
+        {
+            "from": 2487.18,
+            "to": 2489.25,
+            "location": 2,
+            "content": "这个意思就是说因为你的输入变了"
+        },
+        {
+            "from": 2489.26,
+            "to": 2491.41,
+            "location": 2,
+            "content": "所以说我第一层这个BN没办法"
+        },
+        {
+            "from": 2491.54,
+            "to": 2492.57,
+            "location": 2,
+            "content": "我必须也得学一学"
+        },
+        {
+            "from": 2493.34,
+            "to": 2495.54,
+            "location": 2,
+            "content": "这样我才能适应你新的输入"
+        },
+        {
+            "from": 2495.67,
+            "to": 2497.14,
+            "location": 2,
+            "content": "适应你新的数据集"
+        },
+        {
+            "from": 2497.83,
+            "to": 2501.01,
+            "location": 2,
+            "content": "但是除了输入层 再往后我就不想动了"
+        },
+        {
+            "from": 2501.34,
+            "to": 2503.84,
+            "location": 2,
+            "content": "因为如果再动就有过拟合的风险了"
+        },
+        {
+            "from": 2504.62,
+            "to": 2506.8,
+            "location": 2,
+            "content": "这个技巧后来也被广泛使用"
+        },
+        {
+            "from": 2507.13,
+            "to": 2509.89,
+            "location": 2,
+            "content": "虽然说现在视频里的数据集都变得很大了"
+        },
+        {
+            "from": 2509.9,
+            "to": 2511.95,
+            "location": 2,
+            "content": "可能暂时是不需要这种partial BN了"
+        },
+        {
+            "from": 2512.18,
+            "to": 2515.06,
+            "location": 2,
+            "content": "但是在微调的时候 或者在很多下游任务上"
+        },
+        {
+            "from": 2515.3,
+            "to": 2518.05,
+            "location": 2,
+            "content": "还是会有很多情况 你需要使用partial BN"
+        },
+        {
+            "from": 2518.05,
+            "to": 2519.57,
+            "location": 2,
+            "content": "一般呢 工作得都不错"
+        },
+        {
+            "from": 2520.43,
+            "to": 2522.87,
+            "location": 2,
+            "content": "第3个好用的技巧 就是数据增强了"
+        },
+        {
+            "from": 2523.66,
+            "to": 2525.02,
+            "location": 2,
+            "content": "因为为了防止过拟合"
+        },
+        {
+            "from": 2525.41,
+            "to": 2527.37,
+            "location": 2,
+            "content": "数据增强是一个必不可少的工具"
+        },
+        {
+            "from": 2528.12,
+            "to": 2529.83,
+            "location": 2,
+            "content": "作者这里就提出了两个东西"
+        },
+        {
+            "from": 2530,
+            "to": 2531.27,
+            "location": 2,
+            "content": "一个叫corner cropping"
+        },
+        {
+            "from": 2531.36,
+            "to": 2532.51,
+            "location": 2,
+            "content": "一个叫scale-jittering"
+        },
+        {
+            "from": 2533.33,
+            "to": 2534.52,
+            "location": 2,
+            "content": "corner cropping其实就是"
+        },
+        {
+            "from": 2534.53,
+            "to": 2536.36,
+            "location": 2,
+            "content": "作者在训练的过程中发现"
+        },
+        {
+            "from": 2536.37,
+            "to": 2538.04,
+            "location": 2,
+            "content": "如果你去做这种random cropping"
+        },
+        {
+            "from": 2538.72,
+            "to": 2539.91,
+            "location": 2,
+            "content": "这个random出来的crop"
+        },
+        {
+            "from": 2540.16,
+            "to": 2543.27,
+            "location": 2,
+            "content": "经常在这个图像正中间或者在中间附近"
+        },
+        {
+            "from": 2543.28,
+            "to": 2546.01,
+            "location": 2,
+            "content": "它很难去crop到图像的"
+        },
+        {
+            "from": 2546.02,
+            "to": 2547.41,
+            "location": 2,
+            "content": "这种边边角角的地方"
+        },
+        {
+            "from": 2547.89,
+            "to": 2548.96,
+            "location": 2,
+            "content": "所以在这篇论文里"
+        },
+        {
+            "from": 2548.97,
+            "to": 2552.36,
+            "location": 2,
+            "content": "它就强制性地 去在那些边角的地方去做裁剪"
+        },
+        {
+            "from": 2553.08,
+            "to": 2555.59,
+            "location": 2,
+            "content": "就像ImageNet之前做这个测试的时候"
+        },
+        {
+            "from": 2555.84,
+            "to": 2556.83,
+            "location": 2,
+            "content": "有的人用one crop"
+        },
+        {
+            "from": 2556.84,
+            "to": 2557.63,
+            "location": 2,
+            "content": "有的人用five crop"
+        },
+        {
+            "from": 2557.64,
+            "to": 2558.51,
+            "location": 2,
+            "content": "ten crop"
+        },
+        {
+            "from": 2559.25,
+            "to": 2559.8,
+            "location": 2,
+            "content": "那个five crop呢"
+        },
+        {
+            "from": 2559.97,
+            "to": 2562.04,
+            "location": 2,
+            "content": "其实就是在左上 右上"
+        },
+        {
+            "from": 2562.05,
+            "to": 2565.04,
+            "location": 2,
+            "content": "左下 右下和中间选5个裁减的位置"
+        },
+        {
+            "from": 2565.62,
+            "to": 2568.17,
+            "location": 2,
+            "content": "这里面作者就是把之前大家去做推理"
+        },
+        {
+            "from": 2568.18,
+            "to": 2570.57,
+            "location": 2,
+            "content": "做测试的一个方法用到训练中来了"
+        },
+        {
+            "from": 2570.58,
+            "to": 2572.37,
+            "location": 2,
+            "content": "当成了一个数据增强的方式"
+        },
+        {
+            "from": 2573.63,
+            "to": 2575.37,
+            "location": 2,
+            "content": "第二个提出的数据增强方式"
+        },
+        {
+            "from": 2575.575,
+            "to": 2577.75,
+            "location": 2,
+            "content": "也就他这里说的这个scale-jittering "
+        },
+        {
+            "from": 2577.75,
+            "to": 2580.575,
+            "location": 2,
+            "content": "就是想通过改变图片的这个长宽比 "
+        },
+        {
+            "from": 2580.625,
+            "to": 2583.11,
+            "location": 2,
+            "content": "而去增加这个输入图片的多样性"
+        },
+        {
+            "from": 2583.74,
+            "to": 2585.73,
+            "location": 2,
+            "content": "作者这里的实现方式很高效"
+        },
+        {
+            "from": 2586.18,
+            "to": 2587.54,
+            "location": 2,
+            "content": "他就是先把这些视频帧"
+        },
+        {
+            "from": 2587.63,
+            "to": 2590.26,
+            "location": 2,
+            "content": "全都resize到256×340"
+        },
+        {
+            "from": 2590.92,
+            "to": 2593.47,
+            "location": 2,
+            "content": "然后他在这个图片上就去各种各样的做裁剪"
+        },
+        {
+            "from": 2593.89,
+            "to": 2597.64,
+            "location": 2,
+            "content": "但是他做裁剪的长宽 都是从这个列表里去选的"
+        },
+        {
+            "from": 2598.1,
+            "to": 2599.97,
+            "location": 2,
+            "content": "意思就是说有些裁剪出来的通道"
+        },
+        {
+            "from": 2599.98,
+            "to": 2601.73,
+            "location": 2,
+            "content": "比如说就是256×192"
+        },
+        {
+            "from": 2601.98,
+            "to": 2603.65,
+            "location": 2,
+            "content": "有些就是224×168"
+        },
+        {
+            "from": 2603.78,
+            "to": 2605.65,
+            "location": 2,
+            "content": "当然也有可能是224×224"
+        },
+        {
+            "from": 2605.98,
+            "to": 2607.34,
+            "location": 2,
+            "content": "反正就是随机排列组合去吧"
+        },
+        {
+            "from": 2608.26,
+            "to": 2611.13,
+            "location": 2,
+            "content": "这样图片的长宽比就变得非常多样性了"
+        },
+        {
+            "from": 2611.62,
+            "to": 2614.8,
+            "location": 2,
+            "content": "从而能提供更多的训练数据 减少这种过拟合"
+        },
+        {
+            "from": 2615.42,
+            "to": 2616.7,
+            "location": 2,
+            "content": "这两种数据增强的方式"
+        },
+        {
+            "from": 2616.87,
+            "to": 2619.7,
+            "location": 2,
+            "content": "其实一直到现在还有很多论文也在使用"
+        },
+        {
+            "from": 2620.38,
+            "to": 2621.45,
+            "location": 2,
+            "content": "因为确实比较有效"
+        },
+        {
+            "from": 2622.27,
+            "to": 2624.66,
+            "location": 2,
+            "content": "总之除了这几点好用的技巧之外"
+        },
+        {
+            "from": 2624.83,
+            "to": 2627.38,
+            "location": 2,
+            "content": "TSN这篇论文里还有很多宝藏技巧"
+        },
+        {
+            "from": 2628.13,
+            "to": 2629.13,
+            "location": 2,
+            "content": "所以这也就是为什么"
+        },
+        {
+            "from": 2629.14,
+            "to": 2630.33,
+            "location": 2,
+            "content": "作者把good practice"
+        },
+        {
+            "from": 2630.34,
+            "to": 2631.85,
+            "location": 2,
+            "content": "都放到这个论文题目里了"
+        },
+        {
+            "from": 2632.17,
+            "to": 2634.62,
+            "location": 2,
+            "content": "因为真的是这篇论文最出彩的地方之一"
+        },
+        {
+            "from": 2636.37,
+            "to": 2639,
+            "location": 2,
+            "content": "那很多的消融实验呢 我们就暂且跳过不看了"
+        },
+        {
+            "from": 2639.51,
+            "to": 2641.46,
+            "location": 2,
+            "content": "他提出这些技巧都非常有用"
+        },
+        {
+            "from": 2641.59,
+            "to": 2643.02,
+            "location": 2,
+            "content": "提点其实都很显著的"
+        },
+        {
+            "from": 2643.61,
+            "to": 2645.28,
+            "location": 2,
+            "content": "我们直接来看最后这个大表"
+        },
+        {
+            "from": 2645.41,
+            "to": 2647.12,
+            "location": 2,
+            "content": "来看一看TSN的效果"
+        },
+        {
+            "from": 2647.13,
+            "to": 2648.92,
+            "location": 2,
+            "content": "跟之前的方法比 到底有多好"
+        },
+        {
+            "from": 2649.73,
+            "to": 2652.07,
+            "location": 2,
+            "content": "作者在这里把之前手工特征的方式"
+        },
+        {
+            "from": 2652.24,
+            "to": 2653.47,
+            "location": 2,
+            "content": "列到了这个表的上面"
+        },
+        {
+            "from": 2653.77,
+            "to": 2656.44,
+            "location": 2,
+            "content": "然后底下这片 全都是用深度学习来做的"
+        },
+        {
+            "from": 2656.91,
+            "to": 2658.7,
+            "location": 2,
+            "content": "里面有一些我们其实已经讲过了"
+        },
+        {
+            "from": 2658.83,
+            "to": 2661.02,
+            "location": 2,
+            "content": "比如说双流网络59.4%"
+        },
+        {
+            "from": 2661.03,
+            "to": 2663.02,
+            "location": 2,
+            "content": "和UCF上88%的准确度"
+        },
+        {
+            "from": 2663.89,
+            "to": 2664.61,
+            "location": 2,
+            "content": "而这个VideoDarwin"
+        },
+        {
+            "from": 2664.87,
+            "to": 2666.36,
+            "location": 2,
+            "content": "是用ranking function做的"
+        },
+        {
+            "from": 2666.62,
+            "to": 2668.11,
+            "location": 2,
+            "content": "这篇论文也非常有意思"
+        },
+        {
+            "from": 2668.54,
+            "to": 2670.25,
+            "location": 2,
+            "content": "只不过没有什么后续工作了"
+        },
+        {
+            "from": 2670.95,
+            "to": 2672.2,
+            "location": 2,
+            "content": "然后像C3D"
+        },
+        {
+            "from": 2672.2,
+            "to": 2675.04,
+            "location": 2,
+            "content": "其实就是3D-CNN那边的一个早期的工作"
+        },
+        {
+            "from": 2675.6,
+            "to": 2677.67,
+            "location": 2,
+            "content": "我们很快就会在下一个部分就讲到"
+        },
+        {
+            "from": 2678.49,
+            "to": 2680.44,
+            "location": 2,
+            "content": "但是我们可以看到这些早期的工作"
+        },
+        {
+            "from": 2680.57,
+            "to": 2682.56,
+            "location": 2,
+            "content": "即使用了3个卷积神经网络"
+        },
+        {
+            "from": 2682.57,
+            "to": 2684.56,
+            "location": 2,
+            "content": "它最后的结果也才85.2%"
+        },
+        {
+            "from": 2685.26,
+            "to": 2687.46,
+            "location": 2,
+            "content": "既不能跟这种传统的手工特征比"
+        },
+        {
+            "from": 2687.84,
+            "to": 2690.1,
+            "location": 2,
+            "content": "也没法跟双流网络的性能去比"
+        },
+        {
+            "from": 2690.88,
+            "to": 2693.37,
+            "location": 2,
+            "content": "直到I3D的出现才改变了这种现状"
+        },
+        {
+            "from": 2694,
+            "to": 2695.67,
+            "location": 2,
+            "content": "然后Two stream + LSTM\n"
+        },
+        {
+            "from": 2695.68,
+            "to": 2696.67,
+            "location": 2,
+            "content": "也就是我们刚讲过的"
+        },
+        {
+            "from": 2696.96,
+            "to": 2698.83,
+            "location": 2,
+            "content": "Beyond Short Snippets那篇论文"
+        },
+        {
+            "from": 2699.23,
+            "to": 2700.62,
+            "location": 2,
+            "content": "但是提升了也不是很多"
+        },
+        {
+            "from": 2700.99,
+            "to": 2702.74,
+            "location": 2,
+            "content": "从88%涨到了88.6%"
+        },
+        {
+            "from": 2703.34,
+            "to": 2706.18,
+            "location": 2,
+            "content": "然后 TDD这篇论文就是王老师自己的工作"
+        },
+        {
+            "from": 2706.43,
+            "to": 2708.54,
+            "location": 2,
+            "content": "就是那篇把光流简单地堆叠"
+        },
+        {
+            "from": 2708.73,
+            "to": 2710.6,
+            "location": 2,
+            "content": "变成利用轨迹去堆叠的方式"
+        },
+        {
+            "from": 2711.19,
+            "to": 2713.98,
+            "location": 2,
+            "content": "这个提升呢还是比较明显的 就从88%就到90%了"
+        },
+        {
+            "from": 2714.53,
+            "to": 2715.9,
+            "location": 2,
+            "content": "最后呢 我们来看一下TSN"
+        },
+        {
+            "from": 2716.64,
+            "to": 2716.97,
+            "location": 2,
+            "content": "TSN这里呢"
+        },
+        {
+            "from": 2717.19,
+            "to": 2719.07,
+            "location": 2,
+            "content": "我们就看两个modality就可以了"
+        },
+        {
+            "from": 2719.29,
+            "to": 2720.54,
+            "location": 2,
+            "content": "就是RGB和光流"
+        },
+        {
+            "from": 2721.18,
+            "to": 2723.21,
+            "location": 2,
+            "content": "至于3个modality呢 是因为他们用了"
+        },
+        {
+            "from": 2723.22,
+            "to": 2726.62,
+            "location": 2,
+            "content": "另外一种 这个光流的形式 这里我们就不细说了"
+        },
+        {
+            "from": 2727.15,
+            "to": 2729.04,
+            "location": 2,
+            "content": "这里我们看到就用两个modality"
+        },
+        {
+            "from": 2729.05,
+            "to": 2731.92,
+            "location": 2,
+            "content": "这个TSN呢它在HMDB51上就有68.5 %"
+        },
+        {
+            "from": 2732.09,
+            "to": 2733.4,
+            "location": 2,
+            "content": "比之前的方法都高"
+        },
+        {
+            "from": 2733.82,
+            "to": 2735.41,
+            "location": 2,
+            "content": "UCF101上也有94%"
+        },
+        {
+            "from": 2735.63,
+            "to": 2737.51,
+            "location": 2,
+            "content": "比之前的方法也是提升了不少"
+        },
+        {
+            "from": 2738.64,
+            "to": 2741.59,
+            "location": 2,
+            "content": "TSN其实已经是把双流网络做得非常好了"
+        },
+        {
+            "from": 2742.33,
+            "to": 2743.97,
+            "location": 2,
+            "content": "接下来还有一些后续工作"
+        },
+        {
+            "from": 2744.48,
+            "to": 2747.54,
+            "location": 2,
+            "content": "比如说我和蓝振忠[西湖大学]就有一篇叫DVOF[Deep Local Video Feature for Action Recognition]的论文"
+        },
+        {
+            "from": 2748.04,
+            "to": 2750.83,
+            "location": 2,
+            "content": "就是在TSN的基础上加入了全局编码"
+        },
+        {
+            "from": 2751.025,
+            "to": 2752.6,
+            "location": 2,
+            "content": "比如说Fisher Vectors (FV) encoding"
+        },
+        {
+            "from": 2752.6,
+            "to": 2753.83,
+            "location": 2,
+            "content": "或者VLAD encoding"
+        },
+        {
+            "from": 2753.84,
+            "to": 2754.99,
+            "location": 2,
+            "content": "这些编码方式"
+        },
+        {
+            "from": 2755.53,
+            "to": 2757.33,
+            "location": 2,
+            "content": "从而获得了更加全局的特征"
+        },
+        {
+            "from": 2757.74,
+            "to": 2759.34,
+            "location": 2,
+            "content": "然后在UCF101上的效果"
+        },
+        {
+            "from": 2759.47,
+            "to": 2760.86,
+            "location": 2,
+            "content": "也推到了95%点多"
+        },
+        {
+            "from": 2761.41,
+            "to": 2763.04,
+            "location": 2,
+            "content": "然后接下来在CVPR 2017 "
+        },
+        {
+            "from": 2763.05,
+            "to": 2764.8,
+            "location": 2,
+            "content": "还有另外一篇论文叫TLE"
+        },
+        {
+            "from": 2765.13,
+            "to": 2766.6,
+            "location": 2,
+            "content": "也是用了非常类似的思想"
+        },
+        {
+            "from": 2767.13,
+            "to": 2769.2,
+            "location": 2,
+            "content": "只不过我们的不是端到端的"
+        },
+        {
+            "from": 2769.21,
+            "to": 2771.16,
+            "location": 2,
+            "content": "他们又把这个做成端到端了"
+        },
+        {
+            "from": 2771.79,
+            "to": 2772.79,
+            "location": 2,
+            "content": "然后TLE的结果"
+        },
+        {
+            "from": 2772.88,
+            "to": 2775.91,
+            "location": 2,
+            "content": "在UCF101和HMDB51上也是非常的高"
+        },
+        {
+            "from": 2776.23,
+            "to": 2778.51,
+            "location": 2,
+            "content": "UCF101基本上已经到了将近96%了"
+        },
+        {
+            "from": 2779.4,
+            "to": 2780.95,
+            "location": 2,
+            "content": "也就是在2017年"
+        },
+        {
+            "from": 2780.95,
+            "to": 2782.54,
+            "location": 2,
+            "content": " I3D这篇论文也出来了"
+        },
+        {
+            "from": 2783.175,
+            "to": 2784.3,
+            "location": 2,
+            "content": "所以说呢 至此"
+        },
+        {
+            "from": 2784.3,
+            "to": 2786.5699999999997,
+            "location": 2,
+            "content": "双流网络基本也就慢慢地淡出舞台了"
+        },
+        {
+            "from": 2786.9,
+            "to": 2789.01,
+            "location": 2,
+            "content": "而且因为有了Kinetics这个数据集"
+        },
+        {
+            "from": 2789.22,
+            "to": 2791.37,
+            "location": 2,
+            "content": "所以说UCF101和HMDB51"
+        },
+        {
+            "from": 2791.38,
+            "to": 2793.41,
+            "location": 2,
+            "content": "也基本慢慢的淡出这个舞台了"
+        },
+        {
+            "from": 2794.27,
+            "to": 2796.86,
+            "location": 2,
+            "content": "所以说 TSN是视频理解领域里"
+        },
+        {
+            "from": 2796.87,
+            "to": 2799.14,
+            "location": 2,
+            "content": "不得不读的一篇里程碑式的工作"
+        },
+        {
+            "from": 2799.58,
+            "to": 2802.14,
+            "location": 2,
+            "content": "不论你是做分类还是做动作检测"
+        },
+        {
+            "from": 2802.15,
+            "to": 2804.74,
+            "location": 2,
+            "content": "还是做其他任何的这个视频理解的任务"
+        },
+        {
+            "from": 2805.22,
+            "to": 2806.33,
+            "location": 2,
+            "content": "都不要错过TSN"
+        },
+        {
+            "from": 2807.78,
+            "to": 2809.62,
+            "location": 2,
+            "content": "那在这个视频串讲的前半部分"
+        },
+        {
+            "from": 2810.31,
+            "to": 2811.69,
+            "location": 2,
+            "content": "我们主要就是在第一部分里"
+        },
+        {
+            "from": 2811.7,
+            "to": 2813.21,
+            "location": 2,
+            "content": "讲了DeepVideo这个工作"
+        },
+        {
+            "from": 2813.5,
+            "to": 2816.1,
+            "location": 2,
+            "content": "然后在第二部分里讲了双流网络"
+        },
+        {
+            "from": 2816.11,
+            "to": 2817.7,
+            "location": 2,
+            "content": "以及双流网络的一些变体"
+        },
+        {
+            "from": 2818.85,
+            "to": 2821.44,
+            "location": 2,
+            "content": "那具体的这个发展历程我们可以再过一遍"
+        },
+        {
+            "from": 2822.03,
+            "to": 2824.79,
+            "location": 2,
+            "content": "首先就是在2012年有了AlexNet之后呢"
+        },
+        {
+            "from": 2825.4,
+            "to": 2829.09,
+            "location": 2,
+            "content": "大家就想把这个卷积神经网络用到视觉的方方面面"
+        },
+        {
+            "from": 2829.65,
+            "to": 2831.77,
+            "location": 2,
+            "content": "所以说呢 就有了这篇CVPR 2014的论文 "
+        },
+        {
+            "from": 2831.78,
+            "to": 2832.49,
+            "location": 2,
+            "content": "DeepVideo"
+        },
+        {
+            "from": 2832.92,
+            "to": 2834.44,
+            "location": 2,
+            "content": "基本就是把卷积神经网络"
+        },
+        {
+            "from": 2834.45,
+            "to": 2835.96,
+            "location": 2,
+            "content": "迁移到了视频理解这边"
+        },
+        {
+            "from": 2836.51,
+            "to": 2838.13,
+            "location": 2,
+            "content": "不过呢 它的效果比较一般"
+        },
+        {
+            "from": 2838.81,
+            "to": 2841.48,
+            "location": 2,
+            "content": "经过一番研究呢 大家发现这个视频理解"
+        },
+        {
+            "from": 2841.49,
+            "to": 2844.2,
+            "location": 2,
+            "content": "可能还是需要对时间或者对运动讯息"
+        },
+        {
+            "from": 2844.33,
+            "to": 2845.6,
+            "location": 2,
+            "content": "有一些更好的了解"
+        },
+        {
+            "from": 2846.05,
+            "to": 2849.16,
+            "location": 2,
+            "content": "所以说紧接着一个非常庞大的分支就出来了"
+        },
+        {
+            "from": 2849.81,
+            "to": 2850.68,
+            "location": 2,
+            "content": "就是这个 双流网络"
+        },
+        {
+            "from": 2851.31,
+            "to": 2854.31,
+            "location": 2,
+            "content": "双流网络呢 就是在你原来有一支网络的基础上"
+        },
+        {
+            "from": 2854.32,
+            "to": 2856.07,
+            "location": 2,
+            "content": "又加了一支时间流网络"
+        },
+        {
+            "from": 2856.7,
+            "to": 2859.09,
+            "location": 2,
+            "content": "这个时间流网络的输入呢 是光流图像 "
+        },
+        {
+            "from": 2859.65,
+            "to": 2861.125,
+            "location": 2,
+            "content": "这样的话呢 网络本身"
+        },
+        {
+            "from": 2861.125,
+            "to": 2864.605,
+            "location": 2,
+            "content": "就不需要再去从原始的那个视频里去学习运动信息了"
+        },
+        {
+            "from": 2864.94,
+            "to": 2867.58,
+            "location": 2,
+            "content": "这些运动信息呢可以直接从光流而得到"
+        },
+        {
+            "from": 2867.91,
+            "to": 2869.58,
+            "location": 2,
+            "content": "所以说大大地简化了这个问题"
+        },
+        {
+            "from": 2869.59,
+            "to": 2871.22,
+            "location": 2,
+            "content": "而且效果也变得非常好"
+        },
+        {
+            "from": 2871.31,
+            "to": 2873.74,
+            "location": 2,
+            "content": "终于能跟手工的特征打成平手了"
+        },
+        {
+            "from": 2874.48,
+            "to": 2877.67,
+            "location": 2,
+            "content": "自从打成平手以后呢 后续的工作就越来越多了"
+        },
+        {
+            "from": 2878.18,
+            "to": 2879.9,
+            "location": 2,
+            "content": "比如说怎么去更好地利用光流呢"
+        },
+        {
+            "from": 2880.87,
+            "to": 2883.31,
+            "location": 2,
+            "content": "通过这种沿着轨迹去堆叠光流的方式"
+        },
+        {
+            "from": 2883.44,
+            "to": 2886.07,
+            "location": 2,
+            "content": "就有了CVPR 2015的这篇TDD论文"
+        },
+        {
+            "from": 2886.75,
+            "to": 2889.28,
+            "location": 2,
+            "content": "然后如何对这种时序进行更好的建模"
+        },
+        {
+            "from": 2890.03,
+            "to": 2892.54,
+            "location": 2,
+            "content": "所以大家自然而然的 就想到了使用LSTM"
+        },
+        {
+            "from": 2892.67,
+            "to": 2894.14,
+            "location": 2,
+            "content": "也就是后来CVPR 2015的"
+        },
+        {
+            "from": 2894.15,
+            "to": 2895.98,
+            "location": 2,
+            "content": "这个Beyond-short-snippets\n这篇论文"
+        },
+        {
+            "from": 2896.74,
+            "to": 2898.09,
+            "location": 2,
+            "content": "然后呢 因为双流网络"
+        },
+        {
+            "from": 2898.1,
+            "to": 2899.73,
+            "location": 2,
+            "content": "它本身做的是一个Late Fusion"
+        },
+        {
+            "from": 2899.98,
+            "to": 2901.73,
+            "location": 2,
+            "content": "就是在网络最后把这个输出"
+        },
+        {
+            "from": 2901.82,
+            "to": 2903.29,
+            "location": 2,
+            "content": "直接加权平均了一下"
+        },
+        {
+            "from": 2903.65,
+            "to": 2905.86,
+            "location": 2,
+            "content": "大家就想如果你做Early Fusion"
+        },
+        {
+            "from": 2905.87,
+            "to": 2906.61,
+            "location": 2,
+            "content": "效果会不会更好呢"
+        },
+        {
+            "from": 2907.1,
+            "to": 2908.45,
+            "location": 2,
+            "content": "所以说在CVPR 2016的时候呢"
+        },
+        {
+            "from": 2908.62,
+            "to": 2910.33,
+            "location": 2,
+            "content": "就有了这篇Early Fusion的论文"
+        },
+        {
+            "from": 2911.27,
+            "to": 2914.34,
+            "location": 2,
+            "content": "最后呢 为了加强对这种长视频的理解"
+        },
+        {
+            "from": 2914.35,
+            "to": 2916.81,
+            "location": 2,
+            "content": "在ECCV 2016就有了TSN这篇论文"
+        },
+        {
+            "from": 2917.13,
+            "to": 2919.89,
+            "location": 2,
+            "content": "TSN呢就是把一个长视频打成很多的分段"
+        },
+        {
+            "from": 2919.9,
+            "to": 2922.09,
+            "location": 2,
+            "content": "然后每一分段都去算一个结果"
+        },
+        {
+            "from": 2922.45,
+            "to": 2924.5,
+            "location": 2,
+            "content": "然后把这些结果呢 求一个共识"
+        },
+        {
+            "from": 2924.89,
+            "to": 2926.61,
+            "location": 2,
+            "content": "最后得到一个更稳健的输出"
+        },
+        {
+            "from": 2927.5,
+            "to": 2929.33,
+            "location": 2,
+            "content": "接下来呢在TSN的基础上"
+        },
+        {
+            "from": 2929.34,
+            "to": 2931.9,
+            "location": 2,
+            "content": "CVPR 2017就有两篇工作"
+        },
+        {
+            "from": 2932.11,
+            "to": 2934.78,
+            "location": 2,
+            "content": "想法呢 都是把这种全局编码加到这个TSN里面"
+        },
+        {
+            "from": 2935.23,
+            "to": 2936.72,
+            "location": 2,
+            "content": "去学到一个更加全局的"
+        },
+        {
+            "from": 2936.93,
+            "to": 2938.24,
+            "location": 2,
+            "content": " 一个video level的特征"
+        },
+        {
+            "from": 2938.71,
+            "to": 2942.14,
+            "location": 2,
+            "content": "DVOF呢不是端到端的 而TLE是端到端的"
+        },
+        {
+            "from": 2943.12,
+            "to": 2946.79,
+            "location": 2,
+            "content": "这个呢 大概就是从14年到17年视频理解领域"
+        },
+        {
+            "from": 2946.8,
+            "to": 2948.79,
+            "location": 2,
+            "content": "在双流这个方向上的一些发展"
+        },
+        {
+            "from": 2949.74,
+            "to": 2952.33,
+            "location": 2,
+            "content": "这个结果呢 如果拿UCF101来举例的话"
+        },
+        {
+            "from": 2952.54,
+            "to": 2954.77,
+            "location": 2,
+            "content": "也就是从DeepVideo的65%啊"
+        },
+        {
+            "from": 2954.78,
+            "to": 2957.65,
+            "location": 2,
+            "content": "到Two-Stream的这个88% 然后到TSN的这个94%"
+        },
+        {
+            "from": 2957.66,
+            "to": 2959.37,
+            "location": 2,
+            "content": "一直到TLE的这个96%"
+        },
+        {
+            "from": 2959.76,
+            "to": 2961.91,
+            "location": 2,
+            "content": "基本上就是把UCF101刷爆了"
+        },
+        {
+            "from": 2963.15,
+            "to": 2964.3,
+            "location": 2,
+            "content": "那我上面画的这张图呢"
+        },
+        {
+            "from": 2964.47,
+            "to": 2966.9,
+            "location": 2,
+            "content": "其实都是一些传统的手工特征来做"
+        },
+        {
+            "from": 2966.91,
+            "to": 2967.98,
+            "location": 2,
+            "content": "这个视频动作分类的"
+        },
+        {
+            "from": 2968.55,
+            "to": 2969.64,
+            "location": 2,
+            "content": "我之所以画这张图呢"
+        },
+        {
+            "from": 2970.33,
+            "to": 2973.18,
+            "location": 2,
+            "content": "其实是想对比一下传统的手工特征的发展历程"
+        },
+        {
+            "from": 2973.19,
+            "to": 2976.26,
+            "location": 2,
+            "content": "和这个用深度学习做动作识别的发展历程"
+        },
+        {
+            "from": 2976.97,
+            "to": 2977.85,
+            "location": 2,
+            "content": "其实我们可以看出来呢"
+        },
+        {
+            "from": 2977.98,
+            "to": 2980.13,
+            "location": 2,
+            "content": "它的发展历程呢 是非常相像的"
+        },
+        {
+            "from": 2980.69,
+            "to": 2982.71,
+            "location": 2,
+            "content": "手工特征那边呢 是在图像方面"
+        },
+        {
+            "from": 2982.72,
+            "to": 2985.03,
+            "location": 2,
+            "content": "2004年先有了SIFT这个feature"
+        },
+        {
+            "from": 2985.44,
+            "to": 2987.23,
+            "location": 2,
+            "content": "然后呢就延伸到了视频领域 "
+        },
+        {
+            "from": 2987.24,
+            "to": 2989.07,
+            "location": 2,
+            "content": "所以就有了STIP这个feature"
+        },
+        {
+            "from": 2989.28,
+            "to": 2990.23,
+            "location": 2,
+            "content": "Special Temporal Interest Point"
+        },
+        {
+            "from": 2990.2,
+            "to": 2991.2,
+            "location": 2,
+            "content": "Special Tem poral Interest Point"
+        },
+        {
+            "from": 2991.93,
+            "to": 2993.8,
+            "location": 2,
+            "content": "那就跟2012年有了AlexNet"
+        },
+        {
+            "from": 2993.81,
+            "to": 2995.92,
+            "location": 2,
+            "content": "然后把它拓展到DeepVideo一样"
+        },
+        {
+            "from": 2996.49,
+            "to": 2999.96,
+            "location": 2,
+            "content": "然而紧接着 因为这个视频需要更多的时序信息"
+        },
+        {
+            "from": 3000.3,
+            "to": 3002.33,
+            "location": 2,
+            "content": "所以手工特征呢 就把光流加进来"
+        },
+        {
+            "from": 3002.34,
+            "to": 3003.73,
+            "location": 2,
+            "content": "而且把轨迹也加进来"
+        },
+        {
+            "from": 3003.82,
+            "to": 3004.97,
+            "location": 2,
+            "content": "那就推出了这个Dense Trajectories (DT)"
+        },
+        {
+            "from": 3004.98,
+            "to": 3006.57,
+            "location": 2,
+            "content": " 和improved Dense Trajectories (IDT)"
+        },
+        {
+            "from": 3006.58,
+            "to": 3007.81,
+            "location": 2,
+            "content": "这两个工作"
+        },
+        {
+            "from": 3008.275,
+            "to": 3009.475,
+            "location": 2,
+            "content": "其实也就对应了这边的"
+        },
+        {
+            "from": 3009.475,
+            "to": 3011.6450000000004,
+            "location": 2,
+            "content": "Two-Stream和TDD这两个工作"
+        },
+        {
+            "from": 3012.27,
+            "to": 3014.18,
+            "location": 2,
+            "content": "然后呢 你这抽出来的都是特征"
+        },
+        {
+            "from": 3014.43,
+            "to": 3017.38,
+            "location": 2,
+            "content": "所以说如果你想做更长时间的这种视频处理"
+        },
+        {
+            "from": 3017.39,
+            "to": 3019.62,
+            "location": 2,
+            "content": "或者你想对这个时序进行建模的话"
+        },
+        {
+            "from": 3019.93,
+            "to": 3023.07,
+            "location": 2,
+            "content": "那你都可以用LSTM 所以说手工特征那边"
+        },
+        {
+            "from": 3023.28,
+            "to": 3025.39,
+            "location": 2,
+            "content": "也会先抽出特征 然后再用LSTM"
+        },
+        {
+            "from": 3026.63,
+            "to": 3028.26,
+            "location": 2,
+            "content": "然后深度学习这边也一样"
+        },
+        {
+            "from": 3028.27,
+            "to": 3030.1,
+            "location": 2,
+            "content": "就是在一个卷积神经网络之后"
+        },
+        {
+            "from": 3030.31,
+            "to": 3034.67,
+            "location": 2,
+            "content": "再加上这个LSTM 那最后呢 就是为了处理这种长视频"
+        },
+        {
+            "from": 3034.68,
+            "to": 3036.95,
+            "location": 2,
+            "content": "或者为了得到这种全局的信息"
+        },
+        {
+            "from": 3037.44,
+            "to": 3040.03,
+            "location": 2,
+            "content": "那手工特征那边呢也会把IDT这个特征"
+        },
+        {
+            "from": 3040.24,
+            "to": 3041.19,
+            "location": 2,
+            "content": "还有跟这个Fisher Vectors (FV) encoding"
+        },
+        {
+            "from": 3041.2,
+            "to": 3042.59,
+            "location": 2,
+            "content": "去做一个融合"
+        },
+        {
+            "from": 3042.95,
+            "to": 3044.94,
+            "location": 2,
+            "content": "从而去得到一个这种全局的"
+        },
+        {
+            "from": 3044.95,
+            "to": 3045.9,
+            "location": 2,
+            "content": "video level的特征"
+        },
+        {
+            "from": 3046.3,
+            "to": 3046.8,
+            "location": 2,
+            "content": "那深度学习这边呢"
+        },
+        {
+            "from": 3046.82,
+            "to": 3048.49,
+            "location": 2,
+            "content": "也就是把Fisher Vectors (FV) encoding"
+        },
+        {
+            "from": 3048.78,
+            "to": 3050.45,
+            "location": 2,
+            "content": "做到了整个这个框架之内"
+        },
+        {
+            "from": 3051.08,
+            "to": 3052.46,
+            "location": 2,
+            "content": "对应的呢其实就是TSN"
+        },
+        {
+            "from": 3052.47,
+            "to": 3054.78,
+            "location": 2,
+            "content": "DVOF、TLE这一系列工作"
+        },
+        {
+            "from": 3055.77,
+            "to": 3056.73,
+            "location": 2,
+            "content": "所以我们可以看到"
+        },
+        {
+            "from": 3056.86,
+            "to": 3059.05,
+            "location": 2,
+            "content": "其实不论这个工具怎么在改变"
+        },
+        {
+            "from": 3059.6,
+            "to": 3061.51,
+            "location": 2,
+            "content": "发展历程其实都是相似的"
+        },
+        {
+            "from": 3062.19,
+            "to": 3063.78,
+            "location": 2,
+            "content": "那在下一期呢 我们会接着讲"
+        },
+        {
+            "from": 3063.8,
+            "to": 3065.725,
+            "location": 2,
+            "content": "3D网络和Video Transformer"
+        },
+        {
+            "from": 3066.26,
+            "to": 3069.38,
+            "location": 2,
+            "content": "到时候我们可以再看一下这个2D网络 3D网络"
+        },
+        {
+            "from": 3069.39,
+            "to": 3070.22,
+            "location": 2,
+            "content": "双流网络"
+        },
+        {
+            "from": 3070.23,
+            "to": 3072.3,
+            "location": 2,
+            "content": "Video Transformer所有的这些概念"
+        },
+        {
+            "from": 3072.3,
+            "to": 3074,
+            "location": 2,
+            "content": "到底有哪些区别和联系"
+        }
+    ]
+}
