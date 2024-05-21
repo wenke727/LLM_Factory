@@ -27,7 +27,7 @@ class QwenModelWarpper:
         )
 
         # 编码输入并发送到设备
-        model_inputs = self.tokenizer([text], return_tensors="pt").to(self.device)
+        model_inputs = self.tokenizer([text], return_tensors="pt").to(self.model.device)
 
         # 模型生成回答
         generated_ids = self.model.generate(
