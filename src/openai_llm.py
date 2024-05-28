@@ -3,14 +3,10 @@ import base64
 from mimetypes import guess_type
 from openai import AzureOpenAI
 
+END_POINT = "https://xxx.openai.azure.com/"
 API_KEY = ""
-API_BASE = ""
-DEPLOYMENT_NAME = ""
+DEPLOYMENT_NAME = "GPT-4-vision"
 
-
-import openai
-
-openai.chat.completions.create()
 
 def local_image_to_data_url(image_path):
     # Guess the MIME type of the image based on the file extension
@@ -35,6 +31,9 @@ class AzureOpenAIModelWrapper:
         参数:
         - model_name (str): 使用的模型名称，例如 'gpt-4'.
         - device (str, optional): 设备参数，此处作为占位符使用，实际不会应用于HTTP请求。默认为'azure'.
+
+        Refs:
+        - https://learn.microsoft.com/zh-cn/azure/ai-services/openai/chatgpt-quickstart?tabs=command-line%2Cpython-new&pivots=programming-language-python
         """
         # 从环境变量中读取API key、endpoint和deployment名称
         api_key = os.getenv('AZURE_OPENAI_API_KEY')
@@ -97,8 +96,7 @@ class AzureOpenAIModelWrapper:
                 frequency_penalty=frequency_penalty,
                 presence_penalty=presence_penalty
             )
-            # 解析生成的回答
-            answer = response['choices'][0]['message']['content']
+            answer = response.choices[0].message.content
         except Exception as e:
             if verbose:
                 print("Error during API call:", str(e))
