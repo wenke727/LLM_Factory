@@ -7,10 +7,10 @@ sidebar_class_name: hidden
 New to LangChain or to LLM app development in general? Read this material to quickly get up and running.
 
 ### Basics
-- [Build a Simple LLM Application with LCEL](/docs/tutorials/llm_chain)
-- [Build a Chatbot](/docs/tutorials/chatbot)
-- [Build vector stores and retrievers](/docs/tutorials/retrievers)
-- [Build an Agent](./agents.ipynb)
+- [x] [Build a Simple LLM Application with LCEL](./tutorials/llm_chain.ipynb)
+- [x] [Build a Chatbot](./tutorials/chatbot.ipynb)
+- [x] [Build vector stores and retrievers](./tutorials/retrievers.ipynb)
+- [x] [Build an Agent](./tutorials/agents.ipynb)
 
 ### Working with external knowledge
 - [Build a Retrieval Augmented Generation (RAG) Application](/docs/tutorials/rag)
@@ -44,3 +44,10 @@ LangSmith documentation is hosted on a separate site.
 You can peruse [LangSmith tutorials here](https://docs.smith.langchain.com/tutorials/).
 
 For a longer list of tutorials, see our [cookbook section](https://github.com/langchain-ai/langchain/tree/master/cookbook).
+
+# load env
+
+```python
+from dotenv import load_dotenv
+load_dotenv('../.env', verbose=True)
+```
