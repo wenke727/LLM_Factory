@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI, OpenAI
 from langchain_openai import AzureChatOpenAI, AzureOpenAI
 
 
-def initialize_ai_client(use_chat_client=False):
+def initialize_ai_client(use_chat_client=True):
     """
     Initializes and returns an AI client based on environment configuration and client type.
 
@@ -25,10 +25,14 @@ def initialize_ai_client(use_chat_client=False):
 
     if azure_api_key and azure_endpoint:
         print("Initializing Azure OpenAI client...")
+        params = {
+            "model":  os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME"),
+            "deployment_name":  os.getenv("AZURE_OPENAI_CHAT_DEPLOYMENT_NAME")
+        }
         if use_chat_client:
-            return AzureChatOpenAI(endpoint=azure_endpoint, api_key=azure_api_key)
+            return AzureChatOpenAI(**params)
         else:
-            return AzureOpenAI(endpoint=azure_endpoint, api_key=azure_api_key)
+            return AzureOpenAI(**params)
     else:
         openai_api_key = os.getenv('OPENAI_API_KEY')
         if not openai_api_key:
