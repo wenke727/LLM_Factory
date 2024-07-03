@@ -113,7 +113,6 @@ python-dateutil==2.9.0.post0
 python-docx==1.1.0
 python-dotenv==1.0.1
 pytz==2024.1
-pywin32==306
 PyYAML==6.0.1
 pyzmq==25.1.2
 regex==2023.12.25
@@ -137,11 +136,6 @@ termcolor==2.4.0
 threadpoolctl==3.3.0
 tiktoken==0.6.0
 tokenizers==0.15.2
-torch==2.2.0
-torchaudio==2.2.1+cu118
-torchdata==0.7.1
-torchtext==0.16.2
-torchvision==0.17.1+cu118
 tornado==6.4
 tqdm==4.66.2
 traitlets==5.14.1

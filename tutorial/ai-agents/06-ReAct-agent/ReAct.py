@@ -1,18 +1,24 @@
-# 导入环境变量
+#%%
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv("../.env")
 
-# 初始化大模型
-from langchain_openai import ChatOpenAI
-llm = ChatOpenAI(model='gpt-4-turbo-preview',
-             temperature=0.5)
-
-# 设置工具
-from langchain.agents import load_tools
-tools = load_tools(["serpapi", "llm-math"], llm=llm)
-
-# 设置提示模板
 from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
+from langchain.agents import load_tools
+from langchain.agents import AgentExecutor
+from langchain.agents import create_react_agent
+
+#%%
+# 初始化大模型
+llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=0.5)
+
+#%%
+# 设置工具
+tools = load_tools(["serpapi", "llm-math"], llm=llm)
+tools
+
+#%%
+# 设置提示模板
 template = ('''
     '尽你所能用中文回答以下问题。如果能力不够你可以使用以下工具:\n\n'
     '{tools}\n\n
@@ -27,23 +33,31 @@ template = ('''
     'Final Answer: the final answer to the original input question\n\n'
     'Begin!\n\n'
     'Question: {input}\n'
-    'Thought:{agent_scratchpad}' 
+    'Thought:{agent_scratchpad}'
     '''
 )
+
 prompt = PromptTemplate.from_template(template)
+prompt
 
+#%%
 # 初始化Agent
-from langchain.agents import create_react_agent
 agent = create_react_agent(llm, tools, prompt)
+agent
 
+#%%
 # 构建AgentExecutor
-from langchain.agents import AgentExecutor
-agent_executor = AgentExecutor(agent=agent, 
-                               tools=tools, 
+agent_executor = AgentExecutor(agent=agent,
+                               tools=tools,
                                handle_parsing_errors=True,
                                verbose=True)
+agent_executor
 
+#%%
 # 执行AgentExecutor
-agent_executor.invoke({"input": 
+agent_executor.invoke({"input":
                        """目前市场上玫瑰花的一般进货价格是多少？\n
                        如果我在此基础上加价5%，应该如何定价？"""})
+
+
+# %%

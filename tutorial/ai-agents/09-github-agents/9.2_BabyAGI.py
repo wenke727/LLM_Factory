@@ -1,6 +1,6 @@
-# 设置API Key
-import os
-os.environ["OpenAI_API_KEY"] = 'Your OpenAI API Key'
+#%%
+from dotenv import load_dotenv
+load_dotenv("../.env", verbose=True)
 
 # 导入所需的库和模块
 from collections import deque
@@ -274,13 +274,16 @@ class BabyAGI(Chain, BaseModel):
         )
 
 
+#%%
 # 主函数执行部分
 if __name__ == "__main__":
     OBJECTIVE = "分析一下北京市今天的气候情况，写出鲜花储存策略。"
-    llm = OpenAI(temperature=0)
+    llm = OpenAI(model='gpt-3.5-turbo', temperature=0)
     verbose = False
     max_iterations: Optional[int] = 6
-    baby_agi = BabyAGI.from_llm(llm=llm, vectorstore=vectorstore, 
-                                verbose=verbose, 
+    baby_agi = BabyAGI.from_llm(llm=llm, vectorstore=vectorstore,
+                                verbose=verbose,
                                 max_iterations=max_iterations)
     baby_agi({"objective": OBJECTIVE})
+
+# %%
