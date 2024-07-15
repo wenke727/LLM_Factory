@@ -60,9 +60,7 @@ class VLLMModel():
             _output = response.outputs[0]
             if self.confidence:
                 conf = {
-                    "logprobs": {
-                        "top_logprobs": self._process_confidence_request(_output.logprobs)
-                    }
+                    "logprobs": {"top_logprobs": self._process_confidence_request(_output.logprobs)}
                 }
             generation = Generation(
                 text = _output.text.strip().replace("<|eot_id|>", ""),
@@ -92,3 +90,13 @@ class VLLMModel():
 
     def get_num_tokens(self, prompt: str) -> int:
         return len(self.tokenizer.encode(prompt))
+
+if __name__ == "__main__":
+    prompts = [
+        "Hello, my name is",
+        "The president of the United States is",
+        "The capital of France is",
+        "The future of AI is",
+    ]
+    llm = VLLMModel("Qwen/Qwen2-7B-Instruct", tensor_parallel_size=1,confidence=True)
+    res = llm.generate(prompts)
