@@ -10,7 +10,7 @@ from langchain.agents import create_react_agent
 
 #%%
 # 初始化大模型
-llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=0.5)
+llm = ChatOpenAI(model='gpt-4o', temperature=0.5)
 
 #%%
 # 设置工具
@@ -38,7 +38,9 @@ template = ('''
 )
 
 prompt = PromptTemplate.from_template(template)
-prompt
+
+#%%
+prompt.pretty_print()
 
 #%%
 # 初始化Agent
@@ -55,9 +57,7 @@ agent_executor
 
 #%%
 # 执行AgentExecutor
-agent_executor.invoke({"input":
-                       """目前市场上玫瑰花的一般进货价格是多少？\n
-                       如果我在此基础上加价5%，应该如何定价？"""})
+agent_executor.invoke({"input": "目前市场上玫瑰花的一般进货价格是多少？如果我在此基础上加价5%，应该如何定价？"})
 
 
 # %%
