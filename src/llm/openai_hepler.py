@@ -36,7 +36,7 @@ def local_image_to_data_url(image_path, max_size_kb=90):
     # Open the image and check its size
     with Image.open(image_path) as img:
         buffer = io.BytesIO()
-        img.save(buffer, format=img.format)
+        img.save(buffer, format="JPEG")
         size_kb = len(buffer.getvalue()) / 1024
 
         # If the image is too large, resize it
@@ -48,7 +48,7 @@ def local_image_to_data_url(image_path, max_size_kb=90):
 
             # Save the resized image to the buffer
             buffer = io.BytesIO()
-            img.save(buffer, format=img.format)
+            img.save(buffer, format="JPEG")
 
         # Encode image file to base64
         base64_encoded_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
