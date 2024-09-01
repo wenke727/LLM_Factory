@@ -17,13 +17,14 @@ from langchain_openai import (
 from langchain_core.messages import HumanMessage
 
 
-def local_image_to_data_url(image_path, max_size_kb=90):
+def local_image_to_data_url(image_path, max_size_kb=50, quality_first=True):
     """
     Convert a local image file to a data URL with a size limit.
 
     Args:
         image_path (str): The path to the image file.
         max_size_kb (int): Maximum size of the image in kilobytes.
+        quality_first (bool): Whether to reduce quality before resizing the image.
 
     Returns:
         str: A data URL string representing the image.
@@ -33,13 +34,30 @@ def local_image_to_data_url(image_path, max_size_kb=90):
     if mime_type is None:
         mime_type = 'application/octet-stream'
 
-    # Open the image and check its size
+    # Open the image
     with Image.open(image_path) as img:
-        buffer = io.BytesIO()
-        img.save(buffer, format="JPEG")
-        size_kb = len(buffer.getvalue()) / 1024
+        # Convert RGBA to RGB if necessary
+        if img.mode == 'RGBA':
+            img = img.convert('RGB')
 
-        # If the image is too large, resize it
+        buffer = io.BytesIO()
+
+        # Try to reduce image size by adjusting quality
+        if quality_first:
+            quality = 95  # Start with high quality
+            while quality > 10:  # Lower bound on quality
+                buffer.seek(0)
+                img.save(buffer, format="JPEG", quality=quality)
+                size_kb = len(buffer.getvalue()) / 1024
+                if size_kb <= max_size_kb:
+                    break
+                quality -= 5
+        else:
+            # Directly save with default quality (no quality reduction)
+            img.save(buffer, format="JPEG")
+            size_kb = len(buffer.getvalue()) / 1024
+
+        # If the image is still too large, resize it
         if size_kb > max_size_kb:
             scale_factor = (max_size_kb / size_kb) ** 0.5
             new_width = int(img.width * scale_factor)
@@ -48,7 +66,7 @@ def local_image_to_data_url(image_path, max_size_kb=90):
 
             # Save the resized image to the buffer
             buffer = io.BytesIO()
-            img.save(buffer, format="JPEG")
+            img.save(buffer, format="JPEG", quality=quality if quality_first else 95)
 
         # Encode image file to base64
         base64_encoded_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
@@ -93,6 +111,19 @@ def create_multimodal_input(text, imgs):
     # Return a new HumanMessage with the prepared content
     return HumanMessage(content=content)
 
+def _create_openai_client():
+    azure_api_key = os.getenv('AZURE_OPENAI_API_KEY')
+    if azure_api_key:
+        client = openai.AzureOpenAI(
+            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+            api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+            api_version=os.getenv("OPENAI_API_VERSION"),
+        )
+    else:
+        client = openai.OpenAI()
+
+    return client
+
 def initialize_openai_client():
     """
     Initialize the OpenAI client based on the available environment variables.
@@ -110,15 +141,7 @@ def initialize_openai_client():
         chat = openai.ChatCompletion.create
         embeddings = openai.Embedding.create
     else:
-        azure_api_key = os.getenv('AZURE_OPENAI_API_KEY')
-        if azure_api_key:
-            client = openai.AzureOpenAI(
-                azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-                api_key=os.getenv("AZURE_OPENAI_API_KEY"),
-                api_version=os.getenv("OPENAI_API_VERSION"),
-            )
-        else:
-            client = openai.OpenAI()
+        client = _create_openai_client()
 
         chat = client.chat.completions.create
         embeddings = client.embeddings.create
@@ -170,6 +193,19 @@ def initialize_ai_client(model, use_chat_client=True, *args, **kwargs):
         else:
             return OpenAI(api_key=openai_api_key, model=model, *args, **kwargs)
 
+def encode_query(query, model='text-embedding-3-large'):
+    client = _create_openai_client()
+
+    embedding = client.embeddings.create(input=query, model=model)
+    return embedding.data[0].embedding
+
+def encode_queries(queries):
+    res = []
+    for q in queries:
+        res.append(encode_query(q))
+
+    return res
+
 
 if __name__ == "__main__":
     load_dotenv("./.env", verbose=True)
@@ -182,6 +218,7 @@ if __name__ == "__main__":
     # embeddings
     embedding = embeddings(input="Hello, world!", model='text-embedding-3-large')
     embedding.data[0].embedding
+    encode_query(query="Hello, world!")
 
 
     """ Langchain Version """
